@@ -75,6 +75,23 @@ window.InfinityAuth.redirectByAuthConfig();
  if you redirect to another page which **erased the** `auth_config` **query parameters**, please persist it before redirect, then call `window.InfinityAuth.redirectToAuthUrl(config)`with persisted`config`
 {% endhint %}
 
+## Finish Infinity Auth By Auth Config
+
+In order to finish the infinity auth flow, the last `/OAuth/Authorize` call in country setting/payment page, **we currently suggest include WEB SSO javascript library**, so the auth key's data integrity could be preserved during continued flow in VIVEPORT web:
+
+```javascript
+// https://account.htcvive.com/htcaccount.js is loaded
+// assume already finish infinity sign-up from account page,
+// and at country setting/payment page
+
+window.HTCAccount.redirectByAuthConfig();
+// will fire OAuth/Authorize request with payload based on auth_config query param
+```
+
+{% hint style="warning" %}
+if you redirect to another page which **erased the** `auth_config` **query parameters**, please persist it before redirect, then call `window.HTCAccount.redirectByAuthConfig(configs)`with persisted`configs`
+{% endhint %}
+
 ## Get Auth Info
 
 You can get auth info from `_htcsso`  cookie, the parsed and decoded result could also be fetched from `window.InfinityAuth.authInfo` :
