@@ -2,7 +2,7 @@
 
 For VIVE Video client, due to the OS url length limit for launching default browser, we will compose the API for the client but also need query params for dynamically assignment.
 
-{% api-method method="get" host="https://account.htcvive.com" path="/api/proxy/v1/hmd/infinity" %}
+{% api-method method="get" host="https://account.htcvive.com" path="/SS/api/proxy/v1/hmd/infinity" %}
 {% api-method-summary %}
 OAuth Authorize Proxy for AIO Client
 {% endapi-method-summary %}
@@ -42,7 +42,7 @@ https://account.htcvive.com/SS/Services/OAuth/Authorize
 ### Example of OAuth Authorize Proxy Request for VIVE Video Client
 
 ```bash
-https://account.htcvive.com/api/proxy/v1/hmd/infinity
+https://account.htcvive.com/SS/api/proxy/v1/hmd/infinity
 ?redirection_url=https%3A%2F%2Fviveport-web-mock-site.com
 ```
 

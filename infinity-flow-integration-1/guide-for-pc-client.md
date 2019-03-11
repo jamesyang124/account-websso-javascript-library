@@ -4,7 +4,7 @@ For VIVE PC client, due to the OS url length limit for launching default browser
 
 Please follow below API call spec, we also provide an example to follow for VIVE PC client at the end of this section.
 
-{% api-method method="get" host="https://account.htcvive.com" path="/api/proxy/v1/pc/infinity" %}
+{% api-method method="get" host="https://account.htcvive.com" path="/SS/api/proxy/v1/pc/infinity" %}
 {% api-method-summary %}
 OAuth Authorize Proxy For VIVE PC Client
 {% endapi-method-summary %}
@@ -44,7 +44,7 @@ https://csdev.htcwowdev.com/SS/Services/OAuth/Authorize
 ### Example of OAuth Authorize Proxy Request for PC Client
 
 ```bash
-https://account.htcvive.com/api/proxy/v1/pc/infinity
+https://account.htcvive.com/SS/api/proxy/v1/pc/infinity
 ?redirection_url=http%3A%2F%2Flocalhost%3A5566
 ```
 
