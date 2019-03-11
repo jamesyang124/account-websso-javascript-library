@@ -2,7 +2,12 @@
 
 For VIVE PC client, due to the OS url length limit for launching default browser, we will compose the API for the client but also need query params for dynamically assignment. 
 
-Please follow below API call spec, we also provide an example to follow for VIVE PC client at the end of this section.
+Please follow below API call spec, we also provide an example to follow for VIVE PC client at the end of this section. **Use stage domain for development and testing, but please config to production domain for production:**
+
+| ENV | Resource Domain |
+| :--- | :--- |
+| STAGE | [https://account-stage.htcvive.com](https://account-stage.htcvive.com) |
+| PRDO | [https://account.htcvive.com](https://account-stage.htcvive.com) |
 
 {% api-method method="get" host="https://account.htcvive.com" path="/SS/api/proxy/v1/pc/infinity" %}
 {% api-method-summary %}

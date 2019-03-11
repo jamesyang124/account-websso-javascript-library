@@ -1,6 +1,11 @@
 # Integration Guide for VIVE Video Client
 
-For VIVE Video client, due to the OS url length limit for launching default browser, we will compose the API for the client but also need query params for dynamically assignment.
+For VIVE Video client, due to the OS url length limit for launching default browser, we will compose the API for the client but also need query params for dynamically assignment. **Use stage domain for development and testing, but please config to production domain for production:**
+
+| ENV | Resource Domain |
+| :--- | :--- |
+| STAGE | [https://account-stage.htcvive.com](https://account.htcvive.com/infinity/lib.js) |
+| PROD | [https://account.htcvive.com](https://account.htcvive.com/infinity/lib.js) |
 
 {% api-method method="get" host="https://account.htcvive.com" path="/SS/api/proxy/v1/hmd/infinity" %}
 {% api-method-summary %}
