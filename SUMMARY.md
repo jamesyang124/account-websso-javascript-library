@@ -11,6 +11,13 @@
 * [Q&A](web-sso-library/q-and-a.md)
 * [Change Log](web-sso-library/change-log.md)
 
+## REAL NAME VERIFICATION
+
+* [Preset](real-name-verification/preface.md)
+* [Configuration](real-name-verification/configuration.md)
+* [Process Verification](real-name-verification/process-verification.md)
+* [Integration Example](real-name-verification/integration-example.md)
+
 ## Infinity Flow Integration
 
 * [API Specification](infinity-flow-integration-1/infinity-flow-integration.md)
