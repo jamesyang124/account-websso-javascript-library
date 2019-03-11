@@ -18,6 +18,10 @@
 * [Process Verification](real-name-verification/process-verification.md)
 * [Integration Example](real-name-verification/integration-example.md)
 
+## OAMA FLOW INTEGRATION
+
+* [Integration Guide](oama-flow-integration/one-account-multiple-authentication-front-end-guide.md)
+
 ## Infinity Flow Integration
 
 * [API Specification](infinity-flow-integration-1/infinity-flow-integration.md)
