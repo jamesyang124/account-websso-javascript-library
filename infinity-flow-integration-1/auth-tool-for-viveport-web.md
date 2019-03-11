@@ -145,6 +145,17 @@ window.InfinityAuth.config;
 Once the auth config is persisted and page redirected, you should call`window.InfinityAuth.redirectToAuthUrl(config)`to continue infinity auth flow
 {% endhint %}
 
+## Save Auth Cookie From Url Parameters
+
+This helper will try to fetch `window.location.search` and `window.location.hash` to compose `_htcsso` cookie, currently we only respond related parameters in last redirection url. If you need light-weight tool instead of WEBSSO javascript in final redirection page, this may improve performance better.
+
+```javascript
+// https://account.htcvive.com/infinity/lib.js is loaded
+
+window.InfinityAuth.saveAuthCookieFromUrlParams();
+// this will fetch url params and set _htcsso cookie
+```
+
 ## Clean Auth Cookie Example
 
 It might have to clean the auth cookie to re-auth, then the `window.InfinityAuth.cleanAuthCookie()` will  help this without clumsy `document.cookie` operations:
