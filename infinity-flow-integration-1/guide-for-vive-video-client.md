@@ -7,9 +7,9 @@ For VIVE Video client, due to the OS url length limit for launching default brow
 | STAGE | [https://account-stage.htcvive.com](https://account.htcvive.com/infinity/lib.js) |
 | PROD | [https://account.htcvive.com](https://account.htcvive.com/infinity/lib.js) |
 
-{% api-method method="get" host="https://account.htcvive.com" path="/SS/api/proxy/v1/hmd/infinity" %}
+{% api-method method="get" host="https://account.htcvive.com" path="/SS/api/gateway/v1/hmd/infinity" %}
 {% api-method-summary %}
-OAuth Authorize Proxy for AIO Client
+OAuth Authorize Gateway for AIO Client
 {% endapi-method-summary %}
 
 {% api-method-description %}
@@ -47,7 +47,7 @@ https://account.htcvive.com/SS/Services/OAuth/Authorize
 ### Example of OAuth Authorize Proxy Request for VIVE Video Client
 
 ```bash
-https://account.htcvive.com/SS/api/proxy/v1/hmd/infinity
+https://account.htcvive.com/SS/api/gateway/v1/hmd/infinity
 ?redirection_url=https%3A%2F%2Fviveport-web-mock-site.com
 ```
 
