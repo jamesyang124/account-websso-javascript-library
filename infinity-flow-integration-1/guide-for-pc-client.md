@@ -22,7 +22,7 @@ OAuth Authorize API proxy for pc client, it set up and handled by account servic
 {% api-method-request %}
 {% api-method-query-parameters %}
 {% api-method-parameter name="redirection\_url" type="string" required=true %}
-PC client's local host url with dynamic port
+url-encoded PC client's local host url with dynamic port
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}

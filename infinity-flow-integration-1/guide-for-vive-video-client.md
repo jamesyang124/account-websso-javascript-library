@@ -20,7 +20,7 @@ OAuth Authorize API proxy for VIVE Video client, it set up and handled by accoun
 {% api-method-request %}
 {% api-method-path-parameters %}
 {% api-method-parameter name="redirection\_url" type="string" required=true %}
-VIVE VIDEO client's final redirection url, should be VIVEPORT web's url
+url-encoded VIVE VIDEO client's final redirection url, should be VIVEPORT web's url
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 {% endapi-method-request %}
