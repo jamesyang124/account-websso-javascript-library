@@ -42,7 +42,7 @@ To run the infinity flow, please call `window.InfinityAuth.redirectToAuthUrl()` 
 | viewToggles | true | Empty array, or as `["-sign-in"]` for VIVE Video |
 | preSignUpUrl | optional | Indicate whether create account flow should redirect to this url first instead of switching to create account form. Only supply if needed, or may lead redirection loop. **Empty String is not allowed** |
 
-### Example 
+### Example For VIVEPORT Web Normal Sign In
 
 ```javascript
 // https://account.htcvive.com/infinity/lib.js is loaded
@@ -53,6 +53,24 @@ var config = {
   "requiredAuthCode": false,
   "flow": "infinity",
   "initView": "sign-in",
+  "viewToggles": [],
+  "preSingUpUrl": "https://select-plan.com"
+};
+
+window.InfinityAuth.redirectToAuthUrl(config);
+```
+
+### Example For VIVEPORT Web Start Free Trial
+
+```javascript
+// https://account.htcvive.com/infinity/lib.js is loaded
+
+var config = {
+  "client_id": "33035df5-7ddd-4417-a20a-e56722489550",
+  "redirection_url": "https://mock-vivepoer-web.site.com",
+  "requiredAuthCode": false,
+  "flow": "infinity",
+  "initView": "sign-up",
   "viewToggles": [],
   "preSingUpUrl": "https://select-plan.com"
 };
@@ -77,7 +95,7 @@ window.InfinityAuth.redirectByAuthConfig();
 
 ## Finish Infinity Auth By Auth Config
 
-In order to finish the infinity auth flow, the last `/OAuth/Authorize` call in country setting/payment page, **we currently suggest include WEB SSO javascript library**, so the auth key's data integrity could be preserved during continued flow in VIVEPORT web:
+In order to finish the infinity auth flow at the last `/OAuth/Authorize` call in country setting/payment page, **we currently suggest include WEB SSO javascript library**, so the auth key's data integrity could be preserved during continued flow in VIVEPORT web:
 
 ```javascript
 // https://account.htcvive.com/htcaccount.js is loaded
