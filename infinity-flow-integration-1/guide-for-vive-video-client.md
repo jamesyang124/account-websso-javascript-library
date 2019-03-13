@@ -6,6 +6,7 @@ For VIVE Video client, due to the OS url length limit for launching default brow
 | :--- | :--- |
 | STAGE | [https://account-stage.htcvive.com](https://account.htcvive.com/infinity/lib.js) |
 | PROD | [https://account.htcvive.com](https://account.htcvive.com/infinity/lib.js) |
+| TEST | [https://cstest.dev.usw2.cs-htc.co](https://cstest.dev.usw2.cs-htc.co) |
 
 {% api-method method="get" host="https://account.htcvive.com" path="/SS/api/gateway/v1/hmd/infinity" %}
 {% api-method-summary %}
@@ -18,12 +19,6 @@ OAuth Authorize API proxy for VIVE Video client, it set up and handled by accoun
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="redirection\_url" type="string" required=true %}
-url-encoded VIVE VIDEO client's final redirection url, should be VIVEPORT web's url
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=302 %}
@@ -48,7 +43,6 @@ https://account.htcvive.com/SS/Services/OAuth/Authorize
 
 ```bash
 https://account.htcvive.com/SS/api/gateway/v1/hmd/infinity
-?redirection_url=https%3A%2F%2Fviveport-web-mock-site.com
 ```
 
 
