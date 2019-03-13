@@ -8,7 +8,7 @@ You can inject the script for different environment to get `_htcsso`  auth key c
 | :--- | :--- |
 | PROD | [https://account.htcvive.com/infinity/lib.js](https://account.htcvive.com/infinity/tools.js) |
 | STAGE | [https://account-stage.htcvive.com/infinity/lib.js](https://account-stage.htcvive.com/infinity/tools.js) |
-| TEST | [https://cstest.htcwowdev.com/infinity/lib.js](https://cstest.htcwowdev.com/infinity/tools.js) |
+| TEST | [https://cstest.dev.usw2.cs-htc.co/infinity/lib.js](https://cstest.dev.usw2.cs-htc.co/infinity/lib.js) |
 
 {% hint style="warning" %}
 During the infinity sign-in/up flow, **please do not modify URL fragment for access token passing** before loading javascript library. Also the related query param `aid`, `cid`, `se` will be reserved for account team's response usage.
