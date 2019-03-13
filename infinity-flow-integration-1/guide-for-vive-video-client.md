@@ -1,6 +1,6 @@
 # Integration Guide for VIVE Video Client
 
-For VIVE Video client, due to the OS url length limit for launching default browser, we will compose the API for the client but also need query params for dynamically assignment. **Use stage domain for development and testing, but please config to production domain for production:**
+For VIVE Video client, due to the OS url length limit for launching default browser, we will compose the API for the client, the final redirection currently will hardcoded to VIVEPORT web main page. **Use stage domain for development and testing, but please config to production domain for production:**
 
 | ENV | Resource Domain |
 | :--- | :--- |
