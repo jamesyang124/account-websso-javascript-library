@@ -5,7 +5,7 @@ Client only need to call the OAuth authorize API with `state` payload to enable 
 {% hint style="success" %}
 To simplify integration effort, we provide the API spec and integration guide for each client. You can by-pass this page and get quick access via below pages:
 
-{% page-ref page="guide-for-pc-client.md" %}
+{% page-ref page="guide-for-viveport-desktop.md" %}
 
 {% page-ref page="guide-for-vive-video-client.md" %}
 

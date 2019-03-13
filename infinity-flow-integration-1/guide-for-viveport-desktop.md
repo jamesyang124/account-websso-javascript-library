@@ -1,8 +1,8 @@
-# Integration Guide for VIVE PC Client
+# Integration Guide for VIVEPORT Desktop
 
-For VIVE PC client, due to the OS url length limit for launching default browser, we will compose the API for the client but also need query params for dynamically assignment. 
+For VIVEPORT Desktop, due to the OS url length limit for launching default browser, we will compose the API for the client but also need query params for dynamically assignment. 
 
-Please follow below API call spec, we also provide an example to follow for VIVE PC client at the end of this section. **Use stage domain for development and testing, but please config to production domain for production:**
+Please follow below API call spec, we also provide an example to follow for VIVEPORT Desktop at the end of this section. **Use stage domain for development and testing, but please config to production domain for production:**
 
 | ENV | Resource Domain |
 | :--- | :--- |
@@ -12,18 +12,18 @@ Please follow below API call spec, we also provide an example to follow for VIVE
 
 {% api-method method="get" host="https://account.htcvive.com" path="/SS/api/gateway/v1/pc/infinity" %}
 {% api-method-summary %}
-OAuth Authorize Gateway For VIVE PC Client
+OAuth Authorize Gateway For VIVEPORT Desktop
 {% endapi-method-summary %}
 
 {% api-method-description %}
-OAuth Authorize API proxy for pc client, it set up and handled by account service gateway.
+OAuth Authorize API proxy for VIVEPORT Desktop, it set up and handled by account service gateway.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-query-parameters %}
 {% api-method-parameter name="redirection\_url" type="string" required=true %}
-url-encoded PC client's local host url with dynamic port
+url-encoded VIVEPORT Desktop's local host url with dynamic port
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -47,7 +47,7 @@ https://csdev.htcwowdev.com/SS/Services/OAuth/Authorize
 {% endapi-method-spec %}
 {% endapi-method %}
 
-### Example of OAuth Authorize Proxy Request for PC Client
+### Example of OAuth Authorize Proxy Request for VIVEPORT Desktop
 
 ```bash
 https://account.htcvive.com/SS/api/gateway/v1/pc/infinity
