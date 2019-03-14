@@ -10,7 +10,7 @@ Please follow below API call spec, we also provide an example to follow for VIVE
 | PRDO | [https://account.htcvive.com](https://account-stage.htcvive.com) |
 | TEST | [https://cstest.dev.usw2.cs-htc.co](https://cstest.dev.usw2.cs-htc.co/infinity/lib.js) |
 
-{% api-method method="get" host="https://account.htcvive.com" path="/SS/api/gateway/v1/pc/infinity" %}
+{% api-method method="get" host="https://account.htcvive.com" path="/SS/api/gateway/v1/desktop/infinity" %}
 {% api-method-summary %}
 OAuth Authorize Gateway For VIVEPORT Desktop
 {% endapi-method-summary %}
@@ -50,7 +50,7 @@ https://csdev.htcwowdev.com/SS/Services/OAuth/Authorize
 ### Example of OAuth Authorize Proxy Request for VIVEPORT Desktop
 
 ```bash
-https://account.htcvive.com/SS/api/gateway/v1/pc/infinity
+https://account.htcvive.com/SS/api/gateway/v1/desktop/infinity
 ?redirection_url=http%3A%2F%2Flocalhost%3A5566
 ```
 
