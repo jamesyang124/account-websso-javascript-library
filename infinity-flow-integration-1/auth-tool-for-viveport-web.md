@@ -107,7 +107,7 @@ window.HTCAccount.redirectByAuthConfig();
 ```
 
 {% hint style="warning" %}
-if you redirect to another page which **erased the** `auth_config` **query parameters**, please persist it before redirect, then call `window.HTCAccount.redirectByAuthConfig(configs)`with persisted`configs`
+if you redirect to another page which **erased the** `auth_config` **query parameters**, please **url-decoded then decode base 64 then parsed string as JSON** and persist it before redirect, then call `window.HTCAccount.redirectByAuthConfig(configs)`with persisted`configs`
 {% endhint %}
 
 ## Get Auth Info
