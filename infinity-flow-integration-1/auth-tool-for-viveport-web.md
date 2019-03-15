@@ -34,8 +34,8 @@ To run the infinity flow, please call `window.InfinityAuth.redirectToAuthUrl()` 
 
 | Config JSON  | Require | Value |
 | :--- | :--- | :--- |
-| client\_id | true | OAuth client id |
-| redirection\_url | true | Client's redirection url, no URL-encoded required |
+| clientId | true | OAuth client id |
+| redirectionUrl | true | Client's redirection url, no URL-encoded required |
 | requireAuthCode | true | Indicate whether client need authorization code instead of access token |
 | flow | true | constant value **infinity** |
 | initView | true | either **sign-in** or **sign-up** for first rendered page, default should set to **sign-in** |
@@ -48,8 +48,8 @@ To run the infinity flow, please call `window.InfinityAuth.redirectToAuthUrl()` 
 // https://account.htcvive.com/infinity/lib.js is loaded
 
 var config = {
-  "client_id": "33035df5-7ddd-4417-a20a-e56722489550",
-  "redirection_url": "https://mock-vivepoer-web.site.com",
+  "clientId": "33035df5-7ddd-4417-a20a-e56722489550",
+  "redirectionUrl": "https://mock-vivepoer-web.site.com",
   "requiredAuthCode": false,
   "flow": "infinity",
   "initView": "sign-in",
@@ -66,8 +66,8 @@ window.InfinityAuth.redirectToAuthUrl(config);
 // https://account.htcvive.com/infinity/lib.js is loaded
 
 var config = {
-  "client_id": "33035df5-7ddd-4417-a20a-e56722489550",
-  "redirection_url": "https://mock-vivepoer-web.site.com",
+  "clientId": "33035df5-7ddd-4417-a20a-e56722489550",
+  "redirectionUrl": "https://mock-vivepoer-web.site.com",
   "requiredAuthCode": false,
   "flow": "infinity",
   "initView": "sign-up",
@@ -149,8 +149,8 @@ You might need to persist auth config during integrated page redirection, so bef
 
 window.InfinityAuth.config;
 {
-  "client_id": "33035df5-7ddd-4417-a20a-e56722489550",
-  "redirection_url": "https://mock-vivepoer-web.site.com",
+  "clientId": "33035df5-7ddd-4417-a20a-e56722489550",
+  "redirectionUrl": "https://mock-vivepoer-web.site.com",
   "requiredAuthCode": false,
   "flow": "infinity",
   "initView": "sign-in",
