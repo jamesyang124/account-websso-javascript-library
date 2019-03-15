@@ -54,7 +54,7 @@ var config = {
   "flow": "infinity",
   "initView": "sign-in",
   "viewToggles": [],
-  "preSingUpUrl": "https://select-plan.com"
+  "preSignUpUrl": "https://select-plan.com"
 };
 
 window.InfinityAuth.redirectToAuthUrl(config);
@@ -72,7 +72,7 @@ var config = {
   "flow": "infinity",
   "initView": "sign-up",
   "viewToggles": [],
-  "preSingUpUrl": "https://select-plan.com"
+  "preSignUpUrl": "https://select-plan.com"
 };
 
 window.InfinityAuth.redirectToAuthUrl(config);
@@ -155,7 +155,7 @@ window.InfinityAuth.config;
   "flow": "infinity",
   "initView": "sign-in",
   "viewToggles": [],
-  "preSingUpUrl": "https://select-plan.com"
+  "preSignUpUrl": "https://select-plan.com"
 }
 ```
 
