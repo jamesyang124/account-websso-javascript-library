@@ -35,7 +35,7 @@ To run the infinity flow, please call `window.InfinityAuth.redirectToAuthUrl()` 
 | Config JSON  | Require | Value |
 | :--- | :--- | :--- |
 | clientId | true | OAuth client id |
-| redirectionUrl | true | Client's redirection url, no URL-encoded required |
+| redirectionUrl | true | Client's redirection url, no URL-encoded required, **but have to ensure the trailing slash whether required from OAuthSetting** |
 | requireAuthCode | true | Indicate whether client need authorization code instead of access token |
 | flow | true | constant value **infinity** |
 | initView | true | either **sign-in** or **sign-up** for first rendered page, default should set to **sign-in** |
