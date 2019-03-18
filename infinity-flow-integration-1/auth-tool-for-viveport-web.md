@@ -49,7 +49,7 @@ To run the infinity flow, please call `window.InfinityAuth.redirectToAuthUrl()` 
 
 var config = {
   "clientId": "33035df5-7ddd-4417-a20a-e56722489550",
-  "redirectionUrl": "https://mock-vivepoer-web.site.com",
+  "redirectionUrl": "https://mock-vivepoer-web.site.com/",
   "requiredAuthCode": false,
   "flow": "infinity",
   "initView": "sign-in",
@@ -67,7 +67,7 @@ window.InfinityAuth.redirectToAuthUrl(config);
 
 var config = {
   "clientId": "33035df5-7ddd-4417-a20a-e56722489550",
-  "redirectionUrl": "https://mock-vivepoer-web.site.com",
+  "redirectionUrl": "https://mock-vivepoer-web.site.com/",
   "requiredAuthCode": false,
   "flow": "infinity",
   "initView": "sign-up",
@@ -150,7 +150,7 @@ You might need to persist auth config during integrated page redirection, so bef
 window.InfinityAuth.config;
 {
   "clientId": "33035df5-7ddd-4417-a20a-e56722489550",
-  "redirectionUrl": "https://mock-vivepoer-web.site.com",
+  "redirectionUrl": "https://mock-vivepoer-web.site.com/",
   "requiredAuthCode": false,
   "flow": "infinity",
   "initView": "sign-in",
