@@ -34,6 +34,7 @@ To run the infinity flow, please call `window.InfinityAuth.redirectToAuthUrl()` 
 
 | Config JSON  | Require | Value |
 | :--- | :--- | :--- |
+| sessionId | optional | BI session id, if not carried, will generate for it, **please reuse this BI session id if present.** |
 | clientId | true | OAuth client id |
 | redirectionUrl | true | Client's redirection url, no URL-encoded required, **please ensure the trailing slash whether required from OAuthSetting** |
 | requireAuthCode | true | Indicate whether client need authorization code instead of access token |
@@ -48,6 +49,7 @@ To run the infinity flow, please call `window.InfinityAuth.redirectToAuthUrl()` 
 // https://account.htcvive.com/infinity/lib.js is loaded
 
 var config = {
+  "sessionId": "c4641f40-e6ee-44af-92bf-a3f94425ef0c",
   "clientId": "33035df5-7ddd-4417-a20a-e56722489550",
   "redirectionUrl": "https://mock-vivepoer-web.site.com/",
   "requiredAuthCode": false,
@@ -66,6 +68,7 @@ window.InfinityAuth.redirectToAuthUrl(config);
 // https://account.htcvive.com/infinity/lib.js is loaded
 
 var config = {
+  "sessionId": "c4641f40-e6ee-44af-92bf-a3f94425ef0c",
   "clientId": "33035df5-7ddd-4417-a20a-e56722489550",
   "redirectionUrl": "https://mock-vivepoer-web.site.com/",
   "requiredAuthCode": false,
@@ -149,6 +152,7 @@ You might need to persist auth config during integrated page redirection, so bef
 
 window.InfinityAuth.config;
 {
+  "sessionId": "c4641f40-e6ee-44af-92bf-a3f94425ef0c",
   "clientId": "33035df5-7ddd-4417-a20a-e56722489550",
   "redirectionUrl": "https://mock-vivepoer-web.site.com/",
   "requiredAuthCode": false,

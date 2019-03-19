@@ -29,7 +29,11 @@ Validate OAuth setting and redirect to infinity authentication url
 {% api-method-request %}
 {% api-method-query-parameters %}
 {% api-method-parameter name="state" type="string" required=true %}
-an URL-encoded state JSON string to trigger infinity UI flow, please check each state.\* fields
+an URL-encoded state JSON string to trigger UI flow, please check each state.\* fields
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="state.sessionId" type="string" required=false %}
+BI session id, please reuse this id if present
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="state.clientId" type="string" required=true %}
