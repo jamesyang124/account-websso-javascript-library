@@ -17,11 +17,13 @@ To quick access, we provide a light-weight javascript lib for integration. Pleas
 | viewToggles | \[\] |
 | preSignUpUrl | @param { VIVEPORT web's select plan url } |
 | requireAuthCode | false |
+| sessionId | BI session id, if not carried, will generate for it, **please reuse this BI session id if present.** |
 
 #### Example of `state` param
 
 ```javascript
 var state = {
+    "sessionId": "c4641f40-e6ee-44af-92bf-a3f94425ef0c",
     "clientId": "",
     "redirectionUrl": "",
     "flow": "infinity",
