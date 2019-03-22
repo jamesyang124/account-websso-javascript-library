@@ -8,7 +8,7 @@ For VIVE Video client, due to the OS url length limit for launching default brow
 | PROD | [https://account.htcvive.com](https://account.htcvive.com/infinity/lib.js) |
 | TEST | [https://cstest.dev.usw2.cs-htc.co](https://cstest.dev.usw2.cs-htc.co) |
 
-{% api-method method="get" host="https://account.htcvive.com" path="/SS/api/gateway/v1/hmd/infinity" %}
+{% api-method method="get" host="https://account.htcvive.com" path="/api/gateway/v1/hmd/infinity" %}
 {% api-method-summary %}
 OAuth Authorize Gateway for AIO Client
 {% endapi-method-summary %}
@@ -19,6 +19,16 @@ OAuth Authorize API proxy for VIVE Video client, it set up and handled by accoun
 
 {% api-method-spec %}
 {% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="init\_view" type="string" required=true %}
+currently as constant, set up to **`sign-up`**
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="hl" type="string" required=false %}
+host language, can switch to other support locale, **if mis-matched, should fall back to english locale**
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
 
 {% api-method-response %}
 {% api-method-response-example httpCode=302 %}
@@ -42,7 +52,7 @@ https://account.htcvive.com/SS/Services/OAuth/Authorize
 ### Example of OAuth Authorize Proxy Request for VIVE Video Client
 
 ```bash
-https://account.htcvive.com/SS/api/gateway/v1/hmd/infinity
+https://account.htcvive.com/api/gateway/v1/hmd/infinity?hl=zh_TW&init_view=sign-up
 ```
 
 
