@@ -28,6 +28,10 @@ Validate OAuth setting and redirect to infinity authentication url
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-query-parameters %}
+{% api-method-parameter name="scope" type="string" required=false %}
+URL encoded scopes string, delimited by space. Only set it when need broader scope support
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="state" type="string" required=true %}
 an URL-encoded state JSON string to trigger UI flow, please check each state.\* fields
 {% endapi-method-parameter %}

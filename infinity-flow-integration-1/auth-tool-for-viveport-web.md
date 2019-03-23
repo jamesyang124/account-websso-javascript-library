@@ -42,6 +42,7 @@ To run the infinity flow, please call `window.InfinityAuth.redirectToAuthUrl()` 
 | initView | true | either **sign-in** or **sign-up** for first rendered page, default should set to **sign-in** |
 | viewToggles | true | Empty array, or as `["-sign-in"]` for VIVE Video |
 | preSignUpUrl | optional | Indicate whether create account flow should redirect to this url first instead of switching to create account form. Only supply if needed, or may lead redirection loop. **Empty String is not allowed** |
+| scopes | optional | scope array, so the auth key can be constraint to certain scopes. Currently only preset for VIVEPORT Desktop |
 
 ### Example For VIVEPORT Web Normal Sign In
 
@@ -166,17 +167,6 @@ window.InfinityAuth.config;
 {% hint style="warning" %}
 Once the auth config is persisted and page redirected, you should call`window.InfinityAuth.redirectToAuthUrl(config)`to continue infinity auth flow
 {% endhint %}
-
-## Save Auth Cookie From Url Parameters
-
-This helper will try to fetch `window.location.search` and `window.location.hash` to compose `_htcsso` cookie, currently we only respond related parameters in last redirection url. If you need light-weight tool instead of WEBSSO javascript in final redirection page, this may improve performance better.
-
-```javascript
-// https://account.htcvive.com/infinity/lib.js is loaded
-
-window.InfinityAuth.saveAuthCookieFromUrlParams();
-// this will fetch url params and set _htcsso cookie
-```
 
 ## Clean Auth Cookie Example
 
