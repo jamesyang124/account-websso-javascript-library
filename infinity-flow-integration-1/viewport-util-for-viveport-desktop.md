@@ -6,7 +6,7 @@ If the related web pages from account or VIVEPORT store domain, this util could 
 
 ```javascript
 console.log(window.ViewportUtil.expectHeight);
-// 800
+// 900
 
 console.log(window.ViewportUtil.expectWidth);
 // 1024
