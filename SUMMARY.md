@@ -29,4 +29,5 @@
 * [Integration Guide for VIVE Video Client](infinity-flow-integration-1/guide-for-vive-video-client.md)
 * [Integration Guide for VIVEPORT Web](infinity-flow-integration-1/guide-for-viveport-web.md)
 * [Auth Tool For VIVEPORT Web](infinity-flow-integration-1/auth-tool-for-viveport-web.md)
+* [Viewport Util for VIVEPORT Desktop](infinity-flow-integration-1/viewport-util-for-viveport-desktop.md)
 
