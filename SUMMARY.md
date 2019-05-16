@@ -4,6 +4,7 @@
 
 ## WEB SSO LIBRARY
 
+* [Quick Start For SSO V2 Integration](web-sso-library/quick-start-for-sso-v2-integration.md)
 * [Basic Usuage](web-sso-library/basic-usuage.md)
 * [API Specification](web-sso-library/api-specification.md)
 * [Example Code](web-sso-library/example-code.md)

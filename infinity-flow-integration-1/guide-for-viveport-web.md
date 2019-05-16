@@ -16,6 +16,7 @@ To quick access, we provide a light-weight javascript lib for integration. Pleas
 | initView | "sign-in" |
 | viewToggles | \[\] |
 | preSignUpUrl | @param { VIVEPORT web's select plan url } |
+| postSignUpUrl | @param {VIVEPORT web's country setting url} |
 | requireAuthCode | false |
 | sessionId | BI session id, if not carried, will generate for it, **please reuse this BI session id if present.** |
 
@@ -30,7 +31,8 @@ var state = {
     "initView": "sign-up",
     "viewToggles": ["-sign-in"],
     "requiredAuthCode": false, 
-    "preSignUpUrl": "https://viveport-web-mock-site.com/plan/selection"
+    "preSignUpUrl": "https://viveport-web-mock-site.com/plan/selection",
+    "postSignUpUrl": "https://viveport-web-mock-site.com/store/setup/country"
 }
 ```
 
@@ -64,7 +66,7 @@ VIVEPORT web should compose API to enable infinity authentication flow, note tha
 ```bash
 https://account.htcvive.com/SS/Services/OAuth/Authorize
 ?redirection_url=https%3A%2F%2Fcsdev.htcwowdev.com%2Fhtcaccount%2Fcallback%2F%3Fclient_id%3D33035df5-7ddd-4417-a20a-e56722489550%26origin%3Dhttps%253A%252F%252Fid-dev-websso.htcwowdev.com%252F19%252Fdev.html%26type%3Dredirect
-&state=%7B%22clientId%22%3A%2233035df5-7ddd-4417-a20a-e56722489550%22%2C%22redirectionUrl%22%3A%22https%3A%2F%2Fid-dev-websso.htcwowdev.com%2F19%2Fdev.html%22%2C%22flow%22%3A%22infinity%22%2C%22initView%22%3A%22sign-in%22%2C%22viewToggles%22%3A%5B%5D%2C%22preSignUpUrl%22%3A%22%22%7D
+&state=%7B%22clientId%22%3A%2233035df5-7ddd-4417-a20a-e56722489550%22%2C%22redirectionUrl%22%3A%22https%3A%2F%2Fid-dev-websso.htcwowdev.com%2F19%2Fdev.html%22%2C%22flow%22%3A%22infinity%22%2C%22initView%22%3A%22sign-in%22%2C%22viewToggles%22%3A%5B%5D%2C%22preSignUpUrl%22%3A%22%22%2C%22postSignUpUrl%22%3A%22%22%7D
 &response_type=token
 &immediate=FALSE
 &client_id=33035df5-7ddd-4417-a20a-e56722489550
