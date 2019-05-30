@@ -77,11 +77,19 @@ an array of strings to toggle different UI paths in current flow
   
 For Example:  
   
-**`["-forgot-pwd"]`** will disable forgot password link in pages.  
+**`["-sign-in"]`** will disable sign-in link in all pages.  
+**`["-promotion"]`** will disable promotion view.  
+**`["+org-view"]`** will enable organization profile flow  
+**`["logo-htc"]`** will replace logo to HTC & VIVE logo  
   
 Currently support toggle string:  
   
-**"-sign-in"**  
+**"-sign-in",  
+"-promotion",  
+"+org-view",  
+"log-htc"**  
+  
+  
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="client\_id" type="string" required=true %}
