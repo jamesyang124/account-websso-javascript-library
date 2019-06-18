@@ -23,12 +23,14 @@
 
 * [Integration Guide](oama-flow-integration/one-account-multiple-authentication-front-end-guide.md)
 
-## Infinity Flow Integration
+## Infinity Flow Integration <a id="infinity-flow-integration-1"></a>
 
 * [API Specification](infinity-flow-integration-1/infinity-flow-integration.md)
 * [Integration Guide for VIVEPORT Desktop](infinity-flow-integration-1/guide-for-viveport-desktop.md)
 * [Integration Guide for VIVE Video Client](infinity-flow-integration-1/guide-for-vive-video-client.md)
 * [Integration Guide for VIVEPORT Web](infinity-flow-integration-1/guide-for-viveport-web.md)
+* [Integration Guide for Organization Profile View](infinity-flow-integration-1/integration-guide-for-organization-profile-view.md)
 * [Auth Tool For VIVEPORT Web](infinity-flow-integration-1/auth-tool-for-viveport-web.md)
 * [Viewport Util for VIVEPORT Desktop](infinity-flow-integration-1/viewport-util-for-viveport-desktop.md)
+* [Auth Configs for SSO V2](infinity-flow-integration-1/auth-configs-for-sso-v2.md)
 

@@ -1,6 +1,6 @@
 # Quick Start For SSO V2 Integration
 
-This section demonstrate how to integrate with new SSO flow and new UI for viveport, and vive related web services.
+This section demonstrate how to integrate with new SSO flow and new UI for VIVEPORT, and vive related web services.
 
 {% hint style="info" %}
 Before using the SSO SDK, you should already registered OAuth setting with account  team. If not, please contact account team for more info.
@@ -128,8 +128,7 @@ Below example is assume operate on HTC Account Stage environment.
               
   var initConfig = {
     appid: authConfigs.clientId,
-    scope: "email birthday",
-    authorities: ""
+    scope: "email birthday"
   };
 
   window.HTCAccount.init(initConfig);
