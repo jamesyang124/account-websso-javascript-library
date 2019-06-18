@@ -101,7 +101,7 @@ window.HTCAccount.redirectByAuthConfig(minConfig);
 
 for more info, please check config definition at **Start Infinity Auth** section in below link
 
-{% page-ref page="../infinity-flow-integration-1/auth-tool-for-viveport-web.md" %}
+{% page-ref page="../infinity-flow-integration-1/auth-configs-for-sso-v2.md" %}
 
 ## Sample Code
 

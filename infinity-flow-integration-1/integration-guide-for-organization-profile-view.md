@@ -2,7 +2,15 @@
 
 ## Launch with Organization Profile View
 
-Must bring `+org-view`, `-promotion`, and `logo-htc` in `viewToggles` list field to enable organization profile view.
+{% hint style="info" %}
+To enable organization profile view, must bring `+org-view`, `-promotion`, and `logo-htc` in `viewToggles` list field.
+
+Then call `window.HTCAccount.redirectByAuthConfig`with config parameter, please check below link for auth config set up:
+
+{% page-ref page="auth-configs-for-sso-v2.md" %}
+{% endhint %}
+
+
 
 ```javascript
 // htcaccount.js is loaded
@@ -19,12 +27,6 @@ var minConfig = {
   
 window.HTCAccount.redirectByAuthConfig(minConfig);
 ```
-
-{% hint style="success" %}
-To quick access, please check below link to reuse **web SSO SDK, and check config tweaking from above below examples.**
-
-{% page-ref page="../web-sso-library/quick-start-for-sso-v2-integration.md" %}
-{% endhint %}
 
 ## Sample Code For Integrating Organization Profile View
 
