@@ -1,5 +1,7 @@
 # Integration Guide for Organization Profile View
 
+This page provide information to reuse HTCAccount web SSO SDK for infinity flow with organization profile view. Check sample code in last section for synchronous mode.
+
 ## Launch with Organization Profile View
 
 {% hint style="info" %}
@@ -10,7 +12,7 @@ Then call `window.HTCAccount.redirectByAuthConfig`with config parameter, please 
 {% page-ref page="auth-configs-for-sso-v2.md" %}
 {% endhint %}
 
-
+### Example Auth Configs & Bootstrapping
 
 ```javascript
 // htcaccount.js is loaded
