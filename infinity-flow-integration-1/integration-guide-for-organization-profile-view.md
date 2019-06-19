@@ -4,7 +4,7 @@ This page provide information to reuse HTCAccount web SSO SDK for infinity flow 
 
 Please follow below API call spec, we also provide an example to follow for VIVEPORT Desktop at the end of this section. **Use stage domain for development and testing, but please config to production domain for production:**
 
-### Account Host
+### HTCAccountHost env
 
 | ENV | Resource Domain |
 | :--- | :--- |
@@ -12,20 +12,20 @@ Please follow below API call spec, we also provide an example to follow for VIVE
 | PRDO | ​[https://account.htcvive.com](https://account-stage.htcvive.com/)​ |
 | TEST | ​[https://cstest.dev.usw2.cs-htc.co](https://cstest.dev.usw2.cs-htc.co/infinity/lib.js)​ |
 
-### Profile Host
+### HTCProfileDefaultHost env
 
 | ENV | Resource Domain |
 | :--- | :--- |
-| STAGE |  |
-| PROD |  |
+| STAGE | [https://account-profile-stage.htcvive.com](https://account-profile-stage.htcvive.com) |
+| PROD | [https://account-profile.htcvive.com](https://account-profile.htcvive.com) |
 | TEST | [https://profiletest.htcwowdev.com](https://profiletest.htcwowdev.com) |
 
-### Organization Profile Host
+### HTCOrgProfileDefaultHost env
 
 | ENV | Resource Domain |
 | :--- | :--- |
-| STAGE |  |
-| PROD |  |
+| STAGE | [https://account-stage-usw2.viveport.com](https://account-stage-usw2.viveport.com) |
+| PROD | [https://account.viveport.com](https://account.viveport.com) |
 | TEST | [https://business-account-qa.htcwowdev.com](https://business-account-qa.htcwowdev.com) |
 
 ## Launch with Organization Profile View
