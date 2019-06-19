@@ -4,11 +4,29 @@ For VIVEPORT Desktop, due to the OS url length limit for launching default brows
 
 Please follow below API call spec, we also provide an example to follow for VIVEPORT Desktop at the end of this section. **Use stage domain for development and testing, but please config to production domain for production:**
 
+### HTCAccountHost env
+
 | ENV | Resource Domain |
 | :--- | :--- |
-| STAGE | [https://account-stage.htcvive.com](https://account-stage.htcvive.com) |
-| PRDO | [https://account.htcvive.com](https://account-stage.htcvive.com) |
-| TEST | [https://cstest.dev.usw2.cs-htc.co](https://cstest.dev.usw2.cs-htc.co/infinity/lib.js) |
+| STAGE | ​[https://account-stage.htcvive.com](https://account-stage.htcvive.com/)​ |
+| PRDO | ​[https://account.htcvive.com](https://account-stage.htcvive.com/)​ |
+| TEST | ​[https://cstest.dev.usw2.cs-htc.co](https://cstest.dev.usw2.cs-htc.co/infinity/lib.js)​ |
+
+### HTCProfileDefaultHost env
+
+| ENV | Resource Domain |
+| :--- | :--- |
+| STAGE | [https://account-profile-stage.htcvive.com](https://account-profile-stage.htcvive.com) |
+| PROD | [https://account-profile.htcvive.com](https://account-profile.htcvive.com) |
+| TEST | [https://profiletest.htcwowdev.com](https://profiletest.htcwowdev.com) |
+
+### HTCOrgProfileDefaultHost env
+
+| ENV | Resource Domain |
+| :--- | :--- |
+| STAGE | [https://account-stage-usw2.viveport.com](https://account-stage-usw2.viveport.com) |
+| PROD | [https://account.viveport.com](https://account.viveport.com) |
+| TEST | [https://business-account-qa.htcwowdev.com](https://business-account-qa.htcwowdev.com) |
 
 {% api-method method="get" host="https://account.htcvive.com" path="/SS/api/gateway/v1/desktop/infinity" %}
 {% api-method-summary %}

@@ -2,11 +2,29 @@
 
 For VIVE Video client, due to the OS url length limit for launching default browser, we will compose the API for the client, the final redirection currently will hardcoded to VIVEPORT web main page. **Use stage domain for development and testing, but please config to production domain for production:**
 
+### HTCAccountHost env
+
 | ENV | Resource Domain |
 | :--- | :--- |
-| STAGE | [https://account-stage.htcvive.com](https://account.htcvive.com/infinity/lib.js) |
-| PROD | [https://account.htcvive.com](https://account.htcvive.com/infinity/lib.js) |
-| TEST | [https://cstest.dev.usw2.cs-htc.co](https://cstest.dev.usw2.cs-htc.co) |
+| STAGE | ​[https://account-stage.htcvive.com](https://account-stage.htcvive.com/)​ |
+| PRDO | ​[https://account.htcvive.com](https://account-stage.htcvive.com/)​ |
+| TEST | ​[https://cstest.dev.usw2.cs-htc.co](https://cstest.dev.usw2.cs-htc.co/infinity/lib.js)​ |
+
+### HTCProfileDefaultHost env
+
+| ENV | Resource Domain |
+| :--- | :--- |
+| STAGE | [https://account-profile-stage.htcvive.com](https://account-profile-stage.htcvive.com) |
+| PROD | [https://account-profile.htcvive.com](https://account-profile.htcvive.com) |
+| TEST | [https://profiletest.htcwowdev.com](https://profiletest.htcwowdev.com) |
+
+### HTCOrgProfileDefaultHost env
+
+| ENV | Resource Domain |
+| :--- | :--- |
+| STAGE | [https://account-stage-usw2.viveport.com](https://account-stage-usw2.viveport.com) |
+| PROD | [https://account.viveport.com](https://account.viveport.com) |
+| TEST | [https://business-account-qa.htcwowdev.com](https://business-account-qa.htcwowdev.com) |
 
 {% api-method method="get" host="https://account.htcvive.com" path="/api/gateway/v1/hmd/infinity" %}
 {% api-method-summary %}

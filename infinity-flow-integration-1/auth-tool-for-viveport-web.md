@@ -4,11 +4,29 @@
 
 You can inject the script for different environment to get `_htcsso`  auth key cookie from your infinity callback. **All domains in each account's website url from this page should subject to change by environment**:
 
-| ENV | RESOURCE PATH |
+### HTCAccountHost env
+
+| ENV | Resource Domain |
 | :--- | :--- |
-| PROD | [https://account.htcvive.com/infinity/lib.js](https://account.htcvive.com/infinity/tools.js) |
-| STAGE | [https://account-stage.htcvive.com/infinity/lib.js](https://account-stage.htcvive.com/infinity/tools.js) |
-| TEST | [https://cstest.dev.usw2.cs-htc.co/infinity/lib.js](https://cstest.dev.usw2.cs-htc.co/infinity/lib.js) |
+| STAGE | ​[https://account-stage.htcvive.com](https://account-stage.htcvive.com/)​ |
+| PRDO | ​[https://account.htcvive.com](https://account-stage.htcvive.com/)​ |
+| TEST | ​[https://cstest.dev.usw2.cs-htc.co](https://cstest.dev.usw2.cs-htc.co/infinity/lib.js)​ |
+
+### HTCProfileDefaultHost env
+
+| ENV | Resource Domain |
+| :--- | :--- |
+| STAGE | [https://account-profile-stage.htcvive.com](https://account-profile-stage.htcvive.com) |
+| PROD | [https://account-profile.htcvive.com](https://account-profile.htcvive.com) |
+| TEST | [https://profiletest.htcwowdev.com](https://profiletest.htcwowdev.com) |
+
+### HTCOrgProfileDefaultHost env
+
+| ENV | Resource Domain |
+| :--- | :--- |
+| STAGE | [https://account-stage-usw2.viveport.com](https://account-stage-usw2.viveport.com) |
+| PROD | [https://account.viveport.com](https://account.viveport.com) |
+| TEST | [https://business-account-qa.htcwowdev.com](https://business-account-qa.htcwowdev.com) |
 
 {% hint style="warning" %}
 During the infinity sign-in/up flow, **please do not modify URL fragment for access token passing** before loading javascript library. Also the related query param `aid`, `cid`, `se` will be reserved for account team's response usage.
