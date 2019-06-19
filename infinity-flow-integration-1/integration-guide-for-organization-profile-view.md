@@ -4,11 +4,29 @@ This page provide information to reuse HTCAccount web SSO SDK for infinity flow 
 
 Please follow below API call spec, we also provide an example to follow for VIVEPORT Desktop at the end of this section. **Use stage domain for development and testing, but please config to production domain for production:**
 
+### Account Host
+
 | ENV | Resource Domain |
 | :--- | :--- |
 | STAGE | ​[https://account-stage.htcvive.com](https://account-stage.htcvive.com/)​ |
 | PRDO | ​[https://account.htcvive.com](https://account-stage.htcvive.com/)​ |
 | TEST | ​[https://cstest.dev.usw2.cs-htc.co](https://cstest.dev.usw2.cs-htc.co/infinity/lib.js)​ |
+
+### Profile Host
+
+| ENV | Resource Domain |
+| :--- | :--- |
+| STAGE |  |
+| PROD |  |
+| TEST | [https://profiletest.htcwowdev.com](https://profiletest.htcwowdev.com) |
+
+### Organization Profile Host
+
+| ENV | Resource Domain |
+| :--- | :--- |
+| STAGE |  |
+| PROD |  |
+| TEST | [https://business-account-qa.htcwowdev.com](https://business-account-qa.htcwowdev.com) |
 
 ## Launch with Organization Profile View
 
