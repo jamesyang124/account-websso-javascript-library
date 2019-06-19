@@ -2,6 +2,14 @@
 
 This page provide information to reuse HTCAccount web SSO SDK for infinity flow with organization profile view. Check sample code in last section for synchronous mode.
 
+Please follow below API call spec, we also provide an example to follow for VIVEPORT Desktop at the end of this section. **Use stage domain for development and testing, but please config to production domain for production:**
+
+| ENV | Resource Domain |
+| :--- | :--- |
+| STAGE | ​[https://account-stage.htcvive.com](https://account-stage.htcvive.com/)​ |
+| PRDO | ​[https://account.htcvive.com](https://account-stage.htcvive.com/)​ |
+| TEST | ​[https://cstest.dev.usw2.cs-htc.co](https://cstest.dev.usw2.cs-htc.co/infinity/lib.js)​ |
+
 ## Launch with Organization Profile View
 
 {% hint style="info" %}
@@ -19,7 +27,7 @@ Then call `window.HTCAccount.redirectByAuthConfig`with config parameter, please 
 // window.HTCAccount.init already set 
 
 var minConfig = {
-    "clientId": "33035df5-7ddd-4417-a20a-e56722489550",
+    "clientId": "cc955ffe-b086-480c-84a3-42818f13839b",
     "redirectionUrl": "https://store-stage-usw2.viveport.com",
     "flow": "infinity",
     "initView": "sign-in",
@@ -42,7 +50,7 @@ window.HTCAccount.redirectByAuthConfig(minConfig);
   
   var authConfigs = {
     "sessionId": "4686d579-4176-46fc-8636-660643cf1f8f",
-    "clientId": "33035df5-7ddd-4417-a20a-e56722489550",
+    "clientId": "cc955ffe-b086-480c-84a3-42818f13839b",
     "redirectionUrl": "https://store-stage-usw2.viveport.com/",
     "flow": "infinity",
     "initView": "sign-in",
