@@ -13,10 +13,10 @@ james\_yang@htc.com
 
 eddie\_liu@htc.com
 
-tom.th\_lin@htc.com
-
 edward\_kung@htc.com
 
 Copyright© 2019 HTC Corporation. All rights reserved.
 {% endhint %}
+
+
 
