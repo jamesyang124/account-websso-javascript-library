@@ -409,5 +409,38 @@ If user is not in Login status, the API will invoke fail callback function. If u
 HTCAccount.createOrgProfile(failedCallback(result, status));
 ```
 
+### Verify Auth Key
+
+A wrapper of `/api/oauth/v2/verify-token` to verify user auth key for web SSO client. 
+
+#### API
+
+```text
+HTCAccount.verifyTokenV2(success_callback, failed_callback, checkMainSiteAuthKey);
+```
+
+#### Parameters
+
+| Parameter Name | Required | Type | Description |
+| :--- | :--- | :--- | :--- |
+| success\_callback | Y | Function | Callback for succeed response, its first parameter accept succeed JSON response, for JSON fields, please check OAuth verify-token API |
+| failed\_callback | Y | Function | Callback for succeed response, its first parameter accept failed JSON response |
+| checkMainSiteAuthKey | N | Boolean | check main site domain's auth key cookie whether is expired. default set to **false.** |
+
+#### Error Responses
+
+{% hint style="info" %}
+The error response should refer to OAuth verify token API, and with extra error code **4031010** for main site auth key check:
+
+`{   
+  "code": 4031010,   
+  "msg": "main site token expired, please relogged in"   
+}` 
+
+Or other error response code from OAuth API document:
+
+[https://id-dev-swagger.htcwowdev.com/docs\_oauth](https://id-dev-swagger.htcwowdev.com/docs_oauth)
+{% endhint %}
+
 
 
