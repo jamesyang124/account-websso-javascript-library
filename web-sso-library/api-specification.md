@@ -437,6 +437,8 @@ The error response should refer to OAuth verify token API, and with extra error 
   "msg": "main site token expired, please relogged in"   
 }` 
 
+If error code is **negative number as** unexpected errors, please report to account team for troubleshooting.
+
 Or other error response code from OAuth API document:
 
 [https://id-dev-swagger.htcwowdev.com/docs\_oauth](https://id-dev-swagger.htcwowdev.com/docs_oauth)
