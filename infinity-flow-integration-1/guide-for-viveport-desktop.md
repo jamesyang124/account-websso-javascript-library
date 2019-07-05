@@ -28,6 +28,10 @@ Please follow below API call spec, we also provide an example to follow for VIVE
 | PROD | [https://account.viveport.com](https://account.viveport.com) |
 | TEST | [https://business-account-qa.htcwowdev.com](https://business-account-qa.htcwowdev.com) |
 
+{% hint style="danger" %}
+If you **need customization for pre/post sign-up urls**, please contact account team to get authorized permission, **otherwise the requests will be prohibited as malicious user behavior**.
+{% endhint %}
+
 {% api-method method="get" host="https://account.htcvive.com" path="/SS/api/gateway/v1/desktop/infinity" %}
 {% api-method-summary %}
 OAuth Authorize Gateway For VIVEPORT Desktop

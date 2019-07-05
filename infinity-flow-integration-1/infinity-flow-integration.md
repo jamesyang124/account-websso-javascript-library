@@ -16,6 +16,10 @@ To simplify integration effort, we provide the API spec and integration guide fo
 Authorize API  will **check and validate query params based on OAuth setting and may throw error message,**  please resolve issues during development/test phase, these errors are usually occurred by in-appropriate OAuth setting, or invalid preset query params.
 {% endhint %}
 
+{% hint style="danger" %}
+If you **need customization for pre/post sign-up urls**, please contact account team to get authorized permission, **otherwise the requests will be prohibited as malicious user behavior**.
+{% endhint %}
+
 {% api-method method="get" host="https://account.htcvive.com" path="/SS/Services/OAuth/Authorize" %}
 {% api-method-summary %}
 OAuth Authorize

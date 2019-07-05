@@ -107,6 +107,10 @@ for more info, please check config definition at **Start Infinity Auth** section
 
 Below example is assume operate on HTC Account Stage environment.
 
+{% hint style="danger" %}
+If you **need customization for pre/post sign-up urls**, please contact account team to get authorized permission, **otherwise the requests will be prohibited as malicious user behavior**.
+{% endhint %}
+
 ```markup
 <script type="application/javascript">
   // PLEASE ENSURE SET UP HOST BEFORE LOADING SSO JS SDK 
@@ -122,8 +126,7 @@ Below example is assume operate on HTC Account Stage environment.
     "flow": "infinity",
     "initView": "sign-in",
     "viewToggles": [],
-    "requireAuthCode": false,
-    "preSignUpUrl": "https://store-stage-usw2.viveport.com/store/setup/plans"
+    "requireAuthCode": false
   };
               
   var initConfig = {

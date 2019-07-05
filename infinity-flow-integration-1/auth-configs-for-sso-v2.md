@@ -1,5 +1,9 @@
 # Auth Configs for Infinity Flow
 
+{% hint style="danger" %}
+If you **need customization for pre/post sign-up urls**, please contact account team to get authorized permission, **otherwise the requests will be prohibited as malicious user behavior**.
+{% endhint %}
+
 ## Definition of Auth Config Fields
 
 | Config JSON | Require | Value |

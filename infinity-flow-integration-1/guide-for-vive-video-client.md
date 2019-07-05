@@ -26,6 +26,10 @@ For VIVE Video client, due to the OS url length limit for launching default brow
 | PROD | [https://account.viveport.com](https://account.viveport.com) |
 | TEST | [https://business-account-qa.htcwowdev.com](https://business-account-qa.htcwowdev.com) |
 
+{% hint style="danger" %}
+If you **need customization for pre/post sign-up urls**, please contact account team to get authorized permission, **otherwise the requests will be prohibited as malicious user behavior**.
+{% endhint %}
+
 {% api-method method="get" host="https://account.htcvive.com" path="/api/gateway/v1/hmd/infinity" %}
 {% api-method-summary %}
 OAuth Authorize Gateway for AIO Client

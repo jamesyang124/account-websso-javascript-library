@@ -28,6 +28,10 @@ You can inject the script for different environment to get `_htcsso`  auth key c
 | PROD | [https://account.viveport.com](https://account.viveport.com) |
 | TEST | [https://business-account-qa.htcwowdev.com](https://business-account-qa.htcwowdev.com) |
 
+{% hint style="danger" %}
+If you **need customization for pre/post sign-up urls**, please contact account team to get authorized permission, **otherwise the requests will be prohibited as malicious user behavior**.
+{% endhint %}
+
 {% hint style="warning" %}
 During the infinity sign-in/up flow, **please do not modify URL fragment for access token passing** before loading javascript library. Also the related query param `aid`, `cid`, `se` will be reserved for account team's response usage.
 {% endhint %}

@@ -8,6 +8,10 @@ To quick access, we provide a light-weight javascript lib for integration. Pleas
 {% page-ref page="auth-tool-for-viveport-web.md" %}
 {% endhint %}
 
+{% hint style="danger" %}
+If you **need customization for pre/post sign-up urls**, please contact account team to get authorized permission, **otherwise the requests will be prohibited as malicious user behavior**.
+{% endhint %}
+
 | State JSON Parameter Name | Value |
 | :--- | :--- |
 | clientId | @param { VIVEPORT web's OAuth client id } |
