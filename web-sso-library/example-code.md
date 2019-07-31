@@ -36,6 +36,7 @@ var SsoObject = (function() {
                     console.log('ssologin.html :: login');
                     /* Global HTCAccount */
 
+                    // SsoObject.loginPageUrl is a relaive path url
                     var redirectUrl = SsoObject.loginPageUrl + '?action=savecookie&prevUrl=' + encodeURIComponent(returnUrl);
 
                     HTCAccount.login(function(data) {}, SsoObject.settingRedirect(redirectUrl));
