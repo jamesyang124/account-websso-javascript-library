@@ -139,7 +139,7 @@ HTCAccount.login(stateCallbackObject, options): undefined
 
 > Avoid wrapping `HTCAccount.login()` in Promises/A functions or `setTimeout` function, it would cause the login popup page get blocked by some browsers.
 
-The **stateCallbackObject** should carry client data then back to client's redirection URL. But currently this feature has not implemented yet. So **please pass an no-ops object instead**.
+The **stateCallbackObject** should carry client data then back to client's redirection URL\(relative url path\). But currently this feature has not implemented yet. So **please pass an no-ops object instead**.
 
 The **options** is an object and have properties as follow:
 
