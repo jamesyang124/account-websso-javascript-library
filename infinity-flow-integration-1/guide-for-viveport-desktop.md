@@ -44,6 +44,10 @@ OAuth Authorize API proxy for VIVEPORT Desktop, it set up and handled by account
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-query-parameters %}
+{% api-method-parameter name="sid" type="string" required=false %}
+specify session id for BI logging, url encoded
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="redirection\_url" type="string" required=true %}
 url-encoded VIVEPORT Desktop's local host url with dynamic port
 {% endapi-method-parameter %}
@@ -73,7 +77,7 @@ https://csdev.htcwowdev.com/SS/Services/OAuth/Authorize
 
 ```bash
 https://account.htcvive.com/SS/api/gateway/v1/desktop/infinity
-?redirection_url=http%3A%2F%2Flocalhost%3A5566
+?redirection_url=http%3A%2F%2Flocalhost%3A5566&sid=f3fe5e0a-445a-4562-a9a9-5408958b42d7
 ```
 
 {% api-method method="get" host="https://account.htcvive.com" path="/SS/api/gateway/v1/desktop/infinity/rapid" %}
@@ -88,6 +92,10 @@ OAuth Authorize API proxy for VIVEPORT Desktop, it set up and handled by account
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-query-parameters %}
+{% api-method-parameter name="sid" type="string" required=false %}
+specify session id for BI logging
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="redirection\_url" type="string" required=true %}
 url-encoded VIVEPORT Desktop's local host url with dynamic port.
 {% endapi-method-parameter %}
@@ -117,6 +125,6 @@ https://csdev.htcwowdev.com/SS/Services/OAuth/Authorize
 
 ```text
 https://account.htcvive.com/SS/api/gateway/v1/desktop/infinity/rapid
-?redirection_url=http%3A%2F%2Flocalhost%3A5566
+?redirection_url=http%3A%2F%2Flocalhost%3A5566&sid=f3fe5e0a-445a-4562-a9a9-5408958b42d7
 ```
 

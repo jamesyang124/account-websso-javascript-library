@@ -144,7 +144,7 @@ The **stateCallbackObject** should carry client data then back to client's redir
 The **options** is an object and have properties as follow:
 
 * `type: String` - _Either_ `redirect` _or_ `popup`_._
-* `next_url: String` - _When type is_ `redirect`_, then the_ `next_url` _should be registered redirection url or its subpath._
+* `next_url: String` - _When type is_ `redirect`_, then the_ `next_url` _should be registered its subpath, either start with **`"/"`** or client's same domain relative path._
 * `authorities: String` - _Please refer to_ `HTCAccount.init` _**config** object for its usage._
 
 **Example**
@@ -156,7 +156,7 @@ HTCAccount.login();
 // Cusomized options
 HTCAccount.login({ /* state callback object */ }, {
     type: "redirect",
-    next_url: "https://registered.redirection.url/sub/path",
+    next_url: "/sub/path",
     authorities: "-qq.com"
 })
 ```
