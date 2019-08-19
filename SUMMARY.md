@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Preface](README.md)
+* [From WEB SSO to INFINITY FLOW](from-web-sso-to-infinity-flow.md)
 
 ## WEB SSO LIBRARY
 
