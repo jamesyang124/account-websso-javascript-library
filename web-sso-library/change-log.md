@@ -1,5 +1,7 @@
 # Change Log
 
+* **v1.2.2 -  \[8-19-2019\]**
+  * Add Web SSO v2 upgrade to Infinity integration flow.
 * **v.1.2.1 - \[7-23-2018\]**
 
   Add `getOrgProfile` API to get organization data.
