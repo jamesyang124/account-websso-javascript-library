@@ -1,4 +1,4 @@
-# Quick Start For SSO V2 Integration
+# Directly Integrate With Web SSO V2 Infinity Flow
 
 This section demonstrate how to integrate with new SSO flow and new UI for VIVEPORT, and vive related web services.
 
@@ -10,7 +10,7 @@ Before using the SSO SDK, you should already registered OAuth setting with accou
 
 HTC Account Web SSO Javascript Library is obtained from `htcaccount.js`. You can call the `HTCAccount.init()` with config to initialize the library service.
 
-A simeple example should as follow:
+A simple example should as follow:
 
 ```markup
 // this should based on your deployment environment
