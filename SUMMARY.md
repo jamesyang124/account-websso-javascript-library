@@ -4,8 +4,8 @@
 
 ## WEB SSO LIBRARY
 
-* [Migrate From Web SSO V1 to Web SSO V2 Infinity Flow](web-sso-library/from-web-sso-to-infinity-flow.md)
-* [Directly Integrate With Web SSO V2 Infinity Flow](web-sso-library/quick-start-for-sso-v2-integration.md)
+* [Migrate From Web SSO V1 to Web SSO V2](web-sso-library/from-web-sso-to-infinity-flow.md)
+* [Directly Integrate With Web SSO V2](web-sso-library/quick-start-for-sso-v2-integration.md)
 * [Basic Usuage](web-sso-library/basic-usuage.md)
 * [API Specification](web-sso-library/api-specification.md)
 * [Example Code](web-sso-library/example-code.md)
@@ -33,5 +33,5 @@
 * [Integration Guide for Organization Profile View](infinity-flow-integration-1/integration-guide-for-organization-profile-view.md)
 * [Auth Tool For VIVEPORT Web](infinity-flow-integration-1/auth-tool-for-viveport-web.md)
 * [Viewport Util for VIVEPORT Desktop](infinity-flow-integration-1/viewport-util-for-viveport-desktop.md)
-* [Auth Configs for Infinity Flow](infinity-flow-integration-1/auth-configs-for-sso-v2.md)
+* [Auth Configs for Web SSO V2](infinity-flow-integration-1/auth-configs-for-sso-v2.md)
 

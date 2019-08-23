@@ -1,11 +1,11 @@
 ---
 description: >-
-  Infinity flow, as known as web SSO v2, aims to revise the current web SSO v1
-  for better UX experience. This section will introduce the change and its
-  compatibility for web SSO v1 configurations.
+  Web SSO v2 aims to revise the current web SSO v1 for better UX experience.
+  This section will introduce the change and its compatibility for web SSO v1
+  configurations.
 ---
 
-# Migrate From Web SSO V1 to Web SSO V2 Infinity Flow
+# Migrate From Web SSO V1 to Web SSO V2
 
 ## API Backward Compatibility 
 
@@ -16,7 +16,7 @@ If you need customization for v2's configs, please check below link:
 
 {% page-ref page="../infinity-flow-integration-1/auth-configs-for-sso-v2.md" %}
 
-Or if you want directly integrate with Web SSO v2 Infinity flow, please check below link:
+Or if you want directly integrate with Web SSO v2, please check below link:
 
 {% page-ref page="quick-start-for-sso-v2-integration.md" %}
 {% endhint %}
@@ -57,7 +57,7 @@ statePayload = JSON.stringify(Object.assign(statePayload,{redirectionUrl:next_ur
 
 ### 2. Deprecation of Window Popup mode in Web SSO V2
 
-**We don't support `popup` mode anymore in WEB SSO v2**. Current field `type` will no longer take effect for switching popup or redirection mode, **but required to be set as `redirect`**. **WEB SSO v2 will only take url redirection when the infinity enroll flow is finished**. 
+**We don't support `popup` mode anymore in WEB SSO v2**. Current field `type` will no longer take effect for switching popup or redirection mode, **but required to be set as `redirect`**. **WEB SSO v2 will only take url redirection when the flow is finished**. 
 
 Please change the **type** field from `popup` to `redirect`as below sample code:
 
@@ -69,4 +69,8 @@ HTCAccount.login({ /* state callback object */ }, {
     authorities: "-qq.com"  // this will be deprecated, and no effect for v2
 })
 ```
+
+### 3. Deprecation of Social Authorities UI Customization in Web SSO V2
+
+Currently web SSO V2 not support social authorities customization, and will no longer take effect from the authorities field in `HTCAccount.login`function's second parameter.
 

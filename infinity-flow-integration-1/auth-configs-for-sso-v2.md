@@ -1,4 +1,4 @@
-# Auth Configs for Infinity Flow
+# Auth Configs for Web SSO V2
 
 {% hint style="danger" %}
 If you **need customization for pre/post sign-up urls**, please contact account team to get authorized permission, **otherwise the requests will be prohibited as malicious user behavior**.

@@ -1,6 +1,6 @@
-# Directly Integrate With Web SSO V2 Infinity Flow
+# Directly Integrate With Web SSO V2
 
-This section demonstrate how to integrate with new SSO flow and new UI for VIVEPORT, and vive related web services.
+This section demonstrate how to integrate with web SSO V2 flow from the scratch.
 
 {% hint style="info" %}
 Before using the SSO SDK, you should already registered OAuth setting with account  team. If not, please contact account team for more info.
@@ -99,7 +99,7 @@ var minConfig = {
 window.HTCAccount.redirectByAuthConfig(minConfig);
 ```
 
-for more info, please check config definition at **Start Infinity Auth** section in below link
+For more info, please check config definition in below link
 
 {% page-ref page="../infinity-flow-integration-1/auth-configs-for-sso-v2.md" %}
 
