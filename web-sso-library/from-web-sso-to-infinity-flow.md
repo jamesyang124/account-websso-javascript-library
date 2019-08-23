@@ -23,7 +23,7 @@ Or if you want directly integrate with Web SSO v2 Infinity flow, please check be
 
 ### Web SSO V2 Default Configs for Web SSO V1 API
 
-We adjust the **web SSO v1's** `HTCAccount.login` function parameters for interface compatibility. **The function** `HTCAccount.login` **'s second parameter now accept the optional `state` JSON property which is a JSON string as web SSO v2's auth configs for the customization:**
+We adjust the **web SSO v1's** `HTCAccount.login` function parameters for interface compatibility. **The function** `HTCAccount.login` **'s second parameter now accept the optional `state` field which is a JSON string as web SSO v2's auth configs for the customization:**
 
 ```coffeescript
   # source code of HTCAccount.login API
@@ -40,13 +40,13 @@ We adjust the **web SSO v1's** `HTCAccount.login` function parameters for interf
 
 If that **state** field is missing, the default config for web SSO v2 should have at least have `redirectionUrl` and `clientId` fields.
 
-## Limitation / Deprecation
+## Migration Tips
 
 We aim to convert the `login` function and avoid increasing extra code change for web SSO V1 clients. Therefore, we keep the WEB SSO v1 API interface and convert the necessary data information for v2 configs. However, some features will be deprecated or modified for the upgrade:
 
-### HTCAccount.login API
+### 1. State Parameter in HTCAccount.login API
 
-The first, we don't accept the pure text value for `state` JSON property. If the `state` 's value is not a JSON string format, We will convert to a JSON format which has default information:
+The `state` JSON property in `HTCAccount.login`'s second parameter must have JSON string value for customization. We will convert to a JSON format if the value which has default information:
 
 ```coffeescript
 #...
@@ -55,20 +55,18 @@ statePayload = JSON.stringify(Object.assign(statePayload,{redirectionUrl:next_ur
 #...
 ```
 
-### Deprecation of Window Popup mode in Web SSO V2
+### 2. Deprecation of Window Popup mode in Web SSO V2
 
-**We don't support `popup` mode anymore in WEB SSO v2**. Current field `type` will no longer take effect for switching popup or redirection mode. **WEB SSO v2 will only take url redirection when the infinity enroll flow is finished**. 
+**We don't support `popup` mode anymore in WEB SSO v2**. Current field `type` will no longer take effect for switching popup or redirection mode, **but required to be set as `redirect`**. **WEB SSO v2 will only take url redirection when the infinity enroll flow is finished**. 
 
-If clients still need to execute the legacy flow, the current support for web SSO v1 configs should remain the same. 
-
-If client is not listed in legacy flow support list, please change the **type** field from `popup` to `redirect`.
+Please change the **type** field from `popup` to `redirect`as below sample code:
 
 ```javascript
 // Cusomized options for web SSO v2
 HTCAccount.login({ /* state callback object */ }, {
     type: "redirect",       // should change to redirect in any case for v2
     next_url: "/sub/path",
-    authorities: "-qq.com"  // this will be deprecated
+    authorities: "-qq.com"  // this will be deprecated, and no effect for v2
 })
 ```
 
