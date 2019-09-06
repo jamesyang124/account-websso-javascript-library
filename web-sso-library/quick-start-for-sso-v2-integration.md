@@ -139,11 +139,17 @@ If you **need customization for pre/post sign-up urls**, please contact account 
      if (resp.status === 'connected') {
         // already have authe key, and should be able to fetch user auth info
         console.log(resp.authResponse);
-        
+
         window.HTCAccount.getProfileV3(function(data) {
           // get user profile JSON from data parameter, 
           // please check API specification related section for detail
         });
+        
+        window.HTCAccount.getProfileV4(["username","backupEmail"],function(data) {
+          // get user profile JSON from data parameter, 
+          // please check API specification related section for detail
+        });
+        
      } else {
        // this may indicate user is not logged in yet, or unverified user
        // so require user to re-run login/sign-up flow

@@ -97,6 +97,10 @@ window.HTCAccount.redirectByAuthConfig(minConfig);
           // get user profile JSON from data parameter, 
           // please check API specification related section for detail
         });
+        window.HTCAccount.getProfileV4(["username","backupEmail"],function(data) {
+          // get user profile JSON from data parameter, 
+          // please check API specification related section for detail
+        });
      } else {
        // this may indicate user is not logged in yet, or unverified user
        // so require user to re-run login/sign-up flow

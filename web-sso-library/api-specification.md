@@ -224,7 +224,7 @@ For current lib user, We suggest to **use** `getAuthResponseV2` **instead of** `
 
 ### Get User Profile
 
-Integrated client can get user profile data from HTC Profile service. Please use `getProfileV3` for better integration.
+Integrated client can get user profile data from HTC Profile service. Please use above `V3` API for better integration.
 
 #### API
 
@@ -243,6 +243,65 @@ HTCAccount.getProfileV2(successCallback(result, status), failedCallback(result, 
 HTCAccount.getProfileV3(successCallback(result, status), failedCallback(result, status))
 // will request to identity profile service:
 // /Profiles/v2/Me
+
+HTCAccount.getProfileV4(["field1","field2"],successCallback(result, status), failedCallback(result, status))
+// will request to identity profile service:
+// /Profiles/v3/Me
+/* 
+field name list:
+"accountEmail",
+"accountProvider",
+"address",
+"addresses",
+"allowCollectUserData",
+"backupEmail",
+"birthday",
+"contactEmailAddress",
+"countryCode",
+"createTime",
+"currencyCode",
+"customProfilePicture",
+"dayBirth",
+"dayOfBirth",
+"defaultOptIn",
+"displayName",
+"education",
+"firstName",
+"gender",
+"homePhone",
+"id",
+"income",
+"integrationPhoneNumbers",
+"interests",
+"isVerified",
+"languageCode",
+"languageList",
+"lastModifyPasswordTime",
+"lastName",
+"location",
+"monthBirth",
+"monthOfBirth",
+"nickname",
+"phoneNumbers",
+"phones",
+"privacySettings",
+"profession",
+"profilePicture",
+"publicName",
+"regionId",
+"secondEmails",
+"securityQuestion",
+"sendEmailAboutOtherProducts",
+"sendEmailAboutProducts",
+"sendEmailAboutProductsForPartners",
+"sendEmailAboutProductsForVive",
+"sendEmailAboutViveProducts",
+"socialProfilePicture",
+"username",
+"vocation",
+"workPhone",
+"yearOfBirth",
+*/
 ```
 
 **Caveat!**
