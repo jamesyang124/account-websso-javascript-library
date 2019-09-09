@@ -246,7 +246,8 @@ HTCAccount.getProfileV3(successCallback(result, status), failedCallback(result, 
 
 HTCAccount.getProfileV4(["field1","field2"],successCallback(result, status), failedCallback(result, status))
 // will request to identity profile service:
-// /Profiles/v3/Me
+// /Profiles/v3/Me?fields=field1,field2
+// The field name is showed as the below.
 /* 
 field name list:
 accountProvider
