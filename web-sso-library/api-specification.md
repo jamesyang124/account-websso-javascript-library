@@ -280,6 +280,8 @@ privacySettings
 */
 ```
 
+{% file src="../.gitbook/assets/identity-getprofilesv3-020919-0407.pdf" caption="/Profiles/v3/Me document" %}
+
 **Caveat!**
 
 > The **failedCallback** should also supplied. Otherwise this API will not properly execute callback functions.
