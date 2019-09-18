@@ -92,6 +92,10 @@ OAuth Authorize API proxy for VIVEPORT Desktop, it set up and handled by account
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-query-parameters %}
+{% api-method-parameter name="init\_view" type="string" required=false %}
+should be **sign-in** or **sign-up, default is sign-in**
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="sid" type="string" required=false %}
 specify session id for BI logging
 {% endapi-method-parameter %}
