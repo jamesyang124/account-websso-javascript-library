@@ -5,7 +5,7 @@ description: >-
   configurations.
 ---
 
-# Migrate From Web SSO V1 to Web SSO V2
+# Migrate From V1 to V2
 
 ## API Backward Compatibility 
 

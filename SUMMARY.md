@@ -4,8 +4,8 @@
 
 ## WEB SSO LIBRARY
 
-* [Migrate From Web SSO V1 to Web SSO V2](web-sso-library/from-web-sso-to-infinity-flow.md)
-* [Directly Integrate With Web SSO V2](web-sso-library/quick-start-for-sso-v2-integration.md)
+* [Integration Guide](web-sso-library/quick-start-for-sso-v2-integration.md)
+* [Migrate From V1 to V2](web-sso-library/from-web-sso-to-infinity-flow.md)
 * [Basic Usuage](web-sso-library/basic-usuage.md)
 * [API Specification](web-sso-library/api-specification.md)
 * [Example Code](web-sso-library/example-code.md)

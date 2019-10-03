@@ -1,10 +1,27 @@
-# Directly Integrate With Web SSO V2
+# Integration Guide
 
-This section demonstrate how to integrate with web SSO V2 flow from the scratch.
+This section demonstrate how to integrate with web SSO V2 flow from the scratch. **Or jump to last section for sample code as quick start.**
 
 {% hint style="info" %}
 Before using the SSO SDK, you should already registered OAuth setting with account  team. If not, please contact account team for more info.
 {% endhint %}
+
+## Step 0. Set Up HTCAccountHost Global Variable
+
+For non-production development, the client should set up **which HTC account environment you will request for, and put it before load** `htcaccount.js` **script:**
+
+```markup
+//stage
+// put it before htcaccount.js script tag
+<script type="application/javascript">
+    window.HTCAccountHost = "account-stage.htcvive.com/";
+    window.HTCProfileDefaultHost = "account-profile-stage.htcvive.com";
+    window.HTCOrgProfileDefaultHost = "account-stage-usw2.viveport.com";
+</script>
+<script src="https://account.htcvive.com/htcaccount.js"></script>
+
+//above global variables are set to PROD env by default
+```
 
 ## Step 1. Load SSO SDK
 
@@ -27,7 +44,13 @@ A simple example should as follow:
 
 ## Step 2. Setup Init Config to Launch SDK
 
-The configuration for HTCAccount.init should have basic format as below, for more flag and detail please check API Specification **Initialization** section:
+The configuration for HTCAccount.init should have basic format as below, for more flag and detail please check API Specification **Initialization** section
+
+{% hint style="danger" %}
+The **`scope`** field should reflect to client's OAuth setting applied scope list, other wise the request **will be blocked by validation check or user profile access**.
+
+**Please check with account team if lost its registered OAuth setting.** 
+{% endhint %}
 
 ```javascript
 window.HTCAccount.init({
@@ -111,6 +134,18 @@ Below example is assume operate on HTC Account Stage environment.
 If you **need customization for pre/post sign-up urls**, please contact account team to get authorized permission, **otherwise the requests will be prohibited as malicious user behavior**.
 {% endhint %}
 
+{% hint style="danger" %}
+The **`scope`** field should reflect to client's OAuth setting applied scope list, other wise the request **will be blocked by validation check or user profile access**.
+
+**Please check with account team if lost its registered OAuth setting.** 
+{% endhint %}
+
+The **`scope`** field should reflect to client's OAuth setting applied scope list, other wise the request will be blocked by validation check.
+
+{% hint style="info" %}
+**Please check with account team if lost its registered OAuth setting.** 
+{% endhint %}
+
 ```markup
 <script type="application/javascript">
   // PLEASE ENSURE SET UP HOST BEFORE LOADING SSO JS SDK 
@@ -122,6 +157,7 @@ If you **need customization for pre/post sign-up urls**, please contact account 
   var authConfigs = {
     "sessionId": "4686d579-4176-46fc-8636-660643cf1f8f",
     "clientId": "33035df5-7ddd-4417-a20a-e56722489550",
+    // redirectionUrl should include slash "/" to pass url security check
     "redirectionUrl": "https://store-stage-usw2.viveport.com/",
     "flow": "infinity",
     "initView": "sign-in",
@@ -131,6 +167,8 @@ If you **need customization for pre/post sign-up urls**, please contact account 
               
   var initConfig = {
     appid: authConfigs.clientId,
+    // scope list should based on appid's oauth set up scope, 
+    // please check with account team if don't know registered scopes.
     scope: "email birthday"
   };
 
@@ -154,7 +192,8 @@ If you **need customization for pre/post sign-up urls**, please contact account 
        // this may indicate user is not logged in yet, or unverified user
        // so require user to re-run login/sign-up flow
        
-       // trigger login/sign-up flow by redirectByAuthConfig
+       // will immediately trigger login/sign-up flow by 302 redirection
+       // usually can put this command in other action ex: user click sign-in
        window.HTCAccount.redirectByAuthConfig(authConfigs);
      }
   });
