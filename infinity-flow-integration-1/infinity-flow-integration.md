@@ -32,7 +32,7 @@ Validate OAuth setting and redirect to infinity authentication url
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-query-parameters %}
-{% api-method-parameter name="cookieConsent" type="string" required=false %}
+{% api-method-parameter name="state.cookieConsent" type="string" required=false %}
 an array of strings to toggle different cookie consent in current flow.  
 For Example:  
 \["performance", "functional"\]  
