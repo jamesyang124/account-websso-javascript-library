@@ -1,5 +1,7 @@
 # Change Log
 
+* v1.2.5- \[12-12-2019\]
+  * Add config, cookieConsent, at section INFINITY FLOW INTEGRATION.
 * **v1.2.4- \[9-05-2019\]**
   * Add getProfileV4 API
 * **v1.2.2 -  \[8-19-2019\]**

@@ -31,13 +31,22 @@ Validate OAuth setting and redirect to infinity authentication url
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
-
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-
 {% api-method-query-parameters %}
+{% api-method-parameter name="cookieConsent" type="string" required=false %}
+an array of strings to toggle different cookie consent in current flow.  
+For Example:  
+\["performance", "functional"\]  
+If you don't pass this information, the default value will be `["performance","functional","targeting","social-media"]`.  
+  
+Currently support toggle string:  
+  
+performance  
+functional  
+targeting  
+social-media  
+ 
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="scope" type="string" required=false %}
 URL encoded scopes string, delimited by space. Only set it when need broader scope support
 {% endapi-method-parameter %}
@@ -169,7 +178,7 @@ The **https://account.htcvive.com/htcaccount/callback/?client\_id=** is a fixed 
 ```bash
 https://account.htcvive.com/SS/Services/OAuth/Authorize
 ?redirection_url=https%3A%2F%2Fcsdev.htcwowdev.com%2Fhtcaccount%2Fcallback%2F%3Fclient_id%3D33035df5-7ddd-4417-a20a-e56722489550%26origin%3Dhttps%253A%252F%252Fid-dev-websso.htcwowdev.com%252F19%252Fdev.html%26type%3Dredirect
-&state=%7B%22clientId%22%3A%2233035df5-7ddd-4417-a20a-e56722489550%22%2C%22redirectionUrl%22%3A%22https%3A%2F%2Fid-dev-websso.htcwowdev.com%2F19%2Fdev.html%22%2C%22flow%22%3A%22infinity%22%2C%22initView%22%3A%22sign-in%22%2C%22viewToggles%22%3A%5B%5D%2C%22preSignUpUrl%22%3A%22%22%2C%22postSignUpUrl%22%3A%22%22%7D
+&state=%7B%22clientId%22%3A%2233035df5-7ddd-4417-a20a-e56722489550%22%2C%22redirectionUrl%22%3A%22https%3A%2F%2Fid-dev-websso.htcwowdev.com%2F19%2Fdev.html%22%2C%22flow%22%3A%22infinity%22%2C%22initView%22%3A%22sign-in%22%2C%22viewToggles%22%3A%5B%5D%2C%22preSignUpUrl%22%3A%22%22%2C%22postSignUpUrl%22%3A%22%22%2C%22cookieConsent%22%3A%5B%22performance%22%2C%22functional%22%5D%7D
 &response_type=token
 &immediate=FALSE
 &client_id=33035df5-7ddd-4417-a20a-e56722489550

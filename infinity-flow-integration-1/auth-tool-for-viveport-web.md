@@ -92,7 +92,7 @@ var config = {
   "initView": "sign-up",
   "viewToggles": [],
   "preSignUpUrl": "https://select-plan.com",
-    "postSignUpUrl": "https://country-setting.com"
+  "postSignUpUrl": "https://country-setting.com"
 };
 
 window.InfinityAuth.redirectToAuthUrl(config);
