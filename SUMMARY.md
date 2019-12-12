@@ -34,4 +34,5 @@
 * [Auth Tool For VIVEPORT Web](infinity-flow-integration-1/auth-tool-for-viveport-web.md)
 * [Viewport Util for VIVEPORT Desktop](infinity-flow-integration-1/viewport-util-for-viveport-desktop.md)
 * [Auth Configs for Web SSO V2](infinity-flow-integration-1/auth-configs-for-sso-v2.md)
+* [Cookie Consent Policy](cookie-consent-policy.md)
 

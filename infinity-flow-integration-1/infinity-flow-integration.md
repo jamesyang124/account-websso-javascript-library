@@ -32,18 +32,28 @@ Validate OAuth setting and redirect to infinity authentication url
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-query-parameters %}
-{% api-method-parameter name="state.cookieConsent" type="string" required=false %}
-an array of strings to toggle different cookie consent in current flow.  
+{% api-method-parameter name="state.cookieConsent" type="array" required=false %}
+An array of string to overwrite default cookie consents in account enroll flow.  
+  
 For Example:  
-\["performance", "functional"\]  
-If you don't pass this information, the default value will be `["performance","functional","targeting","social-media"]`.  
   
-Currently support toggle string:  
+`["performance", "functional"]`  
   
-performance  
-functional  
-targeting  
-social-media  
+If no value specified for this property , the default value will be:  
+  
+ `[  
+ "performance",  
+ "functional",  
+ "targeting",  
+ "social-media"  
+]`  
+  
+Currently support toggles:  
+  
+1. **performance**  
+2. **functional**  
+3. **targeting**  
+4. **social-media**  
  
 {% endapi-method-parameter %}
 
