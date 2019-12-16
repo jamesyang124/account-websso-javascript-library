@@ -90,10 +90,9 @@ If you **need customization for pre/post sign-up urls**, please contact account 
         <p><code>[&quot;performance&quot;, &quot;functional&quot;]</code>
         </p>
         <p></p>
-        <p>If no value specified for this property, the default value will be:</p>
-        <p></p>
-        <p><code>[ &quot;performance&quot;, &quot;functional&quot;, &quot;targeting&quot;, &quot;social-media&quot; ]</code>
-        </p>
+        <p>If no value specified for this property, the default value will be empty
+          array and is the same as not carry this property, which means user does
+          not consent to send 3rd party cookies</p>
         <p></p>
         <p>Currently support toggles:
           <br />

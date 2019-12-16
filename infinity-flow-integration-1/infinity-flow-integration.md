@@ -39,14 +39,7 @@ For Example:
   
 `["performance", "functional"]`  
   
-If no value specified for this property , the default value will be:  
-  
- `[  
- "performance",  
- "functional",  
- "targeting",  
- "social-media"  
-]`  
+If no value specified for this property , the default value will be empty array and is the same as not carry this property, which means user does not consent to send 3rd party cookies  
   
 Currently support toggles:  
   
