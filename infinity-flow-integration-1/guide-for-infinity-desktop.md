@@ -65,7 +65,7 @@ url-encoded Infinity Desktop's local host url with dynamic port.
 {% endapi-method-response-example-description %}
 
 ```
-https://account.htcvive.com/SS/Services/OAuth/Authorize
+https://account.playinfinity.com/SS/Services/OAuth/Authorize
 ?redirection_url=http%3A%2F%2Flocalhost%3A5566
 &state=%7B%22clientId%22%3A%2233035df5-7ddd-4417-a20a-e56722489550%22%2C%22redirectionUrl%22%3A%22https%3A%2F%2Fid-dev-websso.htcwowdev.com%2F19%2Fdev.html%22%2C%22flow%22%3A%22infinity%22%2C%22initView%22%3A%22sign-in%22%2C%22viewToggles%22%3A%5B%5D%2C%22preSignUpUrl%22%3A%22%22%2C%22postSignUpUrl%22%3A%22%22%7D
 &response_type=code
