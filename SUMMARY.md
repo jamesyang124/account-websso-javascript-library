@@ -28,6 +28,7 @@
 
 * [API Specification](infinity-flow-integration-1/infinity-flow-integration.md)
 * [Integration Guide for VIVEPORT Desktop](infinity-flow-integration-1/guide-for-viveport-desktop.md)
+* [Integration Guide for Infinity Desktop](infinity-flow-integration-1/untitled.md)
 * [Integration Guide for VIVE Video Client](infinity-flow-integration-1/guide-for-vive-video-client.md)
 * [Integration Guide for VIVEPORT Web](infinity-flow-integration-1/guide-for-viveport-web.md)
 * [Integration Guide for Organization Profile View](infinity-flow-integration-1/integration-guide-for-organization-profile-view.md)
