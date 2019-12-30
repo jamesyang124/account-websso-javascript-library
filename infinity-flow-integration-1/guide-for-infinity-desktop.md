@@ -8,9 +8,9 @@ Please follow below API call spec, we also provide an example to follow for Infi
 
 | ENV | Resource Domain |
 | :--- | :--- |
-| STAGE | ​[https://account-stage.htcvive.com](https://account-stage.htcvive.com/)​ |
-| PRDO | ​[https://account.htcvive.com](https://account-stage.htcvive.com/)​ |
-| TEST | ​[https://cstest.dev.usw2.cs-htc.co](https://cstest.dev.usw2.cs-htc.co/infinity/lib.js)​ |
+| STAGE | [​https://account-stage.playinfinity.com](https://account-stage.playinfinity.com) |
+| PRDO | [​https://account.playinfinity.com​](https://account.playinfinity.com) |
+| TEST | [​https://account-test.dev.playinfinity.com](https://account-test.dev.playinfinity.com) |
 
 ### HTCProfileDefaultHost env
 
@@ -32,7 +32,7 @@ Please follow below API call spec, we also provide an example to follow for Infi
 If you **need customization for pre/post sign-up urls**, please contact account team to get authorized permission, **otherwise the requests will be prohibited as malicious user behavior**.
 {% endhint %}
 
-{% api-method method="get" host="https://account.htcvive.com" path="/SS/api/gateway/v1/desktop/playinfinity/rapid" %}
+{% api-method method="get" host="https://account.playinfinity.com" path="/SS/api/gateway/v1/desktop/playinfinity/rapid" %}
 {% api-method-summary %}
  OAuth Authorize Rapid Gateway For Infinity Desktop
 {% endapi-method-summary %}
@@ -80,7 +80,7 @@ https://csdev.htcwowdev.com/SS/Services/OAuth/Authorize
 ### Example of OAuth Authorize Proxy Request for Infinity Desktop
 
 ```text
-https://account.htcvive.com/SS/api/gateway/v1/desktop/playinfinity/rapid
+https://account.playinfinity.com/SS/api/gateway/v1/desktop/playinfinity/rapid
 ?redirection_url=http%3A%2F%2Flocalhost%3A5566&sid=f3fe5e0a-445a-4562-a9a9-5408958b42d7
 ```
 
