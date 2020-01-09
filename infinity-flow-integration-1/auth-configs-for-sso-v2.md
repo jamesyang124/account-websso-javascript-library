@@ -109,5 +109,11 @@ If you **need customization for pre/post sign-up urls**, please contact account 
         </ol>
       </td>
     </tr>
+    <tr>
+      <td style="text-align:left">distinctId</td>
+      <td style="text-align:left">optional</td>
+      <td style="text-align:left">MIXPANEL distinctID. This parameter is used to identify user so that we
+        could find the behavior from client side to Account WEBSSO via distinctId.</td>
+    </tr>
   </tbody>
 </table>

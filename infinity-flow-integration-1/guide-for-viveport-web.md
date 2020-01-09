@@ -74,6 +74,11 @@ If you **need customization for pre/post sign-up urls**, please contact account 
         <p>social-media</p>
       </td>
     </tr>
+    <tr>
+      <td style="text-align:left">distinctId</td>
+      <td style="text-align:left">MIXPANEL distinctID. This parameter is used to identify user so that we
+        could find the behavior from client side to Account WEBSSO via distinctId.</td>
+    </tr>
   </tbody>
 </table>#### Example of `state` param
 
@@ -88,7 +93,8 @@ var state = {
     "requiredAuthCode": false, 
     "preSignUpUrl": "https://viveport-web-mock-site.com/plan/selection",
     "postSignUpUrl": "https://viveport-web-mock-site.com/store/setup/country",
-    "cookieConsent":["performance", "functional"]
+    "cookieConsent":["performance", "functional"],
+    "distinctId":"b02f8000-32b3-11ea-aec2-2e728ce88125"
 }
 ```
 
