@@ -70,7 +70,7 @@ https://account.playinfinity.com/SS/Services/OAuth/Authorize
 &state=%7B%22clientId%22%3A%2233035df5-7ddd-4417-a20a-e56722489550%22%2C%22redirectionUrl%22%3A%22https%3A%2F%2Fid-dev-websso.htcwowdev.com%2F19%2Fdev.html%22%2C%22flow%22%3A%22infinity%22%2C%22initView%22%3A%22sign-in%22%2C%22viewToggles%22%3A%5B%5D%2C%22preSignUpUrl%22%3A%22%22%2C%22postSignUpUrl%22%3A%22%22%7D
 &response_type=code
 &immediate=FALSE
-&client_id=cb2340ce-2cc4-46f8-ac05-f75d40a96699
+&client_id=66af865d-f677-4b07-88b1-3a0d950831c2
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -80,7 +80,7 @@ https://account.playinfinity.com/SS/Services/OAuth/Authorize
 ### Example of OAuth Authorize Proxy Request for Infinity Desktop
 
 ```text
-https://account.playinfinity.com/SS/api/gateway/v1/desktop/playinfinity/rapid
+https://account.playinfinity.com/SS/api/gateway/v1/desktop/infinity/rapid
 ?redirection_url=http%3A%2F%2Flocalhost%3A5566&sid=f3fe5e0a-445a-4562-a9a9-5408958b42d7
 ```
 
