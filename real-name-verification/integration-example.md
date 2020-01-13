@@ -1,39 +1,5 @@
 # Integration Example
 
-{% api-method method="get" host="https://account.htcvivce.com" path="/RCN/SS/api/real-name-service/v1verify" %}
-{% api-method-summary %}
-Query real name verify status
-{% endapi-method-summary %}
-
-{% api-method-description %}
-To use this API, be sure to have valid CORS permission, please connect with OPS to solve this issue if it occurred.
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="AuthKey" type="string" required=true %}
-Header
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```
-{
-    isVerified: Boolean
-}
-```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
 ### Code Example
 
 Example payload for \*\*validate \*\*function:

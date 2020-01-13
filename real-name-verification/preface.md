@@ -1,3 +1,7 @@
+---
+description: VIVEPORT Web only verify when user's country setting is at CN
+---
+
 # Preset
 
 ## Set Up HTCAccountHost Global Variable
