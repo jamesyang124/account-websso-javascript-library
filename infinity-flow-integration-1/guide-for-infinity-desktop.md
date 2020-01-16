@@ -53,7 +53,7 @@ specify session id for BI logging
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="redirection\_url" type="string" required=true %}
-url-encoded Infinity Desktop's local host url with dynamic port.
+url-encoded \(with upper cased URL percent encoding\) Infinity Desktop's local host url with dynamic port.
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
