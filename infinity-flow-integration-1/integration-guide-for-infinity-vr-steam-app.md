@@ -78,6 +78,6 @@ https://account.playinfinity.com/SS/Services/OAuth/Authorize
 ### Example of OAuth Authorize Proxy Request for Infinity VR Steam App
 
 ```bash
-https://account.playinfinity.com/api/gateway/v1/hmd/infinity-vr/steam?hl=zh-TW&init_view=sign-up&pre_sign_up_url=https%3A%2F%2Fwww.playinfinity.com%2Fstore%2Fsetup%2Fredeem%3Fhl%3Dzh-TW
+https://account.playinfinity.com/api/gateway/v1/hmd/infinity-vr/steam?hl=zh-TW&init_view=sign-up&pre_sign_up_url=https%3A%2F%2Fwww.playinfinity.com%2Fstore%2Fsetup%2Fmyredeem%3Fhl%3Dzh-TW
 ```
 
