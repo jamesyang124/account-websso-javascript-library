@@ -2,7 +2,7 @@
 
 ## Infinity Auth Javascript Library
 
-You can inject the script for different environment to get `_htcsso`  auth key cookie from your infinity callback. **All domains in each account's website url from this page should subject to change by environment**:
+You can inject the script during enroll flow for different environment to get `_htcsso`  auth key cookie from your infinity callback. **All domains in each account's website url from this page should subject to change by environment**:
 
 ### HTCAccountHost env
 
@@ -43,6 +43,10 @@ Beside these params, `state` param will have full life cycle from first OAuth/Au
 ## Basic Usage
 
 To use this library, include the script in your page:
+
+{% hint style="danger" %}
+Please be aware this script will skip 3rd party cookie detection block page, only if you also load **htcaccount.js** so it would work. This script is target for specific enroll flow enhancement. As flow trigger point, please use **htcaccount.js**
+{% endhint %}
 
 ```markup
 <script src="https://account.htcvive.com/infinity/lib.js"></script>
