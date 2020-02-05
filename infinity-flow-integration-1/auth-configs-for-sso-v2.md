@@ -53,8 +53,13 @@ If you **need customization for pre/post sign-up urls**, please contact account 
     <tr>
       <td style="text-align:left">viewToggles</td>
       <td style="text-align:left">true</td>
-      <td style="text-align:left">Empty array, or as one of element in<code>[&quot;-sign-in&quot;, &quot;-promotion&quot;, &quot;+org-view&quot;, &quot;logo-htc&quot;]</code> for
-        VIVE Video</td>
+      <td style="text-align:left">
+        <p>Empty array, or as one of element in<code>[&quot;-sign-in&quot;, &quot;-promotion&quot;, &quot;+org-view&quot;, &quot;logo-htc&quot;]</code> for
+          VIVE Video.</p>
+        <p>If you want to trigger advanced org flow, you must include these elements
+          as below:</p>
+        <p>[&quot;+advanced-org-view&quot;,&quot;+org-view&quot;]</p>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">preSignUpUrl</td>
@@ -114,6 +119,14 @@ If you **need customization for pre/post sign-up urls**, please contact account 
       <td style="text-align:left">optional</td>
       <td style="text-align:left">MIXPANEL distinctID. This parameter is used to identify user so that we
         could find the behavior from client side to Account WEBSSO via distinctId.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">prefillEmail</td>
+      <td style="text-align:left">optional</td>
+      <td style="text-align:left">This parameter is allowed to client carry pre-fill email information to
+        WEB SSO. At enroll flow, we will pre-fill the email information and block
+        the input text (also hide the social buttons) to enforce user do flows
+        by this email information.</td>
     </tr>
   </tbody>
 </table>

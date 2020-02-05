@@ -1,5 +1,7 @@
 # Change Log
 
+* v1.2.7- \[02-05-2020\]
+  * Add advanced org flow at section Integration Guide for Organization Profile View
 * v1.2.6- \[01-09-2020\]
   * Add config, distinctId, at section INFINITY FLOW INTEGRATION.
 * v1.2.5- \[12-12-2019\]

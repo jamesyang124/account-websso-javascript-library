@@ -44,6 +44,8 @@ Then call `window.HTCAccount.redirectByAuthConfig`with config parameter, please 
 
 ### Example Auth Configs & Bootstrapping
 
+#### General Organization Flow
+
 ```javascript
 // htcaccount.js is loaded
 // window.HTCAccount.init already set 
@@ -55,6 +57,28 @@ var minConfig = {
     "initView": "sign-in",
     "viewToggles": ["+org-view", "-promotion", "logo-htc"],
     "requireAuthCode": false
+  };
+  
+window.HTCAccount.redirectByAuthConfig(minConfig);
+```
+
+#### Advanced Organization Flow
+
+```javascript
+//If you want to trigger advanced org flow, you must include these elements as below:
+//["+advanced-org-view","+org-view"]
+
+//If you want to enable invitation mode, you should add prefillEmail field.
+// `prefillEmail` field is optional. 
+
+var minConfig = {
+    "clientId": "cc955ffe-b086-480c-84a3-42818f13839b",
+    "redirectionUrl": "https://store-stage-usw2.viveport.com",
+    "flow": "infinity",
+    "initView": "sign-in",
+    "viewToggles": ["+org-view","+advanced-org-view", "-promotion", "logo-htc"],
+    "requireAuthCode": false,
+    "prefillEmail":"email@address.com"
   };
   
 window.HTCAccount.redirectByAuthConfig(minConfig);
