@@ -121,6 +121,26 @@ If you **need customization for pre/post sign-up urls**, please contact account 
         could find the behavior from client side to Account WEBSSO via distinctId.</td>
     </tr>
     <tr>
+      <td style="text-align:left">rootClient</td>
+      <td style="text-align:left">optional</td>
+      <td style="text-align:left">The first client which is triggered by user. If user open PC-Client and
+        then do sign-up flow via Viveport Store. No matter how many middle clients
+        which triggered via several flows, the rootClient is always PC-Client</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">triggerClient</td>
+      <td style="text-align:left">optional</td>
+      <td style="text-align:left">The client which is trigger WEBSSO SDK. If user open PC-Client and do
+        sign-up flow via Viveport Store, the trigger client should be Viveport
+        Store.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">flowEntryPoint</td>
+      <td style="text-align:left">optional</td>
+      <td style="text-align:left">The value is given by root client, we just pass this value to record the
+        data value of flow entry point.</td>
+    </tr>
+    <tr>
       <td style="text-align:left">prefillEmail</td>
       <td style="text-align:left">optional</td>
       <td style="text-align:left">This parameter is allowed to client carry pre-fill email information to
