@@ -18,8 +18,8 @@ If you **need customization for pre/post sign-up urls**, please contact account 
     <tr>
       <td style="text-align:left">sessionId</td>
       <td style="text-align:left">optional</td>
-      <td style="text-align:left">BI session id, if not carried, will generate for it, <b>please reuse this BI session id if present.</b>This
-        field is also used for MIXPANEL data event.</td>
+      <td style="text-align:left">BI session id, if not carried, will generate for it, <b>please reuse this BI session id if present.<br />This field is also used for MIXPANEL data event.</b>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">clientId</td>
