@@ -42,32 +42,6 @@ OAuth Authorize API proxy for VIVE Video client, it set up and handled by accoun
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-query-parameters %}
-{% api-method-parameter name="bi\_sid" type="string" required=false %}
-BI session id, if not carried, will generate for it, please reuse this BI session id if present.   
-**This field is also used for MIXPANEL data event.**  
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="bi\_did" type="string" required=false %}
-**MIXPANEL data event field.**  
-This parameter is used to identify user session so that we could chain the behavior from upstream client to Account WEBSSO via **MIXPANEL** distinctId.
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="bi\_rc" type="string" required=false %}
-**MIXPANEL data event immutable field.**  
-The first upstream client which is triggered by user. No matter how many middle clients which triggered via several flows, the rootClient is always the initiate client. **The value should be client name instead of UUID.**
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="bi\_tc" type="string" required=false %}
-**MIXPANEL data event immutable field.**  
-The client which trigger WEBSSO SDK. If user open VIVEPORT Desktop and do sign-up flow via VIVEPORT Store, the trigger client should be VIVEPORT Store.  
-**The value should be client name instead of UUID.**
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="bi\_fep" type="string" required=false %}
-**MIXPANEL data event immutable field.**  
-The value is given by root client, which described as UI element to initiate the flow. Account WEBSSO SDK just pass this value to record the data value of flow entry point.
-{% endapi-method-parameter %}
-
 {% api-method-parameter name="init\_view" type="string" required=true %}
 currently as constant, set up to **`sign-up`**
 {% endapi-method-parameter %}
@@ -109,32 +83,6 @@ OAuth Authorize API proxy for VIVE Video client, it set up and handled by accoun
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-query-parameters %}
-{% api-method-parameter name="bi\_sid" type="string" required=false %}
-BI session id, if not carried, will generate for it, please reuse this BI session id if present.   
-**This field is also used for MIXPANEL data event.**
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="bi\_did" type="string" required=false %}
-**MIXPANEL data event field.**   
-This parameter is used to identify user session so that we could chain the behavior from upstream client to Account WEBSSO via **MIXPANEL** distinctId.
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="bi\_rc" type="string" required=false %}
-**MIXPANEL data event immutable field.**   
-The first upstream client which is triggered by user. No matter how many middle clients which triggered via several flows, the rootClient is always the initiate client. **The value should be client name instead of UUID.**
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="bi\_tc" type="string" required=false %}
-**MIXPANEL data event immutable field.**   
-The client which is trigger WEBSSO SDK. If user open PC-Client and do sign-up flow via Viveport Store, the trigger client should be Viveport Store.   
-**The value should be client name instead of UUID.**
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="bi\_fep" type="string" required=false %}
-**MIXPANEL data event immutable field.**   
-The value is given by root client, which described as UI element to initiate the flow. Account WEBSSO SDK just pass this value to record the data value of flow entry point.
-{% endapi-method-parameter %}
-
 {% api-method-parameter name="hl" type="string" required=false %}
 host language, can switch to other support locale, **if mis-matched, should fall back to english locale.**
 {% endapi-method-parameter %}
