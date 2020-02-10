@@ -59,7 +59,7 @@ The first upstream client which is triggered by user. No matter how many middle 
 
 {% api-method-parameter name="bi\_tc" type="string" required=false %}
 **MIXPANEL data event immutable field.**  
-The client which is trigger WEBSSO SDK. If user open PC-Client and do sign-up flow via Viveport Store, the trigger client should be Viveport Store.  
+The client which trigger WEBSSO SDK. If user open VIVEPORT Desktop and do sign-up flow via VIVEPORT Store, the trigger client should be VIVEPORT Store.  
 **The value should be client name instead of UUID.**
 {% endapi-method-parameter %}
 
