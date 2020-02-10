@@ -16,60 +16,49 @@ If you **need customization for pre/post sign-up urls**, please contact account 
   <thead>
     <tr>
       <th style="text-align:left">State JSON Parameter Name</th>
-      <th style="text-align:left">Require</th>
       <th style="text-align:left">Value</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style="text-align:left">clientId</td>
-      <td style="text-align:left">true</td>
       <td style="text-align:left">@param { VIVEPORT web&apos;s OAuth client id }</td>
     </tr>
     <tr>
       <td style="text-align:left">redirectionUrl</td>
-      <td style="text-align:left">true</td>
       <td style="text-align:left">@param { URL encoded account FE wrapped url }</td>
     </tr>
     <tr>
       <td style="text-align:left">flow</td>
-      <td style="text-align:left">true</td>
       <td style="text-align:left">&quot;infinity&quot;</td>
     </tr>
     <tr>
       <td style="text-align:left">initView</td>
-      <td style="text-align:left">true</td>
       <td style="text-align:left">&quot;sign-in&quot;</td>
     </tr>
     <tr>
       <td style="text-align:left">viewToggles</td>
-      <td style="text-align:left">true</td>
       <td style="text-align:left">[]</td>
     </tr>
     <tr>
       <td style="text-align:left">preSignUpUrl</td>
-      <td style="text-align:left">optional</td>
       <td style="text-align:left">@param { VIVEPORT web&apos;s select plan url }</td>
     </tr>
     <tr>
       <td style="text-align:left">postSignUpUrl</td>
-      <td style="text-align:left">optional</td>
       <td style="text-align:left">@param {VIVEPORT web&apos;s country setting url}</td>
     </tr>
     <tr>
       <td style="text-align:left">requireAuthCode</td>
-      <td style="text-align:left">true</td>
       <td style="text-align:left">false</td>
     </tr>
     <tr>
       <td style="text-align:left">sessionId</td>
-      <td style="text-align:left">optional</td>
       <td style="text-align:left">BI session id, if not carried, will generate for it,<b> please reuse this BI session id if present.</b>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">cookieConsent</td>
-      <td style="text-align:left">optional</td>
       <td style="text-align:left">
         <p>an array of strings to toggle different cookie consent in current flow.</p>
         <p>For Example:</p>
@@ -87,53 +76,29 @@ If you **need customization for pre/post sign-up urls**, please contact account 
     </tr>
     <tr>
       <td style="text-align:left">distinctId</td>
-      <td style="text-align:left">optional</td>
-      <td style="text-align:left">
-        <p><b>MIXPANEL data event field</b>.</p>
-        <p>This parameter is used to identify user session so that we could chain
-          the behavior from upstream client to Account WEBSSO via <b>MIXPANEL </b>distinctId.</p>
-      </td>
+      <td style="text-align:left">MIXPANEL distinctID. This parameter is used to identify user so that we
+        could find the behavior from client side to Account WEBSSO via distinctId.</td>
     </tr>
     <tr>
       <td style="text-align:left">rootClient</td>
-      <td style="text-align:left">optional</td>
-      <td style="text-align:left">
-        <p><b>MIXPANEL data event immutable field. </b>
-        </p>
-        <p>The first <b>upstream </b>client which is triggered by user.
-          <br />No matter how many middle clients which triggered via several flows, the
-          rootClient is always the initiate client. <b>The value should be client name instead of UUID</b>
-        </p>
-      </td>
+      <td style="text-align:left">The first client which is triggered by user. If user open PC-Client and
+        then do sign-up flow via Viveport Store. No matter how many middle clients
+        which triggered via several flows, the rootClient is always PC-Client</td>
     </tr>
     <tr>
       <td style="text-align:left">triggerClient</td>
-      <td style="text-align:left">optional</td>
-      <td style="text-align:left">
-        <p><b>MIXPANEL data event immutable field. </b>
-        </p>
-        <p>The client which is trigger WEBSSO SDK. If user open PC-Client and do
-          sign-up flow via Viveport Store, the trigger client should be Viveport
-          Store. <b>The value should be client name instead of UUID</b>
-        </p>
-      </td>
+      <td style="text-align:left">The client which is trigger WEBSSO SDK. If user open PC-Client and do
+        sign-up flow via Viveport Store, the trigger client should be Viveport
+        Store.</td>
     </tr>
     <tr>
       <td style="text-align:left">flowEntryPoint</td>
-      <td style="text-align:left">optional</td>
-      <td style="text-align:left">
-        <p><b>MIXPANEL data event immutable field. </b>
-        </p>
-        <p>The value is given by root client, which described as UI element to initiate
-          the flow. Account WEBSSO SDK just pass this value to record the data value
-          of flow entry point.</p>
-      </td>
+      <td style="text-align:left">The value is given by root client, we just pass this value to record the
+        data value of flow entry point.</td>
     </tr>
     <tr>
       <td style="text-align:left">prefillEmail</td>
-      <td style="text-align:left">optional</td>
-      <td style="text-align:left">string text valid email format, ex: &quot;email@address.com&quot;, this
-        is used for org user invitation email flow.</td>
+      <td style="text-align:left">&quot;email@address.com&quot;</td>
     </tr>
   </tbody>
 </table>#### Example of `state` param
@@ -154,7 +119,7 @@ var state = {
     "prefillEmail":"email@address.com",
     "triggerClient":"Infinity Web Store",
     "rootClient":"Infinity VR Steam",
-    "flowEntryPoint":"Welcome Page"
+    "flowEntryPoint":"Welcome Page/Sign Up Button"
 }
 ```
 
