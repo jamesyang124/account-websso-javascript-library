@@ -89,7 +89,7 @@ If you **need customization for pre/post sign-up urls**, please contact account 
       <td style="text-align:left">distinctId</td>
       <td style="text-align:left">optional</td>
       <td style="text-align:left">
-        <p><b>MIXPANEL data event field</b>.</p>
+        <p><b>MIXPANEL distinct id data event field</b>.</p>
         <p>This parameter is used to identify user session so that we could chain
           the behavior from upstream client to Account WEBSSO via <b>MIXPANEL </b>distinctId.</p>
       </td>
@@ -98,7 +98,7 @@ If you **need customization for pre/post sign-up urls**, please contact account 
       <td style="text-align:left">rootClient</td>
       <td style="text-align:left">optional</td>
       <td style="text-align:left">
-        <p><b>MIXPANEL data event field. </b>
+        <p><b>MIXPANEL root client data event field. </b>
         </p>
         <p>The first <b>upstream </b>client which is triggered by user.
           <br />No matter how many middle clients which triggered via several flows, the
@@ -111,7 +111,7 @@ If you **need customization for pre/post sign-up urls**, please contact account 
       <td style="text-align:left">triggerClient</td>
       <td style="text-align:left">optional</td>
       <td style="text-align:left">
-        <p><b>MIXPANEL data event field. </b>
+        <p><b>MIXPANEL trigger client data event field. </b>
         </p>
         <p>The client which trigger WEBSSO SDK. If user open PC-Client and do sign-up
           flow via VIVEPORT Store, the trigger client should be VIVEPORT Store. <b>The value should be client name instead of UUID</b>
@@ -122,7 +122,7 @@ If you **need customization for pre/post sign-up urls**, please contact account 
       <td style="text-align:left">flowEntryPoint</td>
       <td style="text-align:left">optional</td>
       <td style="text-align:left">
-        <p><b>MIXPANEL data event field. </b>
+        <p><b>MIXPANEL flow entry point data event field. </b>
         </p>
         <p>The value is given by root client, which described as UI element to initiate
           the flow. Account WEBSSO SDK just pass this value to record the data value

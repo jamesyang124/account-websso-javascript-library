@@ -48,17 +48,17 @@ BI session id, if not carried, will generate for it, please reuse this BI sessio
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="bi\_did" type="string" required=false %}
-**MIXPANEL data event field.**   
+**MIXPANEL distinct data event field.**   
 This parameter is used to identify user session so that we could chain the behavior from upstream client to Account WEBSSO via **MIXPANEL** distinctId.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="bi\_rc" type="string" required=false %}
-**MIXPANEL data event field.**   
+**MIXPANEL root client data event field.**   
 The first upstream client which is triggered by user. No matter how many middle clients which triggered via several flows, the rootClient is always the initiate client. **The value should be client name instead of UUID.**
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="bi\_tc" type="string" required=false %}
-**MIXPANEL data event field.**   
+**MIXPANEL trigger client data event field.**   
 The client which trigger WEBSSO SDK. If user open VIVEPORT Desktop and do sign-up flow via VIVEPORT Store, the trigger client should be VIVEPORT Store.   
 **The value should be client name instead of UUID.**
 {% endapi-method-parameter %}
