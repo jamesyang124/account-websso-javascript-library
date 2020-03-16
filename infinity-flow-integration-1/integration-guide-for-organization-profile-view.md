@@ -157,3 +157,11 @@ Please ensure, this flow need auth key to complete flow, so that client should *
 | failed | 4002 | AuthKey is expired or invalid. |
 | failed | 4004 | Failed to create org profile. |
 
+The created status will be returned if user finish create-org flow. The callback url is showed as below:  
+
+
+```javascript
+https://${origin_url}?status=succeed
+https://${origin_url}?status=failed&code=9999
+```
+
