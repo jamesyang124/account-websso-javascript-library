@@ -18,7 +18,7 @@ If you **need customization for pre/post sign-up urls**, please contact account 
     <tr>
       <td style="text-align:left">sessionId</td>
       <td style="text-align:left">optional</td>
-      <td style="text-align:left">BI session id, if not carried, will generate for it, <b>please reuse this BI session id if present.</b>
+      <td style="text-align:left">BI session id, if not carried, will generate for it, <b>please reuse this BI session id if present.<br />This field is also used for MIXPANEL data event.</b>
       </td>
     </tr>
     <tr>
@@ -117,36 +117,52 @@ If you **need customization for pre/post sign-up urls**, please contact account 
     <tr>
       <td style="text-align:left">distinctId</td>
       <td style="text-align:left">optional</td>
-      <td style="text-align:left">MIXPANEL distinctID. This parameter is used to identify user so that we
-        could find the behavior from client side to Account WEBSSO via distinctId.</td>
+      <td style="text-align:left">
+        <p><b>MIXPANEL data event field</b>.</p>
+        <p>This parameter is used to identify user session so that we could chain
+          the behavior from upstream client to Account WEBSSO via <b>MIXPANEL </b>distinctId.</p>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">rootClient</td>
       <td style="text-align:left">optional</td>
-      <td style="text-align:left">The first client which is triggered by user. If user open PC-Client and
-        then do sign-up flow via Viveport Store. No matter how many middle clients
-        which triggered via several flows, the rootClient is always PC-Client</td>
+      <td style="text-align:left">
+        <p><b>MIXPANEL data event field. </b>
+        </p>
+        <p>The first <b>upstream </b>client which is triggered by user.
+          <br />No matter how many middle clients which triggered via several flows, the
+          rootClient is always the initiate client.</p>
+        <p><b>The value should be client name instead of UUID</b>
+        </p>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">triggerClient</td>
       <td style="text-align:left">optional</td>
-      <td style="text-align:left">The client which is trigger WEBSSO SDK. If user open PC-Client and do
-        sign-up flow via Viveport Store, the trigger client should be Viveport
-        Store.</td>
+      <td style="text-align:left">
+        <p><b>MIXPANEL data event field. </b>
+        </p>
+        <p>The client which trigger WEBSSO SDK. If user open PC-Client and do sign-up
+          flow via VIVEPORT Store, the trigger client should be VIVEPORT Store. <b>The value should be client name instead of UUID</b>
+        </p>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">flowEntryPoint</td>
       <td style="text-align:left">optional</td>
-      <td style="text-align:left">The value is given by root client, we just pass this value to record the
-        data value of flow entry point.</td>
+      <td style="text-align:left">
+        <p><b>MIXPANEL data event field. </b>
+        </p>
+        <p>The value is given by root client, which described as UI element to initiate
+          the flow. Account WEBSSO SDK just pass this value to record the data value
+          of flow entry point.</p>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">prefillEmail</td>
       <td style="text-align:left">optional</td>
-      <td style="text-align:left">This parameter is allowed to client carry pre-fill email information to
-        WEB SSO. At enroll flow, we will pre-fill the email information and block
-        the input text (also hide the social buttons) to enforce user do flows
-        by this email information.</td>
+      <td style="text-align:left">string text valid email format, ex: &quot;email@address.com&quot;, this
+        is used for org user invitation email flow.</td>
     </tr>
   </tbody>
 </table>

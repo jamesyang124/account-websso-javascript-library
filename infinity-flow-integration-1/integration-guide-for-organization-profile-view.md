@@ -137,3 +137,23 @@ window.HTCAccount.redirectByAuthConfig(minConfig);
 <script src="https://account-stage.htcvive.com/htcaccount.js"></script>
 ```
 
+## Trigger Organization Profile On-demand Page
+
+If client need to trigger on-demand page of create-org-profile flow, trigger the below API.
+
+```javascript
+//is_advanced_org_flow default is false.
+//If client want to trigger advanced org view, the flag should be set true.
+window.HTCAccount.createOrgProfileV2(is_advanced_org_flow);
+```
+
+Please ensure, this flow need auth key to complete flow, so that client should **ensure the `authkey` which is exist and valid**. If the `authkey` is invalid, the on-demand page will return failed status with error code to origin\_url immediately. The callback status is showed as the below:
+
+| Status | Code | Description |
+| :--- | :--- | :--- |
+| succeed | null | Create org profile successfully. |
+| succeed | 4003 | Org profile is exist so that we don’t need to redirect to on-demand page. |
+| failed | 9999 | Service error. |
+| failed | 4002 | AuthKey is expired or invalid. |
+| failed | 4004 | Failed to create org profile. |
+
