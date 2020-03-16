@@ -2,7 +2,7 @@
 
 This page provide information to reuse HTCAccount web SSO SDK for infinity flow with organization profile view. Check sample code in last section for synchronous mode.
 
-Please follow below API call spec, we also provide an example to follow for VIVEPORT Desktop at the end of this section. **Use stage domain for development and testing, but please config to production domain for production:**
+Please follow below API call spec, we also provide a sample code to follow. **Use STAGE domain for development and testing, but please config to PROD domain for production:**
 
 ### HTCAccountHost env
 
@@ -46,6 +46,8 @@ Then call `window.HTCAccount.redirectByAuthConfig`with config parameter, please 
 
 #### General Organization Flow
 
+This flow will only have first page with basic fields.
+
 ```javascript
 // htcaccount.js is loaded
 // window.HTCAccount.init already set 
@@ -63,6 +65,8 @@ window.HTCAccount.redirectByAuthConfig(minConfig);
 ```
 
 #### Advanced Organization Flow
+
+This flow will have second page with **organization avatar, organization website url,** **organization phone number.**
 
 ```javascript
 //If you want to trigger advanced org flow, you must include these elements as below:
@@ -82,6 +86,33 @@ var minConfig = {
   };
   
 window.HTCAccount.redirectByAuthConfig(minConfig);
+```
+
+## Trigger Organization Profile On-demand Page
+
+If client need to trigger on-demand page of create-org-profile flow, trigger the below API.
+
+```javascript
+//is_advanced_org_flow default is false.
+//If client want to trigger advanced org view, the flag should be set true.
+window.HTCAccount.createOrgProfileV2(is_advanced_org_flow);
+```
+
+Please ensure this flow need user already signed-in with auth key to complete flow, so that client should **ensure the `authkey` which is exist and valid**. If the `authkey` is invalid, the on-demand page will carry failed status with error code to **origin\_url** immediately. The callback status and error code is showed as below:
+
+| Status | Code | Description |
+| :--- | :--- | :--- |
+| succeed | null | Create org profile successfully. |
+| succeed | 4003 | Org profile is exist so that we don’t need to redirect to on-demand page. |
+| failed | 9999 | Service error. |
+| failed | 4002 | AuthKey is expired or invalid. |
+| failed | 4004 | Failed to create org profile. |
+
+It's response format would be as follow:
+
+```javascript
+https://${origin_url}?status=succeed
+https://${origin_url}?status=failed&code=9999
 ```
 
 ## Sample Code For Integrating Organization Profile View
@@ -135,33 +166,5 @@ window.HTCAccount.redirectByAuthConfig(minConfig);
   });
 </script>
 <script src="https://account-stage.htcvive.com/htcaccount.js"></script>
-```
-
-## Trigger Organization Profile On-demand Page
-
-If client need to trigger on-demand page of create-org-profile flow, trigger the below API.
-
-```javascript
-//is_advanced_org_flow default is false.
-//If client want to trigger advanced org view, the flag should be set true.
-window.HTCAccount.createOrgProfileV2(is_advanced_org_flow);
-```
-
-Please ensure, this flow need auth key to complete flow, so that client should **ensure the `authkey` which is exist and valid**. If the `authkey` is invalid, the on-demand page will return failed status with error code to origin\_url immediately. The callback status is showed as the below:
-
-| Status | Code | Description |
-| :--- | :--- | :--- |
-| succeed | null | Create org profile successfully. |
-| succeed | 4003 | Org profile is exist so that we don’t need to redirect to on-demand page. |
-| failed | 9999 | Service error. |
-| failed | 4002 | AuthKey is expired or invalid. |
-| failed | 4004 | Failed to create org profile. |
-
-The created status will be returned if user finish create-org flow. The callback url is showed as below:  
-
-
-```javascript
-https://${origin_url}?status=succeed
-https://${origin_url}?status=failed&code=9999
 ```
 
