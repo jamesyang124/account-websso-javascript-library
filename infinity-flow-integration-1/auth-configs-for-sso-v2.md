@@ -65,11 +65,12 @@ For MIXPANEL BI log sending, please **MUST** carry all MIXPANEL data event field
       <td style="text-align:left">viewToggles</td>
       <td style="text-align:left">true</td>
       <td style="text-align:left">
-        <p>Empty array, or as one of element in<code>[&quot;-sign-in&quot;, &quot;-promotion&quot;, &quot;+org-view&quot;, &quot;logo-htc&quot;]</code> for
+        <p>Empty array, or as one of element in<code>[&quot;-sign-up&quot;, &quot;-sign-in&quot;, &quot;-promotion&quot;, &quot;+org-view&quot;, &quot;logo-htc&quot;]</code> for
           VIVE Video.</p>
         <p>If you want to trigger advanced org flow, you must include these elements
           as below:</p>
-        <p>[&quot;+advanced-org-view&quot;,&quot;+org-view&quot;]</p>
+        <p><code>[&quot;+advanced-org-view&quot;, &quot;+org-view&quot;]</code>
+        </p>
       </td>
     </tr>
     <tr>

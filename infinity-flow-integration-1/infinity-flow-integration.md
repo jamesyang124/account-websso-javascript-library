@@ -94,6 +94,7 @@ an array of strings to toggle different UI paths in current flow
 For Example:  
   
 **`["-sign-in"]`** will disable sign-in link in all pages.  
+**`["-sign-up"]`** will disable sign-up link in all pages.  
 **`["-promotion"]`** will disable promotion view.  
 **`["+org-view"]`** will enable organization profile flow  
 **`["logo-htc"]`** will replace logo to HTC & VIVE logo  
@@ -101,6 +102,7 @@ For Example:
 Currently support toggle string:  
   
 **"-sign-in",  
+"-sign-up",  
 "-promotion",  
 "+org-view",  
 "log-htc"**  
