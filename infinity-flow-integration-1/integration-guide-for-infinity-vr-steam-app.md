@@ -31,7 +31,7 @@ If you **need customization for post sign-up urls**, please contact account team
 {% endhint %}
 
 {% hint style="danger" %}
-For MIXPANEL BI log sending, please carry all **bi\_\*** fields, o.w. you may omit those fields if tend to not send MIXPANEL BI log.
+For MIXPANEL BI log sending, please **MUST** carry all **bi\_\*** fields, o.w. you may omit those fields if tend to not send MIXPANEL BI log.
 {% endhint %}
 
 {% api-method method="get" host="https://account.playinfinity.com" path="/api/gateway/v1/hmd/infinity-vr/steam" %}
@@ -46,29 +46,39 @@ OAuth Authorize API proxy for Infinity VR Steam App, it set up and handled by ac
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-query-parameters %}
-{% api-method-parameter name="bi\_sid" type="string" required=true %}
-BI session id, if not carried, will generate for it, please reuse this BI session id if present.   
-**This field is also used for MIXPANEL data event.**
+{% api-method-parameter name="bi\_sid" type="string" required=false %}
+**This field is also used for MIXPANEL data event.  
+MUST carry all other bi\_\* fields to trigger MIXPANEL log sending.**  
+  
+BI session id, if not carried, will generate for it, please reuse this BI session id if present. 
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="bi\_did" type="string" required=true %}
-**MIXPANEL distinct data event field.**   
-This parameter is used to identify user session so that we could chain the behavior from upstream client to Account WEBSSO via **MIXPANEL** distinctId.
+{% api-method-parameter name="bi\_did" type="string" required=false %}
+**MIXPANEL distinct data event field.  
+MUST carry all other bi\_\* fields to trigger MIXPANEL log sending.**  
+  
+This parameter is used to identify user session so that we could chain the behavior from upstream client to Account WEBSSO via **MIXPANEL** distinctId.  
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="bi\_rc" type="string" required=true %}
-**MIXPANEL root client data event field.**   
+{% api-method-parameter name="bi\_rc" type="string" required=false %}
+**MIXPANEL root client data event field.   
+MUST carry all other bi\_\* fields to trigger MIXPANEL log sending.**  
+  
 The first upstream client which is triggered by user. No matter how many middle clients which triggered via several flows, the rootClient is always the initiate client. **The value should be client name instead of UUID.**
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="bi\_tc" type="string" required=true %}
-**MIXPANEL trigger client data event field.**   
+{% api-method-parameter name="bi\_tc" type="string" required=false %}
+**MIXPANEL trigger client data event field.   
+MUST carry all other bi\_\* fields to trigger MIXPANEL log sending.**  
+  
 The client which trigger WEBSSO SDK. If user open VIVEPORT Desktop and do sign-up flow via VIVEPORT Store, the trigger client should be VIVEPORT Store.   
 **The value should be client name instead of UUID.**
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="bi\_fep" type="string" required=true %}
-**MIXPANEL data event field.**   
+{% api-method-parameter name="bi\_fep" type="string" required=false %}
+**MIXPANEL data event field.  
+MUST carry all other bi\_\* fields to trigger MIXPANEL log sending.**   
+  
 The value is given by root client, which described as UI element to initiate the flow. Account WEBSSO SDK just pass this value to record the data value of flow entry point.
 {% endapi-method-parameter %}
 
