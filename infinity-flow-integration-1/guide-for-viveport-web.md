@@ -13,7 +13,7 @@ If you **need customization for pre/post sign-up urls**, please contact account 
 {% endhint %}
 
 {% hint style="danger" %}
-For MIXPANEL BI log sending, please **MUST** carry all **bi\_\*** fields, o.w. you may omit those fields if tend to not send MIXPANEL BI log.
+For MIXPANEL BI log sending, please **MUST** carry all MIXPANEL data event fields, o.w. you may omit those fields if tend to not send MIXPANEL BI log.
 {% endhint %}
 
 <table>

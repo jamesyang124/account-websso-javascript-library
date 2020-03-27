@@ -4,6 +4,10 @@
 If you **need customization for pre/post sign-up urls**, please contact account team to get authorized permission, **otherwise the requests will be prohibited as malicious user behavior**.
 {% endhint %}
 
+{% hint style="danger" %}
+For MIXPANEL BI log sending, please **MUST** carry all MIXPANEL data event fields, o.w. you may omit those fields if tend to not send MIXPANEL BI log.
+{% endhint %}
+
 ## Definition of Auth Config Fields
 
 <table>
