@@ -68,7 +68,14 @@ For MIXPANEL BI log sending, please **MUST** carry all **bi\_\*** fields, o.w. y
     <tr>
       <td style="text-align:left">sessionId</td>
       <td style="text-align:left">optional</td>
-      <td style="text-align:left">BI session id, if not carried, will generate for it,<b> please reuse this BI session id if present.<br />This field is also used for MIXPANEL data event.</b>
+      <td style="text-align:left">
+        <p><b>This field is also used for MIXPANEL data event.</b>
+        </p>
+        <p><b>MUST carry all other MIXPANEL data event fields to trigger MIXPANEL log sending.</b>
+        </p>
+        <p>&lt;b&gt;&lt;/b&gt;</p>
+        <p>BI session id, if not carried, will generate for it,<b> please reuse this BI session id if present.</b>
+        </p>
       </td>
     </tr>
     <tr>
@@ -94,8 +101,9 @@ For MIXPANEL BI log sending, please **MUST** carry all **bi\_\*** fields, o.w. y
       <td style="text-align:left">optional</td>
       <td style="text-align:left">
         <p><b>MIXPANEL distinct id data event field</b>.</p>
-        <p>MUST carry all other bi_* fields to trigger MIXPANEL log sending.</p>
-        <p></p>
+        <p><b>MUST carry all other MIXPANEL data event fields to trigger MIXPANEL log sending.</b>
+        </p>
+        <p>&lt;b&gt;&lt;/b&gt;</p>
         <p>This parameter is used to identify user session so that we could chain
           the behavior from upstream client to Account WEBSSO via <b>MIXPANEL </b>distinctId.</p>
       </td>
@@ -106,8 +114,9 @@ For MIXPANEL BI log sending, please **MUST** carry all **bi\_\*** fields, o.w. y
       <td style="text-align:left">
         <p><b>MIXPANEL root client data event field. </b>
         </p>
-        <p>MUST carry all other bi_* fields to trigger MIXPANEL log sending.</p>
-        <p></p>
+        <p><b>MUST carry all other MIXPANEL data event fields to trigger MIXPANEL log sending.</b>
+        </p>
+        <p>&lt;b&gt;&lt;/b&gt;</p>
         <p>The first <b>upstream </b>client which is triggered by user.
           <br />No matter how many middle clients which triggered via several flows, the
           rootClient is always the initiate client.</p>
@@ -121,9 +130,9 @@ For MIXPANEL BI log sending, please **MUST** carry all **bi\_\*** fields, o.w. y
       <td style="text-align:left">
         <p><b>MIXPANEL trigger client data event field. </b>
         </p>
-        <p><em>MUST carry all other bi_* fields to trigger MIXPANEL log sending.</em>
+        <p><b>MUST carry all other MIXPANEL data event fields to trigger MIXPANEL log sending.</b>
         </p>
-        <p>&lt;em&gt;&lt;/em&gt;</p>
+        <p>&lt;b&gt;&lt;/b&gt;</p>
         <p>The client which trigger WEBSSO SDK. If user open PC-Client and do sign-up
           flow via VIVEPORT Store, the trigger client should be VIVEPORT Store. <b>The value should be client name instead of UUID</b>
         </p>
@@ -135,8 +144,9 @@ For MIXPANEL BI log sending, please **MUST** carry all **bi\_\*** fields, o.w. y
       <td style="text-align:left">
         <p><b>MIXPANEL flow entry point data event field. </b>
         </p>
-        <p>MUST carry all other bi_* fields to trigger MIXPANEL log sending.</p>
-        <p></p>
+        <p><b>MUST carry all other MIAXPANEL data event fields to trigger MIXPANEL log sending.</b>
+        </p>
+        <p>&lt;b&gt;&lt;/b&gt;</p>
         <p>The value is given by root client, which described as UI element to initiate
           the flow. Account WEBSSO SDK just pass this value to record the data value
           of flow entry point.</p>
