@@ -1,5 +1,7 @@
 # Change Log
 
+* v1.2.10-\[06-09-2020\]
+  * \[add\] isEnablePermissionValidation for create-org flow.
 * v1.2.9- \[03-16-2020\]
   * \[add\] create org profile on-demand page.
 * v1.2.8- \[02-10-2020\]

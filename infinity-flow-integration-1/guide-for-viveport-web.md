@@ -159,7 +159,9 @@ For MIXPANEL BI log sending, please **MUST** carry all MIXPANEL data event field
         is used for org user invitation email flow.</td>
     </tr>
   </tbody>
-</table>#### Example of `state` param
+</table>
+
+#### Example of `state` param
 
 ```javascript
 var state = {

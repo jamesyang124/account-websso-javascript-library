@@ -52,11 +52,18 @@ This flow will only have first page with basic fields.
 // htcaccount.js is loaded
 // window.HTCAccount.init already set 
 
+//`isEnablePermissionValidation` default is false.
+//When `isEnablePermissionValidation` is set as false, the create-org flow will be skip 
+//if the account has org profile whether the account is creator or articipants for org profile.
+//If `isEnablePermissionValidation` is set as true and the account never create org profile,
+//the account will do create-org flow.
+
 var minConfig = {
     "clientId": "cc955ffe-b086-480c-84a3-42818f13839b",
     "redirectionUrl": "https://store-stage-usw2.viveport.com",
     "flow": "infinity",
     "initView": "sign-in",
+    "isEnablePermissionValidation": true
     "viewToggles": ["+org-view", "-promotion", "logo-htc"],
     "requireAuthCode": false
   };
@@ -75,11 +82,18 @@ This flow will have second page with **organization avatar, organization website
 //If you want to enable invitation mode, you should add prefillEmail field.
 // `prefillEmail` field is optional. 
 
+//`isEnablePermissionValidation` default is false.
+//When `isEnablePermissionValidation` is set as false, the create-org flow will be skip 
+//if the account has org profile whether the account is creator or articipants for org profile.
+//If `isEnablePermissionValidation` is set as true and the account never create org profile,
+//the account will do create-org flow.
+
 var minConfig = {
     "clientId": "cc955ffe-b086-480c-84a3-42818f13839b",
     "redirectionUrl": "https://store-stage-usw2.viveport.com",
     "flow": "infinity",
     "initView": "sign-in",
+    "isEnablePermissionValidation": true,
     "viewToggles": ["+org-view","+advanced-org-view", "-promotion", "logo-htc"],
     "requireAuthCode": false,
     "prefillEmail":"email@address.com"
@@ -94,8 +108,14 @@ If client need to trigger on-demand page of create-org-profile flow, trigger the
 
 ```javascript
 //is_advanced_org_flow default is false.
-//If client want to trigger advanced org view, the flag should be set true.
-window.HTCAccount.createOrgProfileV2(is_advanced_org_flow);
+//If client wants to trigger advanced org view, the flag should be set true.
+
+//is_enable_permission_validation default is false.
+//When is_enable_permission_validation is set as false, the create-org flow will be skip 
+//if the account has org profile whether the account is creator or articipants for org profile.
+//If is_enable_permission_validation is set as true and the account never create org profile,
+//the account will do create-org flow.
+window.HTCAccount.createOrgProfileV2(is_advanced_org_flow, is_enable_permission_validation);
 ```
 
 Please ensure this flow need user already signed-in with auth key to complete flow, so that client should **ensure the `authkey` which is exist and valid**. If the `authkey` is invalid, the on-demand page will carry failed status with error code to **origin\_url** immediately. The callback status and error code is showed as below:
