@@ -1,5 +1,7 @@
 # Change Log
 
+* v1.2.11-\[06-018-2020\]
+  * \[add\] prefillType for ondemand create-org flow.
 * v1.2.10-\[06-09-2020\]
   * \[add\] isEnablePermissionValidation for create-org flow.
 * v1.2.9- \[03-16-2020\]

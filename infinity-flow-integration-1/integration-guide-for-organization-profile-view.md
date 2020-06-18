@@ -110,12 +110,24 @@ If client need to trigger on-demand page of create-org-profile flow, trigger the
 //is_advanced_org_flow default is false.
 //If client wants to trigger advanced org view, the flag should be set true.
 
-//is_enable_permission_validation default is false.
-//When is_enable_permission_validation is set as false, the create-org flow will be skip 
-//if the account has org profile whether the account is creator or articipants for org profile.
-//If is_enable_permission_validation is set as true and the account never create org profile,
-//the account will do create-org flow.
-window.HTCAccount.createOrgProfileV2(is_advanced_org_flow, is_enable_permission_validation);
+/*
+is_enable_permission_validation default is false.
+When is_enable_permission_validation is set as false, the create-org flow will be skip 
+if the account has org profile whether the account is creator or articipants for org profile.
+If is_enable_permission_validation is set as true and the account never create org profile,
+the account will do create-org flow.
+/*
+
+/*
+prefill_type default is `default` string. `default` value is donotghing to prefill org profile.
+If the parameter is typed in the item from support list instead of default, the ondemand page will trigger auto fill flow by specified type.
+The support type list has:
+dev_con
+default
+*/
+
+
+window.HTCAccount.createOrgProfileV2(is_advanced_org_flow, is_enable_permission_validation,prefill_type);
 ```
 
 Please ensure this flow need user already signed-in with auth key to complete flow, so that client should **ensure the `authkey` which is exist and valid**. If the `authkey` is invalid, the on-demand page will carry failed status with error code to **origin\_url** immediately. The callback status and error code is showed as below:
