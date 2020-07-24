@@ -48,6 +48,10 @@ OAuth Authorize API proxy for Infinity Desktop, it set up and handled by account
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-query-parameters %}
+{% api-method-parameter name="client\_id" type="string" required=false %}
+Default value is for VIVEPORT desktop, please carry this field with proper client id value as enterprise SDK client
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="bi\_sid" type="string" required=false %}
 **MUST carry all other bi\_\* fields to trigger MIXPANEL log sending.  
 This field is also used for MIXPANEL data event.**  
