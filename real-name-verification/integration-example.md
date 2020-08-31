@@ -1,6 +1,6 @@
 # Integration Example
 
-{% api-method method="get" host="https://account.htcvivce.com" path="/RCN/SS/api/real-name-service/v1verify" %}
+{% api-method method="get" host="https://account.htcvivce.com" path="/RCN/SS/api/real-name-service/v1/verify" %}
 {% api-method-summary %}
 Query real name verify status
 {% endapi-method-summary %}
