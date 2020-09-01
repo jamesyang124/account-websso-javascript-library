@@ -10,7 +10,7 @@ Before start the verification process, the client should hold several requiremen
 
 ```javascript
 // stage 
-window.HTCAccountHost = "accoun-stage.htcvive.com"
+window.HTCAccountHost = "account-stage.htcvive.com"
 
 // prod
 window.HTCAccountHost = "account.htcvive.com"
@@ -24,10 +24,10 @@ Embed one of javascript source tag based on your environment in your html file:
 
 ```markup
 // development, testing, or stage environment
-<script>https://accoun-stage.htcvive.com/real-name-verify/lib.js</script>
+<script>https://account-stage.htcvive.com/real-name-verify/lib.js</script>
 
 // production 
-<script>https://accoun.htcvive.com/real-name-verify/lib.js</script>
+<script>https://account.htcvive.com/real-name-verify/lib.js</script>
 ```
 
 After resource loading, a global object `HTC.RealNameVerify` would be a helper to trigger the process of HTC account real name verification.
