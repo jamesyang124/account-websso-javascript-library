@@ -65,12 +65,42 @@ For MIXPANEL BI log sending, please **MUST** carry all MIXPANEL data event field
       <td style="text-align:left">viewToggles</td>
       <td style="text-align:left">true</td>
       <td style="text-align:left">
-        <p>Empty array, or as one of element in<code>[&quot;-signup&quot;, &quot;-sign-in&quot;, &quot;-promotion&quot;, &quot;+org-view&quot;, &quot;logo-htc&quot;]</code> for
-          VIVE Video.</p>
-        <p>If you want to trigger advanced org flow, you must include these elements
-          as below:</p>
-        <p><code>[&quot;+advanced-org-view&quot;, &quot;+org-view&quot;]</code>
+        <p>Empty array, or support any of:</p>
+        <ol>
+          <li><code>&quot;-signup&quot;</code>
+          </li>
+          <li><code>&quot;-sign-in&quot;</code>
+          </li>
+          <li><code>&quot;-promotion&quot;</code>
+          </li>
+          <li><code>&quot;+org-view&quot;</code>
+          </li>
+          <li><code>&quot;logo-htc&quot;</code>
+          </li>
+          <li><code>&quot;+advanced-org-view&quot;</code>
+          </li>
+          <li><code>&quot;+signup&quot;</code>
+          </li>
+          <li><code>&quot;+signupbyphone&quot;</code>
+          </li>
+          <li><code>&quot;+signupbyemail&quot;</code>
+          </li>
+          <li><code>&quot;-signupswitch&quot;</code>
+          </li>
+          <li><code>&quot;-social-profile&quot;</code>
+          </li>
+          <li><code>&quot;-rememberacct&quot;</code>
+          </li>
+          <li><code>&quot;-forgotpwd&quot;</code>
+          </li>
+          <li><code>&quot;+create-org&quot;</code>
+          </li>
+        </ol>
+        <p>Sample value: <code>[&quot;-signup&quot;, &quot;-sign-in&quot;, &quot;-promotion&quot;, &quot;+org-view&quot;, &quot;logo-htc&quot;]</code>
         </p>
+        <p></p>
+        <p>Please consult HTC Account Team to learn how to config toggles for customized
+          UI view</p>
       </td>
     </tr>
     <tr>
