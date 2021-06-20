@@ -162,6 +162,30 @@ For MIXPANEL BI log sending, please **MUST** carry all MIXPANEL data event field
       <td style="text-align:left">string text valid email format, ex: &quot;email@address.com&quot;, this
         is used for org user invitation email flow.</td>
     </tr>
+    <tr>
+      <td style="text-align:left">authorities</td>
+      <td style="text-align:left">optional</td>
+      <td style="text-align:left">
+        <p>HTC SSO authentication strategy. Could be combination of below listed
+          values, delimited by &quot; &quot; space. If not specified, it will support
+          native HTC login, Google OAuth, and Steam OAuth in global region. In China
+          region will support HTC native login, QQ OAuth, and Weibo OAuth. Please
+          contact HTC Account team for authentication strategy customization.
+          <br
+          />
+        </p>
+        <ol>
+          <li><b>htc.com</b>
+          </li>
+          <li><b>google.com</b>
+          </li>
+          <li><b>qq.com</b>
+          </li>
+          <li><b>steam.com</b>
+          </li>
+        </ol>
+      </td>
+    </tr>
   </tbody>
 </table>
 
