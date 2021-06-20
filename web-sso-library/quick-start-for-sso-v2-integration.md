@@ -1,6 +1,8 @@
 # Integration Guide
 
-This section demonstrate how to integrate with web SSO V2 flow from the scratch. **Or jump to last section for sample code as quick start.**
+This section demonstrate how to integrate with web SSO V2 flow from the scratch. HTC Account Web SSO Integration would support browser based SSO integration. If you would like to integrae with server, please refer to [server to server SSO ingration](../server-to-server-sso/server-to-server-sso-integration.md) **or jump to last section for web SSO V2 flow sample code as quick start.**
+
+## EXPLAIN HOW THE NEW SET
 
 {% hint style="info" %}
 Before using the SSO SDK, you should already registered OAuth setting with account  team. If not, please contact account team for more info.

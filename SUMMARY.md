@@ -13,6 +13,10 @@
 * [Q&A](web-sso-library/q-and-a.md)
 * [Change Log](web-sso-library/change-log.md)
 
+## SERVER TO SERVER SSO
+
+* [OAuth Authorization Code flow](server-to-server-sso/server-to-server-sso-integration.md)
+
 ## REAL NAME VERIFICATION
 
 * [Preset](real-name-verification/preface.md)
