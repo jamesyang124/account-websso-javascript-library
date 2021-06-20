@@ -288,7 +288,7 @@ HTC Logout from client web
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This is for actively logout HTC Account session, the redirection behavior default is to HTC Account main site. The redirection would route back to client's logout url if configured.
+This is for actively clean up HTC Account main site's session, the redirection behavior default is back to HTC Account main site. The redirection would route back to client's logout url if configured.
 {% endapi-method-description %}
 
 {% api-method-spec %}
