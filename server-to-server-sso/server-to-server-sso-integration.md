@@ -8,6 +8,8 @@ description: >-
 
 HTC Account SSO also support OAuth authorization code flow with web client. We suggest client to leverage this flow so the security could be guarded by server instead of user-agent. This integration will require server to fire extra two APIs to get HTC Account access token and fetch user profile by token as well. Below flow diagram display orderly to indicate how the server integrate with this flow.
 
+Some client may integrate with HTC Account SSO as its only authentication strategy. In such case, client's user would need to logout from HTC server then redirect back to client's logout URL. If client need actively logout HTC SSO, please provide redirection logout url during HTC SSO OAuth client registration form.
+
 ![HTC SSO OAuth Authorization Code Flow](../.gitbook/assets/htc-sso-oauth-authorization-code-flow.png)
 
 Please follow below API spec. **Use stage domain for development and testing, but please config to production domain for production:**
@@ -255,7 +257,7 @@ HTC Logout from client web
 {% endapi-method-summary %}
 
 {% api-method-description %}
-Some client may integrate with HTC SSO as its only authentication strategy. In such case. client's user would need to logout from HTC server then redirect back to client's logout URL. Client should set up proper session logout with this API. If client need actively logout HTC SSO, please provide redirection logout url during HTC SSO OAuth client registration form.
+This is for actively logout HTC Account session, the redirection behavior default is to HTC Account main site. The redirection would route back to client's logout url if configured.
 {% endapi-method-description %}
 
 {% api-method-spec %}
