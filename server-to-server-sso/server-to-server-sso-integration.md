@@ -6,7 +6,7 @@ description: >-
 
 # OAuth Authorization Code flow
 
-HTC Account SSO also support OAuth authorization code flow. We suggest client to leverage this flow so the security could be guarded by server instead of user-agent. This integration will require server to fire extra two APIs to get HTC Account access token and fetch user profile by token as well. Below flow diagram display orderly to indicate how the server integrate with this flow.
+HTC Account SSO also support OAuth authorization code flow with web client. We suggest client to leverage this flow so the security could be guarded by server instead of user-agent. This integration will require server to fire extra two APIs to get HTC Account access token and fetch user profile by token as well. Below flow diagram display orderly to indicate how the server integrate with this flow.
 
 ![HTC SSO OAuth Authorization Code Flow](../.gitbook/assets/htc-sso-oauth-authorization-code-flow.png)
 
