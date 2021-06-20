@@ -157,62 +157,6 @@ For MIXPANEL BI log sending, please **MUST** carry all MIXPANEL data event field
       </td>
     </tr>
     <tr>
-      <td style="text-align:left">distinctId</td>
-      <td style="text-align:left">optional</td>
-      <td style="text-align:left">
-        <p><b>MIXPANEL data event field</b>.</p>
-        <p><b>MUST carry all other MIXPANEL fields to trigger MIXPANEL log sending.</b>
-        </p>
-        <p>&lt;b&gt;&lt;/b&gt;</p>
-        <p>This parameter is used to identify user session so that we could chain
-          the behavior from upstream client to Account WEBSSO via <b>MIXPANEL </b>distinctId.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">rootClient</td>
-      <td style="text-align:left">optional</td>
-      <td style="text-align:left">
-        <p><b>MIXPANEL data event field. </b>
-        </p>
-        <p><b>MUST carry all other MIXPANEL fields to trigger MIXPANEL log sending.</b>
-        </p>
-        <p>&lt;b&gt;&lt;/b&gt;</p>
-        <p>The first <b>upstream </b>client which is triggered by user.
-          <br />No matter how many middle clients which triggered via several flows, the
-          rootClient is always the initiate client.</p>
-        <p><b>The value should be client name instead of UUID</b>
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">triggerClient</td>
-      <td style="text-align:left">optional</td>
-      <td style="text-align:left">
-        <p><b>MIXPANEL data event field. </b>
-        </p>
-        <p><b>MUST carry all other MIXPANEL fields to trigger MIXPANEL log sending.</b>
-        </p>
-        <p>&lt;b&gt;&lt;/b&gt;</p>
-        <p>The client which trigger WEBSSO SDK. If user open PC-Client and do sign-up
-          flow via VIVEPORT Store, the trigger client should be VIVEPORT Store. <b>The value should be client name instead of UUID</b>
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">flowEntryPoint</td>
-      <td style="text-align:left">optional</td>
-      <td style="text-align:left">
-        <p><b>MIXPANEL data event field. </b>
-        </p>
-        <p><b>MUST carry all other MIXPANEL fields to trigger MIXPANEL log sending.</b>
-        </p>
-        <p>&lt;b&gt;&lt;/b&gt;</p>
-        <p>The value is given by root client, which described as UI element to initiate
-          the flow. Account WEBSSO SDK just pass this value to record the data value
-          of flow entry point.</p>
-      </td>
-    </tr>
-    <tr>
       <td style="text-align:left">prefillEmail</td>
       <td style="text-align:left">optional</td>
       <td style="text-align:left">string text valid email format, ex: &quot;email@address.com&quot;, this
