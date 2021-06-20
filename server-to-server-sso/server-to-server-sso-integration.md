@@ -102,25 +102,27 @@ If request validate failed, will respond as below json sample:
 
 Request's optional **hl** parameter allow client to config HTC SSO UI/UX locale. If not specify this parameter, HTC SSO UI/UX will use browser's preferred language instead. If preferred language not in below support list, will fallback to default locale **en\_US**. Support locales are:
 
-1. ar\_EG
-2. cs\_CZ
-3. da\_DK
-4. de\_DE
-5. es\_US
-6. zh\_CN
-7. zh\_TW
-8. es\_ES
-9. fi\_FI
-10. fr\_FR
-11. it\_IT
-12. ja\_JP
-13. ko\_KR
-14. nb\_NO
-15. nl\_NL
-16. pl\_PL
-17. ru\_RU
-18. sv\_SE
-19. en\_US
+```javascript
+ar_EG
+cs_CZ
+da_DK
+de_DE
+es_US
+zh_CN
+zh_TW
+es_ES
+fi_FI
+fr_FR
+it_IT
+ja_JP
+ko_KR
+nb_NO
+nl_NL
+pl_PL
+ru_RU
+sv_SE
+en_US
+```
 
 #### State query parameter
 
