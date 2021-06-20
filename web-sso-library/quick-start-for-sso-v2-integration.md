@@ -175,7 +175,9 @@ The **`scope`** field should reflect to client's OAuth setting applied scope lis
   };
 
   window.HTCAccount.init(initConfig);
-  window.HTCAccount.getLoginStatus(function(resp) {
+ 
+    
+  window.HTCAccount.Event.subscribe('auth.login', function(resp) {
      if (resp.status === 'connected') {
         // already have authe key, and should be able to fetch user auth info
         console.log(resp.authResponse);
@@ -196,8 +198,14 @@ The **`scope`** field should reflect to client's OAuth setting applied scope lis
        
        // will immediately trigger login/sign-up flow by 302 redirection
        // usually can put this command in other action ex: user click sign-in
-       window.HTCAccount.redirectByAuthConfig(authConfigs);
+       window.HTCAccount.Login(authConfigs);
      }
+  });
+  
+  window.HTCAccount.login(() => {}, { 
+    type: 'redirect',
+    next_url: location.pathname,
+    state: JSON.stringify(authConfigs)
   });
 </script>
 <script src="https://account-stage.htcvive.com/htcaccount.js"></script>
