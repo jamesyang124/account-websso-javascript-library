@@ -2,7 +2,7 @@
 
 * [Preface](README.md)
 
-## WEB SSO LIBRARY
+## WEB CLIENT SSO <a id="web-sso-library"></a>
 
 * [Integration Guide](web-sso-library/quick-start-for-sso-v2-integration.md)
 * [Migrate From V1 to V2](web-sso-library/from-web-sso-to-infinity-flow.md)
