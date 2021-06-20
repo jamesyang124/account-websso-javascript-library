@@ -54,12 +54,11 @@ A simple example should as follow:
 // this should based on your deployment environment
 <script src="https://account.htcvive.com/htcaccount.js"></script>
 <script>
-  var config = {appid: "$APPID"};
+  var config = { appid: "$APPID", scope: "email" };
   HTCAccount.init(config);
-  HTCAccount.getLoginStatus(function() {
-    // APP init
+  HTCAccount.Event.subscribe('auth.login', function(resp) {
+    // check auth status, then call login or getAuthResponseV2 function
   });
-  HTCAccount.getAuthResponseV2();
 </script>
 ```
 
@@ -96,25 +95,31 @@ In API Specification section mention **authorities** flag to switch social butto
 Once initialization complete, we can get user login information from account main site, please check API Specification **Login Status** section for the format of **status** response JSON :
 
 ```javascript
-window.HTCAccount.getLoginStatus(function(status){
+window.HTCAccount.Event.subscribe('auth.login', function(response){
    // User has signed in to HTC Account service.
-   /*{
-    "status": "connected",
-    "authResponse": {
+   // response JSON would be
+   /*
+   {
+      "status": "connected",
+      "authResponse": {
         "access_token": "r8f7dIgXHIYOKfVqGr7YY....",
         "client_id": "5431c830-388a-46dc-929b-c9f9c7b16031",
         "expire": 1471776618831,
         "life": 86400000,
         "scope": "",
         "uid": "92bbb0ba-b8e4-4ab4-b8a3-70f2249fd689"   
-    }
-   }*/
+      }
+   }
+   */
 
    // User does not sign in to HTC Account service.
-   /*{
-    "status": "unknown",
-    "authResponse": false
-   }*/
+   // response JSON would be
+   /*
+   {
+      "status": "unknown",
+      "authResponse": false
+   }
+   */
 });
 ```
 
@@ -124,14 +129,14 @@ If `status` is connected, and can get `authResponse` info, then user should alre
 
 ## Step 4. Trigger Login/Signup Flow
 
-To start SSO V2 authentication flow, please call `redirecbyAuthConfig` with **authConfig, below is a minimum configuration set**:
+To start SSO V2 authentication flow, please call `login` with **authConfig, below is a minimum configuration set**:
 
 {% hint style="info" %}
 auth config have same and consistent format for SSO SDK or infinity lib 
 {% endhint %}
 
 ```javascript
-var minConfig = {
+var minConfigs = {
     "clientId": "33035df5-7ddd-4417-a20a-e56722489550",
     "redirectionUrl": "https://www.viveport.com",
     "flow": "infinity",
@@ -139,8 +144,12 @@ var minConfig = {
     "viewToggles": [],
     "requireAuthCode": false
   };
-  
-window.HTCAccount.redirectByAuthConfig(minConfig);
+
+window.HTCAccount.login(() => {}, { 
+   type: 'redirect',
+   next_url: location.pathname,
+   state: JSON.stringify(minConfigs)
+});
 ```
 
 For more info, please check config definition in below link
@@ -194,8 +203,6 @@ The **`scope`** field should reflect to client's OAuth setting applied scope lis
   };
 
   window.HTCAccount.init(initConfig);
- 
-    
   window.HTCAccount.Event.subscribe('auth.login', function(resp) {
      if (resp.status === 'connected') {
         // already have authe key, and should be able to fetch user auth info
