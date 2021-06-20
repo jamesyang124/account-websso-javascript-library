@@ -251,6 +251,35 @@ HTC Account access token
 https://account-profile.htcvive.com/SS/Profiles/v3/Me?fields=accountProvider,accountEmail,accountPhoneNumber,contactEmailAddress,location,createTime,firstName,id,isVerified,languageCode,lastName,defaultOptIn,integrationPhoneNumbers,socialProfilePicture,customProfilePicture,profilePicture,secondEmails,allowCollectUserData,allowVRContentRecommendation,sendEmailAboutViveProducts,sendEmailAboutOtherProducts
 ```
 
+#### Profile fields list
+
+```javascript
+// field name list:
+accountProvider
+contactEmailAddress
+createTime
+accountEmail
+accountPhoneNumber
+firstName
+id
+isVerified
+languageCode
+lastName
+regionId
+allowCollectUserData
+sendEmailAboutViveProducts
+sendEmailAboutOtherProducts
+secondEmails
+profilePicture
+customProfilePicture
+socialProfilePicture
+defaultOptIn
+publicName
+location
+multiAuth
+integrationPhoneNumbers
+```
+
 {% api-method method="get" host="https://account.htcvive.com" path="/logout" %}
 {% api-method-summary %}
 HTC Logout from client web 
