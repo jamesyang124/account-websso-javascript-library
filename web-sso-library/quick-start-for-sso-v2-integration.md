@@ -1,11 +1,9 @@
 # Integration Guide
 
-This section demonstrate how to integrate with web SSO V2 flow from the scratch. HTC Account Web SSO Integration would support browser based SSO integration. If you would like to integrae with server, please refer to [server to server SSO ingration](../server-to-server-sso/server-to-server-sso-integration.md) **or jump to last section for web SSO V2 flow sample code as quick start.**
-
-## EXPLAIN HOW THE NEW SET
+This section demonstrate how to integrate with web SSO V2 flow from the scratch. HTC Account Web SSO Integration would support browser based SSO integration. If you would like to integrae with server, please refer to [server to server SSO integration](../server-to-server-sso/server-to-server-sso-integration.md) **or jump to last section for web SSO V2 flow sample code as quick start.**
 
 {% hint style="info" %}
-Before using the SSO SDK, you should already registered OAuth setting with account  team. If not, please contact account team for more info.
+Before using the SSO SDK, you should already registered OAuth setting with account  team. If not, please contact HTC Account team for more info.
 {% endhint %}
 
 ## Step 0. Set Up HTCAccountHost Global Variable
@@ -24,6 +22,27 @@ For non-production development, the client should set up **which HTC account env
 
 //above global variables are set to PROD env by default
 ```
+
+### HTC Account Server Host Environment
+
+| ENV | Resource Domain |
+| :--- | :--- |
+| STAGE | ​https://account-stage.htcvive.com |
+| PRDO | ​https://account.htcvive.com |
+
+### HTC Account Profile Server Host Environment
+
+| ENV | Resource Domain |
+| :--- | :--- |
+| STAGE | https://account-profile-stage.htcvive.com |
+| PROD | https://account-profile.htcvive.com |
+
+### HTCOrgProfileDefaultHost env
+
+| ENV | Resource Domain |
+| :--- | :--- |
+| STAGE | https://account-stage-usw2.viveport.com |
+| PROD | https://account.viveport.com |
 
 ## Step 1. Load SSO SDK
 
