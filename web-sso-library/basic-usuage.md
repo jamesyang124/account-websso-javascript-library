@@ -42,9 +42,7 @@ We also provide asynchronous mode to help user able to load the `htcaccount.js` 
  window.htcAccountAsyncInit = function() {
   var config = {appid: "$APPID"};
   HTCAccount.init(config);
-  HTCAccount.getLoginStatus(function() {
-    // APP init
-  });
+  // ....
 }
 </script>
 <script src="https://account.htcvive.com/htcaccount.js"></script>
@@ -59,31 +57,37 @@ If you need to change the host language during login flow, you may append below 
 <script async src="https://account.htcvive.com/htcaccount.js?hl={localeName}"></script>
 ```
 
-The feasible locale list:
-
-```text
-ar    da    es-US fi    it    ko    nl    ru    zh-CN
-cs    de    es    fr    ja    nb    pl    sv    zh-TW
-en
-```
+Please refer [this](../server-to-server-sso/server-to-server-sso-integration.md#hl-query-parameter) for supported locale list.
 
 Example:
 
 ```markup
-<script async src="https://account.htcvive.com/htcaccount.js?hl=fr"></script>
+<script async src="https://account.htcvive.com/htcaccount.js?hl=zh_TW"></script>
 ```
 
 ## Customize Sign-in Options
 
-If you need to only **HTC account native sign-in by \(email/phone\)**, manually set up in `HTCAccount.init` call:
+If you need to only **HTC account native sign-in by \(email/phone\) in SSO UI/UX**, manually set up in `HTCAccount.login` 's state JSON string:
 
 ```javascript
-HTCAccount.init({
-    appid: "0058ef13-1fed-4a0a-b6fb-1181cc525507",
-    scope: "email birthday",
-    authorities: "htc.com"
-})
+var config = { appid: "$APPID", scope: "email birthday" };
+var authConfigs = {
+    "sessionId": "4686d579-4176-46fc-8636-660643cf1f8f",
+    "clientId": config.appid,
+    "flow": "infinity",
+    "initView": "sign-in",
+    "scope": config.scope,
+    "viewToggles": [],
+    "requireAuthCode": false,
+    // customized sign-in options
+    // sample value will provide only HTC native login option
+    "authorities": "htc.com"
+};
+
+HTCAccount.login(() => {}, {
+   type: 'redreict',
+   next_url: location.pathname,
+   state: JSON.stringify(authConfigs)
+});
 ```
-
-
 
