@@ -16,37 +16,6 @@ The **config** parameter is an object and expect to have properties as follow:
 
 * `appid: String` - _A client id with UUID format which registered to HTC Account service._
 * `scope: String` - _A string list all registered permitted scopes, all are seperated by a space._
-* `authorities: String` - _You can omit this property and the WEBSSO library will set the default value based on user's GEO IP detection._
-
-For GEO ip is located in non-China region, **authorities** default value is:
-
-```javascript
-authorities: "google.com facebook.com htc.com steam.com"
-```
-
-For GEO ip is located in China:
-
-```javascript
-authorities: "weibo.com qq.com htc.com"
-```
-
-If HTC WEBSSO library failed to get user's GEO ip, then the default value is `htc.com`.
-
-You can remove specific authority by **prefixed minus sign, but the UI layout may not dynamically changed**.
-
-```javascript
-// Assume client is located in China
-// Remove QQ social sign in button:
-authorities: "weibo.com -qq.com htc.com"
-
-// Or remove default authorities instead.
-// Only permit Weibo and HTC sign-in:
-authorities: "-weibo.com"
-```
-
-**Caveat!**
-
-> In China region, `Facebook` and `Google` is not valid options for authorities. In Non-China region, `QQ` and `Weibo` also are invalid options.
 
 **Example**:
 

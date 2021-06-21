@@ -1,11 +1,9 @@
 # Auth Configs for SSO State Parameter
 
-{% hint style="danger" %}
-If you **need customization for pre/post sign-up urls**, please contact account team to get authorized permission, **otherwise the requests will be prohibited as malicious user behavior**.
-{% endhint %}
+OAuth state parameter by standard is to allow client to pass its transient data in flow. HTC Account SSO also leverage this parameter for UI/UX customization. Below listed JSON fields are preserve fields and should be configured in login flow initialization, ex: **HTCAccount.login** api call for web client, or **OAuth authorize** api call for server client.
 
 {% hint style="danger" %}
-For MIXPANEL BI log sending, please **MUST** carry all MIXPANEL data event fields, o.w. you may omit those fields if tend to not send MIXPANEL BI log.
+If you **need customization for pre/post sign-up urls**, please contact account team to get authorized permission, **otherwise the requests will be prohibited as malicious user behavior**.
 {% endhint %}
 
 ## Definition of Auth Config Fields
@@ -22,14 +20,7 @@ For MIXPANEL BI log sending, please **MUST** carry all MIXPANEL data event field
     <tr>
       <td style="text-align:left">sessionId</td>
       <td style="text-align:left">optional</td>
-      <td style="text-align:left">
-        <p><b>This field is also used for MIXPANEL data event.</b>
-        </p>
-        <p><b>MUST carry all other MIXPANEL fields to trigger MIXPANEL log sending.</b>
-        </p>
-        <p>&lt;b&gt;&lt;/b&gt;</p>
-        <p>BI session id, if not carried, will generate for it, <b>please reuse this BI session id if present.</b>
-        </p>
+      <td style="text-align:left">BI session id, if not carried, will generate for it, <b>please reuse this BI session id if present.</b>
       </td>
     </tr>
     <tr>
@@ -167,12 +158,8 @@ For MIXPANEL BI log sending, please **MUST** carry all MIXPANEL data event field
       <td style="text-align:left">optional</td>
       <td style="text-align:left">
         <p>HTC SSO authentication strategy. Could be combination of below listed
-          values, delimited by &quot; &quot; space. If not specified, it will support
-          native HTC login, Google OAuth, and Steam OAuth in global region. In China
-          region will support HTC native login, QQ OAuth, and Weibo OAuth. Please
-          contact HTC Account team for authentication strategy customization.
-          <br
-          />
+          values, delimited by &quot; &quot; space.
+          <br />
         </p>
         <ol>
           <li><b>htc.com</b>
@@ -188,4 +175,38 @@ For MIXPANEL BI log sending, please **MUST** carry all MIXPANEL data event field
     </tr>
   </tbody>
 </table>
+
+### Authorities field
+
+_You can omit this property and the WEBSSO library will set the default value based on user's GEO IP detection._
+
+For GEO ip is located in non-China region, **authorities** default value is:
+
+```javascript
+authorities: "google.com facebook.com htc.com steam.com"
+```
+
+For GEO ip is located in China:
+
+```javascript
+authorities: "weibo.com qq.com htc.com"
+```
+
+If HTC WEBSSO library failed to get user's GEO ip, then the default value is `htc.com`.
+
+You can remove specific authority by **prefixed minus sign, but the UI layout may not dynamically changed**.
+
+```javascript
+// Assume client is located in China
+// Remove QQ social sign in button:
+authorities: "weibo.com -qq.com htc.com"
+
+// Or remove default authorities instead.
+// Only permit Weibo and HTC sign-in:
+authorities: "-weibo.com"
+```
+
+**Caveat!**
+
+> In China region, `Facebook` and `Google` is not valid options for authorities. In Non-China region, `QQ` and `Weibo` also are invalid options.
 
