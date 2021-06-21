@@ -147,6 +147,7 @@ var minConfigs = {
     "flow": "infinity",
     "initView": "sign-in",
     "viewToggles": [],
+    "scope": "email",
     "requireAuthCode": false
   };
 
@@ -193,20 +194,21 @@ The **`scope`** field should reflect to client's OAuth setting applied scope lis
   window.HTCProfileDefaultHost = "account-profile-stage.htcvive.com";
   window.HTCOrgProfileDefaultHost = "account-stage-usw2.viveport.com";
   
-  var authConfigs = {
-    "sessionId": "4686d579-4176-46fc-8636-660643cf1f8f",
-    "clientId": "33035df5-7ddd-4417-a20a-e56722489550",
-    "flow": "infinity",
-    "initView": "sign-in",
-    "viewToggles": [],
-    "requireAuthCode": false
-  };
-              
   var initConfig = {
-    appid: authConfigs.clientId,
+    appid: "33035df5-7ddd-4417-a20a-e56722489550",
     // scope list should based on appid's oauth set up scope, 
     // please check with account team if don't know registered scopes.
     scope: "email birthday"
+  };
+  
+  var authConfigs = {
+    "sessionId": "4686d579-4176-46fc-8636-660643cf1f8f",
+    "clientId": initConfig.clientId,
+    "flow": "infinity",
+    "initView": "sign-in",
+    "viewToggles": [],
+    "scope": initConfig.scope,
+    "requireAuthCode": false
   };
 
   window.HTCAccount.init(initConfig);

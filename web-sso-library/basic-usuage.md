@@ -8,13 +8,28 @@ A simeple example should as follow:
 // this should based on your deployment environment
 <script src="https://account.htcvive.com/htcaccount.js"></script>
 <script>
-  var config = {appid: "$APPID"};
+  var config = { appid: "$APPID", scope: "email birthday" };
+  var authConfigs = {
+    "sessionId": "4686d579-4176-46fc-8636-660643cf1f8f",
+    "clientId": config.appid,
+    "flow": "infinity",
+    "initView": "sign-in",
+    "scope": config.scope,
+    "viewToggles": [],
+    "requireAuthCode": false
+  };
   HTCAccount.init(config);
-  HTCAccount.getLoginStatus(function() {
-    // APP init
+  HTCAccount.Event.subscribe('auth.login', function(response){
+    if (resp.status === 'connected') {
+      // get user profile
+    } else {
+      HTCAccount.login(() => {}, {
+        type: 'redreict',
+        next_url: location.pathname,
+        state: JSON.stringify(authConfigs)
+      });
+    }
   });
-  HTCAccount.login();
-  HTCAccount.getAuthResponseV2();
 </script>
 ```
 
