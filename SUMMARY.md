@@ -5,11 +5,10 @@
 ## WEB CLIENT SSO <a id="web-sso-library"></a>
 
 * [Integration Guide](web-sso-library/quick-start-for-sso-v2-integration.md)
-* [Migrate From V1 to V2](web-sso-library/from-web-sso-to-infinity-flow.md)
 * [Basic Usuage](web-sso-library/basic-usuage.md)
 * [API Specification](web-sso-library/api-specification.md)
-* [Example Code](web-sso-library/example-code.md)
 * [Internal Mechanism](web-sso-library/internal-mechanism.md)
+* [Migrate From V1 to V2](web-sso-library/from-web-sso-to-infinity-flow.md)
 * [Q&A](web-sso-library/q-and-a.md)
 * [Change Log](web-sso-library/change-log.md)
 

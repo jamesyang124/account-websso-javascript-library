@@ -166,7 +166,7 @@ For more info, please check config definition in below link
 
 {% page-ref page="../infinity-flow-integration-1/auth-configs-for-sso-v2.md" %}
 
-## Sample Code
+## Example Code
 
 Below example is assume operate on HTC Account Stage environment.
 
@@ -210,33 +210,33 @@ The **`scope`** field should reflect to client's OAuth setting applied scope lis
     "scope": initConfig.scope,
     "requireAuthCode": false
   };
-
-  window.HTCAccount.init(initConfig);
-  window.HTCAccount.Event.subscribe('auth.login', function(resp) {
-     if (resp.status === 'connected') {
-        // already have authe key, and should be able to fetch user auth info
-        console.log(resp.authResponse);
-        
-        window.HTCAccount.getProfileV4(["username","backupEmail"],function(data) {
-          // get user profile JSON from data parameter, 
-          // please check API specification related section for detail
-        });
-        
-     } else {
-       // this may indicate user is not logged in yet, or unverified user
-       // so require user to re-run login/sign-up flow
-       
-       // will immediately trigger login/sign-up flow by 302 redirection
-       // usually can put this command in other action ex: user click sign-in
-       window.HTCAccount.login(() => {}, { 
-          type: 'redirect',
-          next_url: location.pathname,
-          state: JSON.stringify(authConfigs)
-       });
-     }
-  });
   
-// we could customize hl to switch web SSO UI/UX locale
+  $(document).ready(function() {
+    window.HTCAccount.init(initConfig);
+    window.HTCAccount.Event.subscribe('auth.login', function(resp) {
+       if (resp.status === 'connected') {
+          // already have authe key, and should be able to fetch user auth info
+          console.log(resp.authResponse);
+        
+          window.HTCAccount.getProfileV4(["username","backupEmail"],function(data) {
+            // get user profile JSON from data parameter, 
+            // please check API specification related section for detail
+          });
+        
+       } else {
+         // this may indicate user is not logged in yet, or unverified user
+         // so require user to re-run login/sign-up flow
+       
+         // will immediately trigger login/sign-up flow by 302 redirection
+         // usually can put this command in other action ex: user click sign-in
+         window.HTCAccount.login(() => {}, { 
+            type: 'redirect',
+            next_url: location.pathname,
+            state: JSON.stringify(authConfigs)
+         });
+       }
+    });
+  });
 </script>
 <script src="https://account-stage.htcvive.com/htcaccount.js?hl=zh_TW"></script>
 ```
