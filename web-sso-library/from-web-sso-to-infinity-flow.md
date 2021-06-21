@@ -66,7 +66,10 @@ Please change the **type** field from `popup` to `redirect`as below sample code:
 HTCAccount.login({ /* state callback object */ }, {
     type: "redirect",       // should change to redirect in any case for v2
     next_url: "/sub/path",
-    authorities: "-qq.com"  // this will be deprecated, and no effect for v2
+    // authorities field will be deprecated, and no effect for v2
+    // please move this field to authConfigs as state's JSON string
+    authorities: "-qq.com",
+    state: JSON.stringify(authConfigs)
 })
 ```
 
