@@ -22,8 +22,7 @@ The **config** parameter is an object and expect to have properties as follow:
 ```javascript
 HTCAccount.init({
     appid: "0058ef13-1fed-4a0a-b6fb-1181cc525507",
-    scope: "email birthday",
-    authorities: "htc.com google.com"
+    scope: "email birthday"
 })
 
 // Or use authority default values
@@ -35,8 +34,7 @@ HTCAccount.init({
 // Or remove and assign specific authorities
 HTCAccount.init({
     appid: "0058ef13-1fed-4a0a-b6fb-1181cc525507",
-    scope: "email birthday",
-    authorities: "htc.com -google.com -facebook.com"
+    scope: "email birthday"
 })
 ```
 
