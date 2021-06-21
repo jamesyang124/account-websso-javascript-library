@@ -39,6 +39,6 @@
 * [Integration Guide for Organization Profile View](infinity-flow-integration-1/integration-guide-for-organization-profile-view.md)
 * [Auth Tool For VIVEPORT Web](infinity-flow-integration-1/auth-tool-for-viveport-web.md)
 * [Viewport Util for VIVEPORT Desktop](infinity-flow-integration-1/viewport-util-for-viveport-desktop.md)
-* [Auth Configs for Web SSO V2](infinity-flow-integration-1/auth-configs-for-sso-v2.md)
+* [Auth Configs for SSO State Parameter](infinity-flow-integration-1/auth-configs-for-sso-v2.md)
 * [Configuration for Cookie Consent Policy](infinity-flow-integration-1/cookie-consent-policy.md)
 
