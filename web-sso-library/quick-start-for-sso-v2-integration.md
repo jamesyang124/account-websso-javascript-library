@@ -1,6 +1,6 @@
 # Integration Guide
 
-This section demonstrate how to integrate with web SSO V2 flow from the scratch. HTC Account Web SSO Integration would support browser based SSO integration. If you would like to integrae with server, please refer to [server to server SSO integration](../server-to-server-sso/server-to-server-sso-integration.md) **or jump to last section for web SSO V2 flow sample code as quick start.**
+This section demonstrate how to integrate with web SSO flow from scratch. If you would like to integrate with server, please refer to [server to server SSO integration](../server-to-server-sso/server-to-server-sso-integration.md) **or jump to last section for web SSO flow sample code as quick start.**
 
 {% hint style="info" %}
 Before using the SSO SDK, you should already registered OAuth setting with account  team. If not, please contact HTC Account team for more info.
@@ -62,6 +62,10 @@ A simple example should as follow:
 </script>
 ```
 
+{% hint style="info" %}
+Client could add **hl** query parameter for specifying web SSO's UI/UX locale to align client site's locale. Please check [this section](../server-to-server-sso/server-to-server-sso-integration.md#hl-query-parameter) for more info**.**
+{% endhint %}
+
 ## Step 2. Setup Init Config to Launch SDK
 
 The configuration for HTCAccount.init should have basic format as below, for more flag and detail please check API Specification **Initialization** section
@@ -74,6 +78,7 @@ The **`scope`** field should reflect to client's OAuth setting applied scope lis
 
 ```javascript
 window.HTCAccount.init({
+    // appid is registered OAuth client id
     appid: "0058ef13-1fed-4a0a-b6fb-1181cc525507",
     scope: "email birthday"
 });
@@ -92,7 +97,7 @@ In API Specification section mention **authorities** flag to switch social butto
 
 ## Step 3. Fetch Login Status
 
-Once initialization complete, we can get user login information from account main site, please check API Specification **Login Status** section for the format of **status** response JSON :
+Once initialization complete, we can get user login information from HTC Account main site by subscribe **auth.login** event :
 
 ```javascript
 window.HTCAccount.Event.subscribe('auth.login', function(response){
@@ -147,6 +152,10 @@ var minConfigs = {
 
 window.HTCAccount.login(() => {}, { 
    type: 'redirect',
+   // next_url is client site's redirection url in relative path format
+   // if redirection url not have path part, we can omit this field
+   // and nex_url will fallback to window.location.href instead
+   // this next_url will finally as full url as state JSON's redirection_url field
    next_url: location.pathname,
    state: JSON.stringify(minConfigs)
 });
@@ -187,8 +196,6 @@ The **`scope`** field should reflect to client's OAuth setting applied scope lis
   var authConfigs = {
     "sessionId": "4686d579-4176-46fc-8636-660643cf1f8f",
     "clientId": "33035df5-7ddd-4417-a20a-e56722489550",
-    // redirectionUrl should include slash "/" to pass url security check
-    "redirectionUrl": "https://store-stage-usw2.viveport.com/",
     "flow": "infinity",
     "initView": "sign-in",
     "viewToggles": [],
@@ -207,11 +214,6 @@ The **`scope`** field should reflect to client's OAuth setting applied scope lis
      if (resp.status === 'connected') {
         // already have authe key, and should be able to fetch user auth info
         console.log(resp.authResponse);
-
-        window.HTCAccount.getProfileV3(function(data) {
-          // get user profile JSON from data parameter, 
-          // please check API specification related section for detail
-        });
         
         window.HTCAccount.getProfileV4(["username","backupEmail"],function(data) {
           // get user profile JSON from data parameter, 
@@ -224,16 +226,16 @@ The **`scope`** field should reflect to client's OAuth setting applied scope lis
        
        // will immediately trigger login/sign-up flow by 302 redirection
        // usually can put this command in other action ex: user click sign-in
-       window.HTCAccount.Login(authConfigs);
+       window.HTCAccount.login(() => {}, { 
+          type: 'redirect',
+          next_url: location.pathname,
+          state: JSON.stringify(authConfigs)
+       });
      }
   });
   
-  window.HTCAccount.login(() => {}, { 
-    type: 'redirect',
-    next_url: location.pathname,
-    state: JSON.stringify(authConfigs)
-  });
+// we could customize hl to switch web SSO UI/UX locale
 </script>
-<script src="https://account-stage.htcvive.com/htcaccount.js"></script>
+<script src="https://account-stage.htcvive.com/htcaccount.js?hl=zh_TW"></script>
 ```
 
