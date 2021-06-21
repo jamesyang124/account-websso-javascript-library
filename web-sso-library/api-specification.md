@@ -73,6 +73,10 @@ HTCAccount.init({
 
 ## Login Status
 
+{% hint style="danger" %}
+This API does not support async mode and is planned to deprecate. For version compatibility, suggest use event subscription for **auth.login**, **auth.logout**, **auth.responseChange** events instead. Please check [below](api-specification.md#event-subscription-handler) section for more info.
+{% endhint %}
+
 Once the initialization has been done, then integrated client should able to check the login status in anytime.
 
 #### API
@@ -398,9 +402,9 @@ Supported event channels are:
 
   Fire event when the authResponse changed, such as `login`, `logout`, `getLoginStatus(callback, refresh = true)`.
 
-* `auth.login` - _Fire event when user login successfully._
+* `auth.login` - _Fire event when user login successfully, or login status check after **HTCAccount.init** initialization call._
 * `auth.logout` - _Fire event after user logout and account session data is cleaned._
-* `auth.prompt` - _Fire event when popup window is opened, only in popup mode._
+* `auth.prompt` - _Fire event when popup window is opened, **only** in popup mode._
 * `auth.statusChange` - _Fire event when login status changed, or access token renewed._
 
 **Example**
@@ -417,12 +421,20 @@ HTCAccount.Event.subscribe("auth.authResponseChange", function(loginStatus) {
 
 // auth.login
 HTCAccount.Event.subscribe("auth.login", function(loginStatus) {
-    // apply application logic
+    if (loginStatus["status"] === "connected") {
+        // apply application logic after login
+    } else { // loginStatus["status"] === "unknown"
+        // apply application logic after logout
+    }
 });
 
 // auth.logout
 HTCAccount.Event.subscribe("auth.logout", function(loginStatus) {
-    // apply application logic
+    if (loginStatus["status"] === "connected") {
+        // apply application logic after login
+    } else { // loginStatus["status"] === "unknown"
+        // apply application logic after logout
+    }
 });
 
 // auth.prompt
