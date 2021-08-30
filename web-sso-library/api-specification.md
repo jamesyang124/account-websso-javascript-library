@@ -152,6 +152,24 @@ Similar as login API, the `callback` accepts a parameter which return login stat
 { status: "unknown", authResponse: false }
 ```
 
+### LogoutV2
+
+accept optional JSON object, if JSON property `logout_redirect_url` specified, will run top-level redirection to HTC account main site logout then redirect back to `logout_redirect_url`  to enable this feature, please also inform HTC Account team to configure security list to whitelist its logout URL. 
+
+#### API
+
+```javascript
+HTCAccount.logoutV2({ 
+    "logout_redirect_url": "https://example.com/logout"  
+}): undefined/false
+```
+
+You could listen auth event for `sauth.authResponseChange` , the event payload would be:
+
+```javascript
+{ status: "unknown", authResponse: false }
+```
+
 ### Get Auth Response
 
 Integrated client can get auth response in anytime. There has three types of response:
