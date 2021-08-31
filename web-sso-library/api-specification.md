@@ -132,7 +132,7 @@ HTCAccount.login({ /* state callback object */ }, {
 })
 ```
 
-### Logout
+### Logout for Web SSO
 
 Integrated Client can listen below listed event in order after user logout HTC account service:
 
@@ -152,14 +152,14 @@ Similar as login API, the `callback` accepts a parameter which return login stat
 { status: "unknown", authResponse: false }
 ```
 
-### LogoutV2
+### Logout for OIDC Web SSO \(V2 Web SSO\)
 
-accept optional JSON object, if JSON property `logout_redirect_url` specified, will run top-level redirection to HTC account main site logout then redirect back to `logout_redirect_url`  to enable this feature, please also inform HTC Account team to configure security list to whitelist its logout URL. 
+Accept optional JSON object, if JSON property `logout_redirect_url` specified, will run top-level redirection to HTC account main site logout then redirect back to `logout_redirect_url`  to enable this feature, please also inform HTC Account team to configure security list to whitelist its logout URL. 
 
 #### API
 
 ```javascript
-HTCAccount.logoutV2({ 
+HTCAccount.logout({ 
     "logout_redirect_url": "https://example.com/logout"  
 }): undefined/false
 ```
