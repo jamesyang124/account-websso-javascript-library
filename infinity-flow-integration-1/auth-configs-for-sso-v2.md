@@ -8,173 +8,21 @@ If you **need customization for pre/post sign-up urls**, please contact account 
 
 ## Definition of Auth Config Fields
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Config JSON</th>
-      <th style="text-align:left">Require</th>
-      <th style="text-align:left">Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">sessionId</td>
-      <td style="text-align:left">optional</td>
-      <td style="text-align:left">BI session id, if not carried, will generate for it, <b>please reuse this BI session id if present.</b>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">clientId</td>
-      <td style="text-align:left">true</td>
-      <td style="text-align:left">OAuth client id</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">redirectionUrl</td>
-      <td style="text-align:left">true</td>
-      <td style="text-align:left">Client&apos;s redirection url, no URL-encoded required, <b>please ensure the trailing slash whether required from OAuthSetting</b>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">requireAuthCode</td>
-      <td style="text-align:left">true</td>
-      <td style="text-align:left">Indicate whether client need authorization code instead of access token</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">flow</td>
-      <td style="text-align:left">true</td>
-      <td style="text-align:left">constant value <b>infinity</b>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">initView</td>
-      <td style="text-align:left">true</td>
-      <td style="text-align:left">either <b>sign-in</b> or <b>sign-up</b> for first rendered page, default should
-        set to <b>sign-in</b>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">viewToggles</td>
-      <td style="text-align:left">true</td>
-      <td style="text-align:left">
-        <p>Empty array, or support any of:</p>
-        <ol>
-          <li><code>&quot;-signup&quot;</code>
-          </li>
-          <li><code>&quot;-sign-in&quot;</code>
-          </li>
-          <li><code>&quot;-promotion&quot;</code>
-          </li>
-          <li><code>&quot;+org-view&quot;</code>
-          </li>
-          <li><code>&quot;logo-htc&quot;</code>
-          </li>
-          <li><code>&quot;+advanced-org-view&quot;</code>
-          </li>
-          <li><code>&quot;+signup&quot;</code>
-          </li>
-          <li><code>&quot;+signupbyphone&quot;</code>
-          </li>
-          <li><code>&quot;+signupbyemail&quot;</code>
-          </li>
-          <li><code>&quot;-signupswitch&quot;</code>
-          </li>
-          <li><code>&quot;-social-profile&quot;</code>
-          </li>
-          <li><code>&quot;-rememberacct&quot;</code>
-          </li>
-          <li><code>&quot;-forgotpwd&quot;</code>
-          </li>
-          <li><code>&quot;+create-org&quot;</code>
-          </li>
-        </ol>
-        <p>Sample value: <code>[&quot;-signup&quot;, &quot;-sign-in&quot;, &quot;-promotion&quot;, &quot;+org-view&quot;, &quot;logo-htc&quot;]</code>
-        </p>
-        <p></p>
-        <p>Please consult HTC Account Team to learn how to config toggles for customized
-          UI view</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">preSignUpUrl</td>
-      <td style="text-align:left">optional</td>
-      <td style="text-align:left">Indicate whether create account flow should redirect to this url first
-        instead of switching to create account form. Only supply if needed, or
-        may lead redirection loop. <b>Empty String is not allowed</b>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">postSignUpUrl</td>
-      <td style="text-align:left">optional</td>
-      <td style="text-align:left">if a user finish the account flow, the page will redirect to the path
-        of postSignUpUrl immediately. <b>Empty String is not allowed.</b>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">scopes</td>
-      <td style="text-align:left">optional</td>
-      <td style="text-align:left">scope array, so the auth key can be constraint to certain scopes. Currently
-        only preset for VIVEPORT Desktop</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">cookieConsent</td>
-      <td style="text-align:left">optional</td>
-      <td style="text-align:left">
-        <p>An array of string to <b>overwrite </b>default cookie consents in account
-          enroll flow.</p>
-        <p></p>
-        <p>For Example:
-          <br />
-        </p>
-        <p><code>[&quot;performance&quot;, &quot;functional&quot;]</code>
-        </p>
-        <p></p>
-        <p>If no value specified for this property, the default value will be empty
-          array and is the same as not carry this property, which means user does
-          not consent to send 3rd party cookies</p>
-        <p></p>
-        <p>Currently support toggles:
-          <br />
-        </p>
-        <ol>
-          <li><b>performance</b>
-          </li>
-          <li><b>functional</b>
-          </li>
-          <li><b>targeting</b>
-          </li>
-          <li><b>social-media</b>
-          </li>
-        </ol>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">prefillEmail</td>
-      <td style="text-align:left">optional</td>
-      <td style="text-align:left">string text valid email format, ex: &quot;email@address.com&quot;, this
-        is used for org user invitation email flow.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">authorities</td>
-      <td style="text-align:left">optional</td>
-      <td style="text-align:left">
-        <p>HTC SSO authentication strategy. Could be combination of below listed
-          values, delimited by &quot; &quot; space.
-          <br />
-        </p>
-        <ol>
-          <li><b>htc.com</b>
-          </li>
-          <li><b>google.com</b>
-          </li>
-          <li><b>qq.com</b>
-          </li>
-          <li><b>steam.com</b>
-          </li>
-        </ol>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Config JSON     | Require  | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| --------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| sessionId       | optional | BI session id, if not carried, will generate for it, **please reuse this BI session id if present.**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| clientId        | true     | OAuth client id                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| redirectionUrl  | true     | Client's redirection url, no URL-encoded required, **please ensure the trailing slash whether required from OAuthSetting**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| requireAuthCode | true     | Indicate whether client need authorization code instead of access token                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| flow            | true     | constant value **infinity**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| initView        | true     | either **sign-in** or **sign-up** for first rendered page, default should set to **sign-in**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| viewToggles     | true     | <p>Empty array, or support any of:</p><ol><li><code>"-signup"</code></li><li><code>"-sign-in"</code></li><li><code>"-promotion"</code></li><li><code>"+org-view"</code></li><li><code>"logo-htc"</code></li><li><code>"+advanced-org-view"</code></li><li><code>"+signup"</code></li><li><code>"+signupbyphone"</code></li><li><code>"+signupbyemail"</code></li><li><code>"-signupswitch"</code></li><li><code>"-social-profile"</code></li><li><code>"-rememberacct"</code></li><li><code>"-forgotpwd"</code></li><li><code>"+create-org"</code></li></ol><p>Sample value: <code>["-signup", "-sign-in", "-promotion", "+org-view", "logo-htc"]</code></p><p></p><p>Please consult HTC Account Team to learn how to config toggles for customized UI view</p> |
+| preSignUpUrl    | optional | Indicate whether create account flow should redirect to this url first instead of switching to create account form. Only supply if needed, or may lead redirection loop. **Empty String is not allowed**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| postSignUpUrl   | optional | if a user finish the account flow, the page will redirect to the path of postSignUpUrl immediately. **Empty String is not allowed.**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| scopes          | optional | scope array, so the auth key can be constraint to certain scopes. Currently only preset for VIVEPORT Desktop                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| cookieConsent   | optional | <p>An array of string to <strong>overwrite </strong>default cookie consents in account enroll flow.</p><p></p><p>For Example:<br></p><p><code>["performance", "functional"]</code></p><p></p><p>If no value specified for this property, the default value will be empty array and is the same as not carry this property, which means user does not consent to send 3rd party cookies</p><p></p><p>Currently support toggles:<br></p><ol><li><strong>performance</strong></li><li><strong>functional</strong></li><li><strong>targeting</strong></li><li><strong>social-media</strong></li></ol>                                                                                                                                                               |
+| prefillEmail    | optional | string text valid email format, ex: "email@address.com", this is used for org user invitation email flow.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| authorities     | optional | <p>HTC SSO authentication strategy. Could be combination of below listed values, delimited by " " space.<br></p><ol><li><strong>htc.com</strong></li><li><strong>google.com</strong></li><li><strong>qq.com</strong></li><li><strong>steam.com</strong></li><li><strong>docomo.com </strong></li></ol>                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 ### Authorities field
 
@@ -209,4 +57,3 @@ authorities: "-weibo.com"
 **Caveat!**
 
 > In China region, `Facebook` and `Google` is not valid options for authorities. In Non-China region, `QQ` and `Weibo` also are invalid options.
-
