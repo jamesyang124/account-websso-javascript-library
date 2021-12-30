@@ -57,3 +57,26 @@ authorities: "-weibo.com"
 **Caveat!**
 
 > In China region, `Facebook` and `Google` is not valid options for authorities. In Non-China region, `QQ` and `Weibo` also are invalid options.
+
+### Example
+
+```javascript
+var authConfigs = {
+  "sessionId": "4686d579-4176-46fc-8636-660643cf1f8f",
+  "clientId": config.appid,
+  "flow": "infinity",
+  "initView": "sign-in",
+  "scope": ["email"],
+  "viewToggles": ["-forgotpwd"],
+  "requireAuthCode": false,
+  "prefillEmail": "someUserEmail@example.com",
+  "authorities": "htc.com google.com"
+};
+
+// HTCAccount.init already called.
+HTCAccount.login(() => {}, {
+  type: 'redreict',
+  next_url: location.pathname,
+  state: JSON.stringify(authConfigs)
+});
+```
