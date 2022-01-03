@@ -66,7 +66,7 @@ var authConfigs = {
   "clientId": config.appid,
   "flow": "infinity",
   "initView": "sign-in",
-  "scope": ["email"],
+  "scopes": ["email"],
   "viewToggles": ["-forgotpwd"],
   "requireAuthCode": false,
   "prefillEmail": "someUserEmail@example.com",
