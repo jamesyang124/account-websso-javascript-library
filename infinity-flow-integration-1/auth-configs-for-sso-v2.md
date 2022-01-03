@@ -67,6 +67,7 @@ var authConfigs = {
   "flow": "infinity",
   "initView": "sign-in",
   "scopes": ["email"],
+  "redirectionUrl": "https://some-domain.example.com",
   "viewToggles": ["-forgotpwd"],
   "requireAuthCode": false,
   "prefillEmail": "someUserEmail@example.com",
