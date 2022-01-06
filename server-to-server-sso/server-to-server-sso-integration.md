@@ -114,21 +114,39 @@ As previous mentioned, client could merge extra data with state JSON, regarding 
 https://account.htcvive.com/SS/Services/OAuth/Authorize?hl=zh_TW&client_id=cc955ffe-b086-480c-84a3-42818f13839b&immediate=FALSE&response_type=code&state=%7B%22clientId%22%3A%22cc955ffe-b086-480c-84a3-42818f13839b%22%2C%22redirectionUrl%22%3A%22https%3A%2F%2Fwww.viveport.com%2Fsso%2Fauth%2Fcallback%22%2C%22flow%22%3A%22infinity%22%2C%22initView%22%3A%22sign-in%22%2C%22viewToggles%22%3A%5B%5D%2C%22requireAuthCode%22%3Atrue%2C%22scopes%22%3A%5B%22issuetoken%22%2C%22email%22%2C%22payment.security.write%22%5D%2C%22preSignUpUrl%22%3A%22https%3A%2F%2Fwww.viveport.com%2Fstore%2Fsetup%2Fplans%22%2C%22postSignUpUrl%22%3A%22https%3A%2F%2Fwww.viveport.com%2Fstore%2Fsetup%2Fcountry%22%2C%22sessionId%22%3A%2255153bf2-7d45-1116-8a0b-92ebf5bd3d81%22%2C%22cookieConsent%22%3A%5B%22functional%22%5D%2C%22customRedirectUrl%22%3A%22https%3A%2F%2Fwww.viveport.com%22%7D&redirection_url=https%3A%2F%2Fwww.viveport.com%2Fsso%2Fauth%2Fcallback&scope=issuetoken+email+payment.security.write
 ```
 
-{% swagger baseUrl="https://account.htcvive.com" path="/SS/api/oauth/v2/token/authorization-code" method="post" summary="Get HTC Account access token by authorization code" %}
+{% swagger baseUrl="https://account.htcvive.com" path="/${DC_PREFIX}/SS/Services/OAuth/Token" method="post" summary="Get HTC Account access token by authorization code" %}
 {% swagger-description %}
-Client server call this api with authorization code and client secret to get user's HTC Account access token
+Client server call this api with authorization code and client secret to get user's HTC Account access token. 
+
+**This URL must from callback's**
+
+ 
+
+`api_url`
+
+ 
+
+_****_
+
+** query parameter so would have proper DC_PREFIX**
+
+.
 {% endswagger-description %}
 
-{% swagger-parameter in="body" name="code" type="string" %}
+{% swagger-parameter in="body" name="code" type="string" required="true" %}
 HTC SSO OAuth authorization code
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="client_secret" type="string" %}
+{% swagger-parameter in="body" name="client_secret" type="string" required="true" %}
 OAuth client secret
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="client_id" type="string" %}
+{% swagger-parameter in="body" name="client_id" type="string" required="true" %}
 OAuth client id
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="grant_type" type="string" required="true" %}
+must be "authorization_code"
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="respond JSON with HTC Account access token" %}
