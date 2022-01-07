@@ -225,6 +225,7 @@ accountProvider
 contactEmailAddress
 createTime
 accountEmail
+ethereumPublicAddr
 accountPhoneNumber
 firstName
 id
