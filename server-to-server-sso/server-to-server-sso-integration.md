@@ -252,6 +252,10 @@ integrationPhoneNumbers
 This is for actively clean up HTC Account main site's session, the redirection behavior default is back to HTC Account main site. The redirection would route back to client's logout url if configured.
 {% endswagger-description %}
 
+{% swagger-parameter in="query" name="redirect_url" %}
+URL encoded string. This will fallback to client's logout url, it's whitelisted. Please contact HTC Account team for allowed redirect domain.
+{% endswagger-parameter %}
+
 {% swagger-response status="302" description="Clean out HTC Account SSO session, then redirect back to client's logout url.
 
 Sample url:" %}
