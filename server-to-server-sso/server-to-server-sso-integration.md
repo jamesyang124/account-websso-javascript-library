@@ -256,11 +256,17 @@ This is for actively clean up HTC Account main site's session, the redirection b
 URL encoded string. This will fallback to client's logout url, it's whitelisted. Please contact HTC Account team for allowed redirect domain.
 {% endswagger-parameter %}
 
-{% swagger-response status="302" description="Clean out HTC Account SSO session, then redirect back to client's logout url.
+{% swagger-response status="302" description="Clean out HTC Account SSO session, then redirect back to client's logout url." %}
+Sample url: 
 
-Sample url:" %}
-```
-https://vivepor.com/customer/account/logout
-```
+\
+
+
+
+
+\
+
+
+https://account-stage.htcvive.com/logout?redirect_url=https%3A%2F%2Fdev-mastodon.htcwowdev.com%2Fauth%2Fsign_out
 {% endswagger-response %}
 {% endswagger %}
