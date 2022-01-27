@@ -1,6 +1,33 @@
 # Ethereum Authentication Flow
 
-support two APIs for ethereum auth => for oauth password grant type client only
+{% hint style="warning" %}
+This flow is **only** support for HTC OAuth client with **password grant type**, if need this integration, please contact us for expanding OAuth client access control or other solution.
+{% endhint %}
+
+HTC Account support Ethereum authentication with identity's **capitalization encoded checksum** Ethereum address. After identity connect to an Ethereum wallet app, HTC account integrated app client could get HTC account access token by this flow. Scenario is as following:\
+
+
+![sequence for HTC Account ethereum auth flow](../.gitbook/assets/Untitled-2022-01-27-1409.png)
+
+{% hint style="warning" %}
+Ethereum address performing the signing conformant to **capitalization encoded checksum** specified in EIP-55 where applicable.
+{% endhint %}
+
+### HTC Account Server Host Environment
+
+| ENV   | Resource Domain                    |
+| ----- | ---------------------------------- |
+| STAGE | ​https://account-stage.htcvive.com |
+| PRDO  | ​https://account.htcvive.com       |
+
+### HTC Account Profile Server Host Environment
+
+| ENV   | Resource Domain                           |
+| ----- | ----------------------------------------- |
+| STAGE | https://account-profile-stage.htcvive.com |
+| PROD  | https://account-profile.htcvive.com       |
+
+### API SPEC
 
 {% swagger method="post" path="/RME/SS/api/ethereum-auth/v1/login" baseUrl="https://account.htcvive.com" summary="check signed message and authenticate HTC account user" %}
 {% swagger-description %}
@@ -8,7 +35,9 @@ support two APIs for ethereum auth => for oauth password grant type client only
 {% endswagger-description %}
 
 {% swagger-parameter in="body" required="true" name="paddr" %}
-ethereum wallet address
+**capitalization encoded checksum**
+
+ ethereum address
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="extra" required="true" %}
@@ -48,7 +77,7 @@ application/json
 ```
 {% endswagger-response %}
 
-{% swagger-response status="400: Bad Request" description="Verify Signature failed" %}
+{% swagger-response status="400: Bad Request" description="Verify Signature failed, client error handling should be general " %}
 ```javascript
 {
     // Response
@@ -56,7 +85,7 @@ application/json
 ```
 {% endswagger-response %}
 
-{% swagger-response status="400: Bad Request" description="Nonce Already Expired" %}
+{% swagger-response status="400: Bad Request" description="Nonce Already Expired, client error handling should be general" %}
 ```javascript
 {
     // Response
@@ -71,7 +100,9 @@ application/json
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="paddr" required="true" %}
-ethereum wallet address
+**capitalization encoded checksum**
+
+ ethereum address
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="content-type" %}
@@ -100,3 +131,9 @@ application/json
 ```
 {% endswagger-response %}
 {% endswagger %}
+
+### REFERENCE
+
+{% embed url="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-4361.md" %}
+
+{% embed url="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-55.md" %}
