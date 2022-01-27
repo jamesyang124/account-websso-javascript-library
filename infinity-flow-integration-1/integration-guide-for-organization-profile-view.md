@@ -6,27 +6,27 @@ Please follow below API call spec, we also provide a sample code to follow. **Us
 
 ### HTCAccountHost env
 
-| ENV | Resource Domain |
-| :--- | :--- |
-| STAGE | ​[https://account-stage.htcvive.com](https://account-stage.htcvive.com/)​ |
-| PRDO | ​[https://account.htcvive.com](https://account-stage.htcvive.com/)​ |
-| TEST | ​[https://cstest.dev.usw2.cs-htc.co](https://cstest.dev.usw2.cs-htc.co/infinity/lib.js)​ |
+| ENV   | Resource Domain                                                                          |
+| ----- | ---------------------------------------------------------------------------------------- |
+| STAGE | ​[https://account-stage.htcvive.com](https://account-stage.htcvive.com)​                 |
+| PRDO  | ​[https://account.htcvive.com](https://account-stage.htcvive.com)​                       |
+| TEST  | ​[https://cstest.dev.usw2.cs-htc.co](https://cstest.dev.usw2.cs-htc.co/infinity/lib.js)​ |
 
 ### HTCProfileDefaultHost env
 
-| ENV | Resource Domain |
-| :--- | :--- |
+| ENV   | Resource Domain                                                                        |
+| ----- | -------------------------------------------------------------------------------------- |
 | STAGE | [https://account-profile-stage.htcvive.com](https://account-profile-stage.htcvive.com) |
-| PROD | [https://account-profile.htcvive.com](https://account-profile.htcvive.com) |
-| TEST | [https://profiletest.htcwowdev.com](https://profiletest.htcwowdev.com) |
+| PROD  | [https://account-profile.htcvive.com](https://account-profile.htcvive.com)             |
+| TEST  | [https://profiletest.htcwowdev.com](https://profiletest.htcwowdev.com)                 |
 
 ### HTCOrgProfileDefaultHost env
 
-| ENV | Resource Domain |
-| :--- | :--- |
-| STAGE | [https://account-stage-usw2.viveport.com](https://account-stage-usw2.viveport.com) |
-| PROD | [https://account.viveport.com](https://account.viveport.com) |
-| TEST | [https://business-account-qa.htcwowdev.com](https://business-account-qa.htcwowdev.com) |
+| ENV   | Resource Domain                                                                        |
+| ----- | -------------------------------------------------------------------------------------- |
+| STAGE | [https://account-stage-usw2.viveport.com](https://account-stage-usw2.viveport.com)     |
+| PROD  | [https://account.viveport.com](https://account.viveport.com)                           |
+| TEST  | [https://business-account-qa.htcwowdev.com](https://business-account-qa.htcwowdev.com) |
 
 {% hint style="danger" %}
 If you **need customization for pre/post sign-up urls**, please contact account team to get authorized permission, **otherwise the requests will be prohibited as malicious user behavior**.
@@ -38,8 +38,6 @@ If you **need customization for pre/post sign-up urls**, please contact account 
 To enable organization profile view, must bring `+org-view`, `-promotion`, and `logo-htc` in `viewToggles` list field.
 
 Then call `window.HTCAccount.redirectByAuthConfig`with config parameter, please check below link for auth config set up:
-
-{% page-ref page="auth-configs-for-sso-v2.md" %}
 {% endhint %}
 
 ### Example Auth Configs & Bootstrapping
@@ -132,13 +130,13 @@ window.HTCAccount.createOrgProfileV2(is_advanced_org_flow, is_enable_permission_
 
 Please ensure this flow need user already signed-in with auth key to complete flow, so that client should **ensure the `authkey` which is exist and valid**. If the `authkey` is invalid, the on-demand page will carry failed status with error code to **origin\_url** immediately. The callback status and error code is showed as below:
 
-| Status | Code | Description |
-| :--- | :--- | :--- |
-| succeed | null | Create org profile successfully. |
+| Status  | Code | Description                                                               |
+| ------- | ---- | ------------------------------------------------------------------------- |
+| succeed | null | Create org profile successfully.                                          |
 | succeed | 4003 | Org profile is exist so that we don’t need to redirect to on-demand page. |
-| failed | 9999 | Service error. |
-| failed | 4002 | AuthKey is expired or invalid. |
-| failed | 4004 | Failed to create org profile. |
+| failed  | 9999 | Service error.                                                            |
+| failed  | 4002 | AuthKey is expired or invalid.                                            |
+| failed  | 4004 | Failed to create org profile.                                             |
 
 It's response format would be as follow:
 
@@ -199,4 +197,3 @@ https://${origin_url}?status=failed&code=9999
 </script>
 <script src="https://account-stage.htcvive.com/htcaccount.js"></script>
 ```
-

@@ -1,38 +1,22 @@
 # Integration Example
 
-{% api-method method="get" host="https://account.htcvivce.com" path="/RCN/SS/api/real-name-service/v1/verify" %}
-{% api-method-summary %}
-Query real name verify status
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://account.htcvivce.com" path="/RCN/SS/api/real-name-service/v1/verify" method="get" summary="Query real name verify status" %}
+{% swagger-description %}
 To use this API, be sure to have valid CORS permission, please connect with OPS to solve this issue if it occurred.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="AuthKey" type="string" required=true %}
+{% swagger-parameter in="path" name="AuthKey" type="string" %}
 Header
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 {
     isVerified: Boolean
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 ### Code Example
 
@@ -98,4 +82,3 @@ HTCAccount.getLoginStatus(function(resp) {
     }
 }, true);
 ```
-

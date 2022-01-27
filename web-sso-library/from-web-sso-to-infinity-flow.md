@@ -7,18 +7,14 @@ description: >-
 
 # Migrate From V1 to V2
 
-## API Backward Compatibility 
+## API Backward Compatibility&#x20;
 
-**Web SSO v2** support the minimum adjustment for web SSO v1 clients to seamlessly configure **with Web SSO v2's default configs**. Current web SSO v1 clients should have no code base change for the upgrade. 
+**Web SSO v2** support the minimum adjustment for web SSO v1 clients to seamlessly configure **with Web SSO v2's default configs**. Current web SSO v1 clients should have no code base change for the upgrade.&#x20;
 
 {% hint style="info" %}
 If you need customization for v2's configs, please check below link:
 
-{% page-ref page="../infinity-flow-integration-1/auth-configs-for-sso-v2.md" %}
-
 Or if you want directly integrate with Web SSO v2, please check below link:
-
-{% page-ref page="quick-start-for-sso-v2-integration.md" %}
 {% endhint %}
 
 ### Web SSO V2 Default Configs for Web SSO V1 API
@@ -57,7 +53,7 @@ statePayload = JSON.stringify(Object.assign(statePayload,{redirectionUrl:next_ur
 
 ### 2. Deprecation of Window Popup mode in Web SSO V2
 
-**We don't support `popup` mode anymore in WEB SSO v2**. Current field `type` will no longer take effect for switching popup or redirection mode, **but required to be set as `redirect`**. **WEB SSO v2 will only take url redirection when the flow is finished**. 
+**We don't support `popup` mode anymore in WEB SSO v2**. Current field `type` will no longer take effect for switching popup or redirection mode, **but required to be set as `redirect`**. **WEB SSO v2 will only take url redirection when the flow is finished**.&#x20;
 
 Please change the **type** field from `popup` to `redirect`as below sample code:
 
@@ -76,4 +72,3 @@ HTCAccount.login({ /* state callback object */ }, {
 ### 3. Deprecation of Social Authorities UI Customization in Web SSO V2
 
 Currently web SSO V2 not support social authorities customization, and will no longer take effect from the authorities field in `HTCAccount.login`function's second parameter.
-

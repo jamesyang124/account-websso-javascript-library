@@ -110,13 +110,13 @@ HTCAccount.login(stateCallbackObject, options): undefined
 
 > Avoid wrapping `HTCAccount.login()` in Promises/A functions or `setTimeout` function, it would cause the login popup page get blocked by some browsers.
 
-The **stateCallbackObject** should carry client data then back to client's redirection URL\(relative url path\). But currently this feature has not implemented yet. So **please pass an no-ops object instead**.
+The **stateCallbackObject** should carry client data then back to client's redirection URL(relative url path). But currently this feature has not implemented yet. So **please pass an no-ops object instead**.
 
 The **options** is an object and have properties as follow:
 
 * `type: String` - _Either_ `redirect` _or_ `popup`_._
 * `next_url: String` - _When type is_ `redirect`_, then the_ `next_url` _should be registered its subpath, either start with **`"/"`** or client's same domain relative path._
-* `authorities: String` - _Please refer to_ `HTCAccount.init` _**config** object for its usage._
+* `authorities: String` - _Please refer to_ `HTCAccount.init` _ **config** object for its usage._
 
 **Example**
 
@@ -152,9 +152,9 @@ Similar as login API, the `callback` accepts a parameter which return login stat
 { status: "unknown", authResponse: false }
 ```
 
-### Logout for OIDC Web SSO \(V2 Web SSO\)
+### Logout for OIDC Web SSO (V2 Web SSO)
 
-Accept optional JSON object, if JSON property `logout_redirect_url` specified, will run top-level redirection to HTC account main site logout then redirect back to `logout_redirect_url`  to enable this feature, please also inform HTC Account team to configure security list to whitelist its logout URL. 
+Accept optional JSON object, if JSON property `logout_redirect_url` specified, will run top-level redirection to HTC account main site logout then redirect back to `logout_redirect_url`  to enable this feature, please also inform HTC Account team to configure security list to whitelist its logout URL.&#x20;
 
 #### API
 
@@ -269,7 +269,9 @@ privacySettings
 */
 ```
 
-{% file src="../.gitbook/assets/identity-getprofilesv3-020919-0407.pdf" caption="/Profiles/v3/Me document" %}
+{% file src="../.gitbook/assets/identity-getprofilesv3-020919-0407.pdf" %}
+/Profiles/v3/Me document
+{% endfile %}
 
 **Caveat!**
 
@@ -341,7 +343,7 @@ Both callback accept two parameters, the `status` is AJAX related value, the `re
 * `languageCode: String` - _User preferred language. The product or verification email will set as this language translated text._
 * `country: String`- Country code for organization
 * `taxId: String` - tax id for organization
-* `city: String` 
+* `city: String`&#x20;
 * `newsLetterOptIn: Boolean`-If allow HTC to send email to user
 * `contactEmail: String`-contact emil for organization
 
@@ -383,10 +385,9 @@ HTCAccount.Event.unsubscribe(channel, handler)
 
 Supported event channels are:
 
-* `auth.authResponseChange`:
+*   `auth.authResponseChange`:
 
-  Fire event when the authResponse changed, such as `login`, `logout`, `getLoginStatus(callback, refresh = true)`.
-
+    Fire event when the authResponse changed, such as `login`, `logout`, `getLoginStatus(callback, refresh = true)`.
 * `auth.login` - _Fire event when user login successfully, or login status check after **HTCAccount.init** initialization call._
 * `auth.logout` - _Fire event after user logout and account session data is cleaned._
 * `auth.prompt` - _Fire event when popup window is opened, **only** in popup mode._
@@ -445,38 +446,36 @@ HTCAccount.createOrgProfile(failedCallback(result, status));
 
 ### Verify Auth Key
 
-A wrapper of `/api/oauth/v2/verify-token` to verify user auth key for web SSO client. 
+A wrapper of `/api/oauth/v2/verify-token` to verify user auth key for web SSO client.&#x20;
 
 #### API
 
-```text
+```
 HTCAccount.verifyTokenV2(success_callback, failed_callback, checkMainSiteAuthKey);
 ```
 
 #### Parameters
 
-| Parameter Name | Required | Type | Description |
-| :--- | :--- | :--- | :--- |
-| success\_callback | Y | Function | Callback for succeed response, its first parameter accept succeed JSON response, for JSON fields, please check OAuth verify-token API |
-| failed\_callback | Y | Function | Callback for succeed response, its first parameter accept failed JSON response |
-| checkMainSiteAuthKey | N | Boolean | check main site domain's auth key cookie whether is expired. default set to **false.** |
+| Parameter Name       | Required | Type     | Description                                                                                                                           |
+| -------------------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| success\_callback    | Y        | Function | Callback for succeed response, its first parameter accept succeed JSON response, for JSON fields, please check OAuth verify-token API |
+| failed\_callback     | Y        | Function | Callback for succeed response, its first parameter accept failed JSON response                                                        |
+| checkMainSiteAuthKey | N        | Boolean  | check main site domain's auth key cookie whether is expired. default set to **false.**                                                |
 
 #### Error Responses
 
 {% hint style="info" %}
 The error response should refer to OAuth verify token API, and with extra error code **4031010** for main site auth key check:
 
-`{   
-  "code": 4031010,   
-  "msg": "main site token expired, please relogged in"   
-}` 
+`{` \
+&#x20; `"code": 4031010,` \
+&#x20; `"msg": "main site token expired, please relogged in"` \
+`}`&#x20;
 
 If error code is **negative number as** unexpected errors, please report to account team for troubleshooting.
 
 Or other error response code from OAuth API document:
 
-[https://id-dev-swagger.htcwowdev.com/docs\_oauth](https://id-dev-swagger.htcwowdev.com/docs_oauth)
+[https://id-dev-swagger.htcwowdev.com/docs\_oauth](https://id-dev-swagger.htcwowdev.com/docs\_oauth)
 {% endhint %}
-
-
 

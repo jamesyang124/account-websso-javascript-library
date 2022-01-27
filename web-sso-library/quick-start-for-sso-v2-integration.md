@@ -25,24 +25,24 @@ For non-production development, the client should set up **which HTC account env
 
 ### HTC Account Server Host Environment
 
-| ENV | Resource Domain |
-| :--- | :--- |
+| ENV   | Resource Domain                    |
+| ----- | ---------------------------------- |
 | STAGE | ​https://account-stage.htcvive.com |
-| PRDO | ​https://account.htcvive.com |
+| PRDO  | ​https://account.htcvive.com       |
 
 ### HTC Account Profile Server Host Environment
 
-| ENV | Resource Domain |
-| :--- | :--- |
+| ENV   | Resource Domain                           |
+| ----- | ----------------------------------------- |
 | STAGE | https://account-profile-stage.htcvive.com |
-| PROD | https://account-profile.htcvive.com |
+| PROD  | https://account-profile.htcvive.com       |
 
 ### HTCOrgProfileDefaultHost env
 
-| ENV | Resource Domain |
-| :--- | :--- |
+| ENV   | Resource Domain                         |
+| ----- | --------------------------------------- |
 | STAGE | https://account-stage-usw2.viveport.com |
-| PROD | https://account.viveport.com |
+| PROD  | https://account.viveport.com            |
 
 ## Step 1. Load SSO SDK
 
@@ -71,9 +71,9 @@ Client could add **hl** query parameter for specifying web SSO's UI/UX locale to
 The configuration for HTCAccount.init should have basic format as below, for more flag and detail please check API Specification **Initialization** section
 
 {% hint style="danger" %}
-The **`scope`** field should reflect to client's OAuth setting applied scope list, other wise the request **will be blocked by validation check or user profile access**.
+The ** `scope` ** field should reflect to client's OAuth setting applied scope list, other wise the request **will be blocked by validation check or user profile access**.
 
-**Please check with account team if lost its registered OAuth setting.** 
+**Please check with account team if lost its registered OAuth setting.**&#x20;
 {% endhint %}
 
 ```javascript
@@ -84,15 +84,17 @@ window.HTCAccount.init({
 });
 ```
 
-{% page-ref page="api-specification.md" %}
+{% content-ref url="api-specification.md" %}
+[api-specification.md](api-specification.md)
+{% endcontent-ref %}
 
-| Config Param | Description | Type | Example |
-| :--- | :--- | :--- | :--- |
-| appid | OAuth client id | String | 0058ef13-1fed-4a0a-b6fb-1181cc525507 |
-| scope | OAuth scopes string, delimited by space character | String | "email profile.write birthday" |
+| Config Param | Description                                       | Type   | Example                              |
+| ------------ | ------------------------------------------------- | ------ | ------------------------------------ |
+| appid        | OAuth client id                                   | String | 0058ef13-1fed-4a0a-b6fb-1181cc525507 |
+| scope        | OAuth scopes string, delimited by space character | String | "email profile.write birthday"       |
 
 {% hint style="warning" %}
-In API Specification section mention **authorities** flag to switch social buttons, in current phase SSO V2 UI have not implement this feature yet, so you can safely ignore this config. 
+In API Specification section mention **authorities** flag to switch social buttons, in current phase SSO V2 UI have not implement this feature yet, so you can safely ignore this config.&#x20;
 {% endhint %}
 
 ## Step 3. Fetch Login Status
@@ -130,14 +132,16 @@ window.HTCAccount.Event.subscribe('auth.login', function(response){
 
 If `status` is connected, and can get `authResponse` info, then user should already logged in current website. o.w. we need user to log-in instead.
 
-{% page-ref page="api-specification.md" %}
+{% content-ref url="api-specification.md" %}
+[api-specification.md](api-specification.md)
+{% endcontent-ref %}
 
 ## Step 4. Trigger Login/Signup Flow
 
 To start SSO V2 authentication flow, please call `login` with **authConfig, below is a minimum configuration set**:
 
 {% hint style="info" %}
-auth config have same and consistent format for SSO SDK or infinity lib 
+auth config have same and consistent format for SSO SDK or infinity lib&#x20;
 {% endhint %}
 
 ```javascript
@@ -164,7 +168,9 @@ window.HTCAccount.login(() => {}, {
 
 For more info, please check config definition in below link
 
-{% page-ref page="../infinity-flow-integration-1/auth-configs-for-sso-v2.md" %}
+{% content-ref url="../infinity-flow-integration-1/auth-configs-for-sso-v2.md" %}
+[auth-configs-for-sso-v2.md](../infinity-flow-integration-1/auth-configs-for-sso-v2.md)
+{% endcontent-ref %}
 
 ## Example Code
 
@@ -175,15 +181,15 @@ If you **need customization for pre/post sign-up urls**, please contact account 
 {% endhint %}
 
 {% hint style="danger" %}
-The **`scope`** field should reflect to client's OAuth setting applied scope list, other wise the request **will be blocked by validation check or user profile access**.
+The ** `scope` ** field should reflect to client's OAuth setting applied scope list, other wise the request **will be blocked by validation check or user profile access**.
 
-**Please check with account team if lost its registered OAuth setting.** 
+**Please check with account team if lost its registered OAuth setting.**&#x20;
 {% endhint %}
 
-The **`scope`** field should reflect to client's OAuth setting applied scope list, other wise the request will be blocked by validation check.
+The ** `scope` ** field should reflect to client's OAuth setting applied scope list, other wise the request will be blocked by validation check.
 
 {% hint style="info" %}
-**Please check with account team if lost its registered OAuth setting.** 
+**Please check with account team if lost its registered OAuth setting.**&#x20;
 {% endhint %}
 
 ```markup
@@ -240,4 +246,3 @@ The **`scope`** field should reflect to client's OAuth setting applied scope lis
 </script>
 <script src="https://account-stage.htcvive.com/htcaccount.js?hl=zh_TW"></script>
 ```
-

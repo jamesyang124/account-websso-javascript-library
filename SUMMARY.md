@@ -2,14 +2,14 @@
 
 * [Preface](README.md)
 
-## WEB CLIENT SSO <a id="web-sso-library"></a>
+## WEB CLIENT SSO <a href="#web-sso-library" id="web-sso-library"></a>
 
 * [Integration Guide](web-sso-library/quick-start-for-sso-v2-integration.md)
 * [Basic Usuage](web-sso-library/basic-usuage.md)
 * [API Specification](web-sso-library/api-specification.md)
 * [Internal Mechanism](web-sso-library/internal-mechanism.md)
 * [Migrate From V1 to V2](web-sso-library/from-web-sso-to-infinity-flow.md)
-* [Q&A](web-sso-library/q-and-a.md)
+* [Q\&A](web-sso-library/q-and-a.md)
 * [Change Log](web-sso-library/change-log.md)
 
 ## SERVER TO SERVER SSO
@@ -27,7 +27,11 @@
 
 * [Integration Guide](oama-flow-integration/one-account-multiple-authentication-front-end-guide.md)
 
-## Infinity Flow Integration <a id="infinity-flow-integration-1"></a>
+## ETHEREUM AUTH WITH HTC ACCOUNT
+
+* [ETHEREUM AUTH](ethereum-auth-with-htc-account/ethereum-auth.md)
+
+## Infinity Flow Integration <a href="#infinity-flow-integration-1" id="infinity-flow-integration-1"></a>
 
 * [API Specification](infinity-flow-integration-1/infinity-flow-integration.md)
 * [Integration Guide for VIVEPORT Desktop](infinity-flow-integration-1/guide-for-viveport-desktop.md)
@@ -41,4 +45,3 @@
 * [Viewport Util for VIVEPORT Desktop](infinity-flow-integration-1/viewport-util-for-viveport-desktop.md)
 * [Auth Configs for SSO State Parameter](infinity-flow-integration-1/auth-configs-for-sso-v2.md)
 * [Configuration for Cookie Consent Policy](infinity-flow-integration-1/cookie-consent-policy.md)
-

@@ -6,27 +6,27 @@ You can inject the script during enroll flow for different environment to get `_
 
 ### HTCAccountHost env
 
-| ENV | Resource Domain |
-| :--- | :--- |
-| STAGE | ​[https://account-stage.htcvive.com](https://account-stage.htcvive.com/)​ |
-| PRDO | ​[https://account.htcvive.com](https://account-stage.htcvive.com/)​ |
-| TEST | ​[https://cstest.dev.usw2.cs-htc.co](https://cstest.dev.usw2.cs-htc.co/infinity/lib.js)​ |
+| ENV   | Resource Domain                                                                          |
+| ----- | ---------------------------------------------------------------------------------------- |
+| STAGE | ​[https://account-stage.htcvive.com](https://account-stage.htcvive.com)​                 |
+| PRDO  | ​[https://account.htcvive.com](https://account-stage.htcvive.com)​                       |
+| TEST  | ​[https://cstest.dev.usw2.cs-htc.co](https://cstest.dev.usw2.cs-htc.co/infinity/lib.js)​ |
 
 ### HTCProfileDefaultHost env
 
-| ENV | Resource Domain |
-| :--- | :--- |
+| ENV   | Resource Domain                                                                        |
+| ----- | -------------------------------------------------------------------------------------- |
 | STAGE | [https://account-profile-stage.htcvive.com](https://account-profile-stage.htcvive.com) |
-| PROD | [https://account-profile.htcvive.com](https://account-profile.htcvive.com) |
-| TEST | [https://profiletest.htcwowdev.com](https://profiletest.htcwowdev.com) |
+| PROD  | [https://account-profile.htcvive.com](https://account-profile.htcvive.com)             |
+| TEST  | [https://profiletest.htcwowdev.com](https://profiletest.htcwowdev.com)                 |
 
 ### HTCOrgProfileDefaultHost env
 
-| ENV | Resource Domain |
-| :--- | :--- |
-| STAGE | [https://account-stage-usw2.viveport.com](https://account-stage-usw2.viveport.com) |
-| PROD | [https://account.viveport.com](https://account.viveport.com) |
-| TEST | [https://business-account-qa.htcwowdev.com](https://business-account-qa.htcwowdev.com) |
+| ENV   | Resource Domain                                                                        |
+| ----- | -------------------------------------------------------------------------------------- |
+| STAGE | [https://account-stage-usw2.viveport.com](https://account-stage-usw2.viveport.com)     |
+| PROD  | [https://account.viveport.com](https://account.viveport.com)                           |
+| TEST  | [https://business-account-qa.htcwowdev.com](https://business-account-qa.htcwowdev.com) |
 
 {% hint style="danger" %}
 If you **need customization for pre/post sign-up urls**, please contact account team to get authorized permission, **otherwise the requests will be prohibited as malicious user behavior**.
@@ -52,14 +52,12 @@ Please be aware this script will skip 3rd party cookie detection block page, onl
 <script src="https://account.htcvive.com/infinity/lib.js"></script>
 ```
 
-This will autoload your current redirection url's query parameter \(`window.location.search`\)and hash \(`window.location.hash`\), so the proper auth information will be injected.
+This will autoload your current redirection url's query parameter (`window.location.search`)and hash (`window.location.hash`), so the proper auth information will be injected.
 
-## Start Infinity Auth 
+## Start Infinity Auth&#x20;
 
 {% hint style="info" %}
 To run the infinity flow, please call `window.InfinityAuth.redirectToAuthUrl()` with config parameter, please check below link for auth config set up:
-
-{% page-ref page="auth-configs-for-sso-v2.md" %}
 {% endhint %}
 
 ### Example For VIVEPORT Web Normal Sign In
@@ -114,7 +112,7 @@ window.InfinityAuth.redirectByAuthConfig();
 ```
 
 {% hint style="warning" %}
- if you redirect to another page which **erased the** `auth_config` **query parameters**, please persist it before redirect, then call `window.InfinityAuth.redirectToAuthUrl(config)`with persisted`config`
+&#x20;if you redirect to another page which **erased the** `auth_config` **query parameters**, please persist it before redirect, then call `window.InfinityAuth.redirectToAuthUrl(config)`with persisted`config`
 {% endhint %}
 
 ## Finish Infinity Auth By Auth Config
@@ -154,14 +152,14 @@ window.InfinityAuth.authInfo;
 }
 ```
 
-| Parameter Name | Description |
-| :--- | :--- |
-| au | access token for this client id |
-| cid | OAuth client id |
-| se | session expires at, as timestamp |
-| uid | user account id |
-| life | token expire time interval |
-| sc | access token allowed scope |
+| Parameter Name | Description                      |
+| -------------- | -------------------------------- |
+| au             | access token for this client id  |
+| cid            | OAuth client id                  |
+| se             | session expires at, as timestamp |
+| uid            | user account id                  |
+| life           | token expire time interval       |
+| sc             | access token allowed scope       |
 
 ## Get Auth Config
 
@@ -199,5 +197,4 @@ window.InfinityAuth.cleanAuthCookie();
 // this will remove _htcsso cookie
 ```
 
-## 
-
+##
