@@ -27,7 +27,7 @@ Ethereum address performing the signing conformant to **capitalization encoded c
 | STAGE | https://account-profile-stage.htcvive.com |
 | PROD  | https://account-profile.htcvive.com       |
 
-### API SPEC
+### API Specification
 
 {% swagger method="post" path="/RME/SS/api/ethereum-auth/v1/login" baseUrl="https://account.htcvive.com" summary="check signed message and authenticate HTC account user" %}
 {% swagger-description %}
@@ -136,7 +136,7 @@ application/json
 {% endswagger-response %}
 {% endswagger %}
 
-### REFERENCE
+### Reference
 
 {% embed url="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-4361.md" %}
 
