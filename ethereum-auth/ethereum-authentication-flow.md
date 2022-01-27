@@ -4,7 +4,7 @@
 This flow is **only** support for HTC OAuth client with **password grant type**, if need this integration, please contact us for expanding OAuth client access control or other solution.
 {% endhint %}
 
-HTC Account support Ethereum authentication with identity's **capitalization encoded checksum** Ethereum address. After identity connect to an Ethereum wallet app, HTC account integrated app client could get HTC account access token by this flow. Scenario is as following:\
+HTC Account support Ethereum authentication with identity's **capitalization encoded checksum** Ethereum address. After identity **already connected** to an Ethereum wallet app, HTC account integrated app client could get HTC account access token by this flow. Scenario is as following:\
 
 
 ![sequence for HTC Account ethereum auth flow](../.gitbook/assets/Untitled-2022-01-27-1409.png)
@@ -50,6 +50,10 @@ HTC OAuth client's client id
 
 {% swagger-parameter in="body" name="extra.scopes" required="true" type="String list" %}
 HTC OAuth client's required scope list
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="sig" %}
+ethereum personal_sign JSON RPC call respond signed signature
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="content-type" %}
