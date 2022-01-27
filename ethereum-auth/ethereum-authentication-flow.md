@@ -1,6 +1,6 @@
 # Ethereum Authentication Flow
 
-support two APIs for ethereum auth =>
+support two APIs for ethereum auth => for oauth password grant type client only
 
 {% swagger method="post" path="/RME/SS/api/ethereum-auth/v1/login" baseUrl="https://account.htcvive.com" summary="check signed message and authenticate HTC account user" %}
 {% swagger-description %}
