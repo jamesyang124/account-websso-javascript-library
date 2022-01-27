@@ -1,4 +1,4 @@
-# ETHEREUM AUTH
+# Ethereum Authentication Flow
 
 support two APIs for ethereum auth =>
 

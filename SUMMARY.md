@@ -12,6 +12,10 @@
 * [Q\&A](web-sso-library/q-and-a.md)
 * [Change Log](web-sso-library/change-log.md)
 
+## ETHEREUM AUTH
+
+* [Ethereum Authentication Flow](ethereum-auth/ethereum-authentication-flow.md)
+
 ## SERVER TO SERVER SSO
 
 * [OAuth Authorization Code flow](server-to-server-sso/server-to-server-sso-integration.md)
@@ -26,10 +30,6 @@
 ## OAMA FLOW INTEGRATION
 
 * [Integration Guide](oama-flow-integration/one-account-multiple-authentication-front-end-guide.md)
-
-## ETHEREUM AUTH WITH HTC ACCOUNT
-
-* [ETHEREUM AUTH](ethereum-auth-with-htc-account/ethereum-auth.md)
 
 ## Infinity Flow Integration <a href="#infinity-flow-integration-1" id="infinity-flow-integration-1"></a>
 
