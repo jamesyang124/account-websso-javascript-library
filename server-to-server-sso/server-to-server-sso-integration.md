@@ -217,6 +217,10 @@ HTC Account access token
 https://account-profile.htcvive.com/SS/Profiles/v3/Me?fields=accountProvider,accountEmail,accountPhoneNumber,contactEmailAddress,location,createTime,firstName,id,isVerified,languageCode,lastName,defaultOptIn,integrationPhoneNumbers,socialProfilePicture,customProfilePicture,profilePicture,secondEmails,allowCollectUserData,allowVRContentRecommendation,sendEmailAboutViveProducts,sendEmailAboutOtherProducts
 ```
 
+{% hint style="info" %}
+For wallet address HTC account, the profile response will always have **ethereumPublicAddr** if it is, o.w. that field will not present.
+{% endhint %}
+
 #### Profile fields list
 
 ```javascript
@@ -225,7 +229,6 @@ accountProvider
 contactEmailAddress
 createTime
 accountEmail
-ethereumPublicAddr
 accountPhoneNumber
 firstName
 id
@@ -244,7 +247,7 @@ defaultOptIn
 publicName
 location
 multiAuth
-integrationPhoneNumbers
+integrationPhoneNumbersethereumPublicAddr
 ```
 
 {% swagger baseUrl="https://account.htcvive.com" path="/logout" method="get" summary="HTC Logout from client web " %}
