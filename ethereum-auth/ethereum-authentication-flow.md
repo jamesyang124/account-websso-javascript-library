@@ -122,7 +122,7 @@ application/json
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="get" path="/RME/SS/api/ethereum-auth/v1/metadata" baseUrl="https://account.htcvive.com" summary="get ethereum personal_sign message template" %}
+{% swagger method="get" path="/RME/SS/api/ethereum-auth/v1/metadata" baseUrl="https://account.htcvive.com" summary="get ethereum personal_sign message template and nonce TTL in seconds" %}
 {% swagger-description %}
 
 {% endswagger-description %}
