@@ -130,7 +130,8 @@ application/json
 {% swagger-response status="200: OK" description="signin-text-template field for personal_sign message template" %}
 ```javascript
 {
-    "signin-text-template": "I am sign-in with this one-time 6-digit nonce:     %s"
+    "signin-text-template": "I am sign-in with this one-time 6-digit nonce:     %s",
+    "nonce-ttl-seconds": 60
 }
 ```
 {% endswagger-response %}
