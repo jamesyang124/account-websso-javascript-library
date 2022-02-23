@@ -247,7 +247,8 @@ defaultOptIn
 publicName
 location
 multiAuth
-integrationPhoneNumbersethereumPublicAddr
+integrationPhoneNumbers
+ethereumPublicAddr
 ```
 
 {% swagger baseUrl="https://account.htcvive.com" path="/logout" method="get" summary="HTC Logout from client web " %}
