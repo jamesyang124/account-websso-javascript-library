@@ -260,6 +260,10 @@ This is for actively clean up HTC Account main site's session, the redirection b
 URL encoded string. This will fallback to client's logout url, it's whitelisted. Please contact HTC Account team for allowed redirect domain.
 {% endswagger-parameter %}
 
+{% swagger-parameter in="query" name="client_id" %}
+indicate its OAuth client for force its logout redirection.
+{% endswagger-parameter %}
+
 {% swagger-response status="302" description="Clean out HTC Account SSO session, then redirect back to client's logout url." %}
 Sample url: \
 
