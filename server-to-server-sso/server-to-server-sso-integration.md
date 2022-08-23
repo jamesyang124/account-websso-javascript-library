@@ -61,6 +61,30 @@ constant value "code" indicate it is for OAuth authorization code.
 registered OAuth client id in UUID format.
 {% endswagger-parameter %}
 
+{% swagger-parameter in="query" name="authorities" type="string" %}
+URL encoded space limited login methods, support list:
+
+&#x20;
+
+**htc.com**
+
+**google.com**
+
+**qq.com**
+
+**steam.com**
+
+**docomo.com**&#x20;
+
+**walletconnect.com**
+
+**metamask.com**
+
+****
+
+**sample text: "google.com walletconnect.com"**
+{% endswagger-parameter %}
+
 {% swagger-response status="302" description="1. If user not signed-in and not in passive mode, will redirect to HTC SSO UI/UX web.
 2. If user not signed-in and in passive mode with passive url, will redirect to passive url.
 3. If user already signed-in, redirect to redirection url with authorization code.
