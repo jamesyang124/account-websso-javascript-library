@@ -82,7 +82,10 @@ URL encoded space limited login methods, support list:
 
 ****
 
-**sample text: "google.com walletconnect.com"**
+**sample text: "google.com walletconnect.com"**\
+****\
+****\
+**please refer this for more detail:** [#authorities-field](../infinity-flow-integration-1/auth-configs-for-sso-v2.md#authorities-field "mention")****
 {% endswagger-parameter %}
 
 {% swagger-response status="302" description="1. If user not signed-in and not in passive mode, will redirect to HTC SSO UI/UX web.
