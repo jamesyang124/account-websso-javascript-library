@@ -229,6 +229,7 @@ HTC Account access token
     "sendEmailAboutOtherProducts": true,
     "defaultOptIn": false,
     "location": "TW",
+    "ethereumPublicAddr": "eth waller address"
     "unresolved": [] 
 }
 ```
