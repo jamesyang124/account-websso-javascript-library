@@ -200,7 +200,7 @@ this used to indicate request profile field set and delimited by "," comma. Fiel
 HTC Account access token
 {% endswagger-parameter %}
 
-{% swagger-response status="200" description="" %}
+{% swagger-response status="200" description="please unfold to see sample response body:" %}
 ```
 {
     "createTime": 1574924921,
