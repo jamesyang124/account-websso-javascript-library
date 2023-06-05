@@ -19,6 +19,7 @@
 ## SERVER TO SERVER SSO
 
 * [OAuth Authorization Code flow](server-to-server-sso/server-to-server-sso-integration.md)
+* [Service Authorization](server-to-server-sso/service-authorization.md)
 
 ## REAL NAME VERIFICATION
 
