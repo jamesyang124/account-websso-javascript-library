@@ -14,7 +14,7 @@ For non-production development, the client should set up **which HTC account env
 //stage
 // put it before htcaccount.js script tag
 <script type="application/javascript">
-    window.HTCAccountHost = "account-stage.htcvive.com/";
+    window.HTCAccountHost = "account-stage.htcvive.com";
     window.HTCProfileDefaultHost = "account-profile-stage.htcvive.com";
     window.HTCOrgProfileDefaultHost = "account-stage-usw2.viveport.com";
 </script>
@@ -71,7 +71,7 @@ Client could add **hl** query parameter for specifying web SSO's UI/UX locale to
 The configuration for HTCAccount.init should have basic format as below, for more flag and detail please check API Specification **Initialization** section
 
 {% hint style="danger" %}
-The ** `scope` ** field should reflect to client's OAuth setting applied scope list, other wise the request **will be blocked by validation check or user profile access**.
+The **`scope`** field should reflect to client's OAuth setting applied scope list, other wise the request **will be blocked by validation check or user profile access**.
 
 **Please check with account team if lost its registered OAuth setting.**&#x20;
 {% endhint %}
@@ -181,12 +181,12 @@ If you **need customization for pre/post sign-up urls**, please contact account 
 {% endhint %}
 
 {% hint style="danger" %}
-The ** `scope` ** field should reflect to client's OAuth setting applied scope list, other wise the request **will be blocked by validation check or user profile access**.
+The **`scope`** field should reflect to client's OAuth setting applied scope list, other wise the request **will be blocked by validation check or user profile access**.
 
 **Please check with account team if lost its registered OAuth setting.**&#x20;
 {% endhint %}
 
-The ** `scope` ** field should reflect to client's OAuth setting applied scope list, other wise the request will be blocked by validation check.
+The **`scope`** field should reflect to client's OAuth setting applied scope list, other wise the request will be blocked by validation check.
 
 {% hint style="info" %}
 **Please check with account team if lost its registered OAuth setting.**&#x20;
