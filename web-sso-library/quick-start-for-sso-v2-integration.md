@@ -17,8 +17,18 @@ For non-production development, the client should set up **which HTC account env
     window.HTCAccountHost = "account-stage.htcvive.com";
     window.HTCProfileDefaultHost = "account-profile-stage.htcvive.com";
     window.HTCOrgProfileDefaultHost = "account-stage-usw2.viveport.com";
+    
+    // SDK function call should execute after DOMContentLoaded event occurred
+    // https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event
+    // ex:
+    // addEventListener("DOMContentLoaded", (event) => { ..... });
+    // onDOMContentLoaded = (event) => { ..... };
+    // $(document).ready(function() { .... });
+
 </script>
-<script src="https://account.htcvive.com/htcaccount.js"></script>
+// htcaccount.js resource domain should based on integration environment,
+// please refer >> HTC Account Server Host Environment << table
+<script src="https://account-stage.htcvive.com/htcaccount.js"></script>
 
 //above global variables are set to PROD env by default
 ```
@@ -54,10 +64,12 @@ A simple example should as follow:
 // this should based on your deployment environment
 <script src="https://account.htcvive.com/htcaccount.js"></script>
 <script>
-  var config = { appid: "$APPID", scope: "email" };
-  HTCAccount.init(config);
-  HTCAccount.Event.subscribe('auth.login', function(resp) {
-    // check auth status, then call login or getAuthResponseV2 function
+  addEventListener("DOMContentLoaded", (event) => {
+      var config = { appid: "$APPID", scope: "email" };
+      HTCAccount.init(config);
+      HTCAccount.Event.subscribe('auth.login', function(resp) {
+          // check auth status, then call login or getAuthResponseV2 function
+      });
   });
 </script>
 ```

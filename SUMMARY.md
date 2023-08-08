@@ -8,7 +8,7 @@
 * [Basic Usuage](web-sso-library/basic-usuage.md)
 * [API Specification](web-sso-library/api-specification.md)
 * [Internal Mechanism](web-sso-library/internal-mechanism.md)
-* [Migrate From V1 to V2](web-sso-library/from-web-sso-to-infinity-flow.md)
+* [Migrate From V1 to V2 \[DEPRECATED\]](web-sso-library/from-web-sso-to-infinity-flow.md)
 * [Q\&A](web-sso-library/q-and-a.md)
 * [Change Log](web-sso-library/change-log.md)
 
