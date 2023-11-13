@@ -14,6 +14,10 @@ If you **need customization for pre/post sign-up urls**, please contact account 
 
 _You can omit this property and the WEBSSO library will set the default value based on user's GEO IP detection._
 
+_To modify authorities field, you could either inject in `HTCAccount.init` function's config param, or supply it during `HTCAccount.login` function call's config param._
+
+_Please ensure its authorities value is consistent in both `state` param and function param, and always carry authorities value if specified in `state` param._
+
 For GEO ip is located in non-China region, **authorities** default value is:
 
 ```javascript
@@ -64,6 +68,7 @@ var authConfigs = {
 HTCAccount.login(() => {}, {
   type: 'redreict',
   next_url: location.pathname,
+  authorities: "htc.com google.com",
   state: JSON.stringify(authConfigs)
 });
 ```
