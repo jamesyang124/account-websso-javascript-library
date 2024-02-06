@@ -18,7 +18,7 @@ A simeple example should as follow:
     "viewToggles": [],
     "requireAuthCode": false
   };
-  HTCAccount.init(config);
+
   HTCAccount.Event.subscribe('auth.login', function(response){
     if (resp.status === 'connected') {
       // get user profile
@@ -30,6 +30,8 @@ A simeple example should as follow:
       });
     }
   });
+  
+  HTCAccount.init(config);
 </script>
 ```
 
@@ -41,6 +43,8 @@ We also provide asynchronous mode to help user able to load the `htcaccount.js` 
 <script>
  window.htcAccountAsyncInit = function() {
   var config = {appid: "$APPID"};
+  // subscribe event if need to capture init event
+
   HTCAccount.init(config);
   // ....
 }
@@ -67,7 +71,7 @@ Example:
 
 ## Customize Sign-in Options
 
-If you need to only **HTC account native sign-in by \(email/phone\) in SSO UI/UX**, manually set up in `HTCAccount.login` 's state JSON string:
+If you need to only **HTC account native sign-in by (email/phone) in SSO UI/UX**, manually set up in `HTCAccount.login` 's state JSON string:
 
 ```javascript
 var config = { appid: "$APPID", scope: "email birthday" };
@@ -90,4 +94,3 @@ HTCAccount.login(() => {}, {
    state: JSON.stringify(authConfigs)
 });
 ```
-
