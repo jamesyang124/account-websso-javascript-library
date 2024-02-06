@@ -66,10 +66,13 @@ A simple example should as follow:
 <script>
   addEventListener("DOMContentLoaded", (event) => {
       var config = { appid: "$APPID", scope: "email" };
-      HTCAccount.init(config);
       HTCAccount.Event.subscribe('auth.login', function(resp) {
           // check auth status, then call login or getAuthResponseV2 function
       });
+      
+      // besure to sub. events before init action,
+      // so first init event could be dispatched.
+      HTCAccount.init(config);
   });
 </script>
 ```
@@ -230,7 +233,7 @@ The **`scope`** field should reflect to client's OAuth setting applied scope lis
   };
   
   $(document).ready(function() {
-    window.HTCAccount.init(initConfig);
+   
     window.HTCAccount.Event.subscribe('auth.login', function(resp) {
        if (resp.status === 'connected') {
           // already have authe key, and should be able to fetch user auth info
@@ -254,6 +257,8 @@ The **`scope`** field should reflect to client's OAuth setting applied scope lis
          });
        }
     });
+    
+    window.HTCAccount.init(initConfig);
   });
 </script>
 <script src="https://account-stage.htcvive.com/htcaccount.js?hl=zh_TW"></script>
