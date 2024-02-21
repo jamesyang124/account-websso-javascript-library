@@ -3,6 +3,10 @@
 This section demonstrate how to integrate with web SSO flow from scratch. If you would like to integrate with server, please refer to [server to server SSO integration](../server-to-server-sso/server-to-server-sso-integration.md) **or jump to last section for web SSO flow sample code as quick start.**
 
 {% hint style="info" %}
+Since Feb. 2024, the WEB SSO SDK V1 will silently bump to V3, and compatible with Chrome's updated 3rd party cookie policy. The integration should be the same for V1 & V3 SDK.&#x20;
+{% endhint %}
+
+{% hint style="info" %}
 Before using the SSO SDK, you should already registered OAuth setting with account  team. If not, please contact HTC Account team for more info.
 {% endhint %}
 
