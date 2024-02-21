@@ -43,6 +43,7 @@ We also provide asynchronous mode to help user able to load the `htcaccount.js` 
 <script>
  window.htcAccountAsyncInit = function() {
   var config = {appid: "$APPID"};
+  
   // subscribe event if need to capture init event
 
   HTCAccount.init(config);

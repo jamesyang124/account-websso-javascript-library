@@ -8,8 +8,8 @@ Please follow below API call spec, we also provide a sample code to follow. **Us
 
 | ENV   | Resource Domain                                                                          |
 | ----- | ---------------------------------------------------------------------------------------- |
-| STAGE | ​[https://account-stage.htcvive.com](https://account-stage.htcvive.com)​                 |
-| PRDO  | ​[https://account.htcvive.com](https://account-stage.htcvive.com)​                       |
+| STAGE | ​[https://account-stage.htcvive.com](https://account-stage.htcvive.com/)​                |
+| PRDO  | ​[https://account.htcvive.com](https://account-stage.htcvive.com/)​                      |
 | TEST  | ​[https://cstest.dev.usw2.cs-htc.co](https://cstest.dev.usw2.cs-htc.co/infinity/lib.js)​ |
 
 ### HTCProfileDefaultHost env

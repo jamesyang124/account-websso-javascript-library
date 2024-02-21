@@ -35,9 +35,7 @@ Ethereum address performing the signing conformant to **capitalization encoded c
 {% endswagger-description %}
 
 {% swagger-parameter in="body" required="true" name="paddr" %}
-**capitalization encoded checksum**
-
- ethereum address
+**capitalization encoded checksum** ethereum address
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="extra" required="true" %}
@@ -53,7 +51,7 @@ HTC OAuth client's required scope list
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="sig" %}
-ethereum personal_sign JSON RPC call respond signed signature
+ethereum personal\_sign JSON RPC call respond signed signature
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="content-type" %}
@@ -104,9 +102,7 @@ application/json
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="paddr" required="true" %}
-**capitalization encoded checksum**
-
- ethereum address
+**capitalization encoded checksum** ethereum address
 {% endswagger-parameter %}
 
 {% swagger-parameter in="header" name="content-type" %}

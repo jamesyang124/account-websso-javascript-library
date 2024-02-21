@@ -40,156 +40,52 @@ OAuth Authorize API proxy for Infinity VR Oculus App, it set up and handled by a
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="bi_sid" type="string" %}
-**This field is also used for MIXPANEL data event.**
-
+**This field is also used for MIXPANEL data event.**\
+**MUST carry all other bi\_\* fields to trigger MIXPANEL log sending.**\
 \
-
-
-**MUST carry all other bi_* fields to trigger MIXPANEL log sending.**
-
-\
-
-
-
-
-\
-
-
-BI session id, if not carried, will generate for it, please reuse this BI session id if present. 
+BI session id, if not carried, will generate for it, please reuse this BI session id if present.&#x20;
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="bi_did" type="string" %}
-**MIXPANEL data distinct id event field.**
-
+**MIXPANEL data distinct id event field.**\
+**MUST carry all other bi\_\* fields to trigger MIXPANEL log sending.**\
 \
-
-
-**MUST carry all other bi_* fields to trigger MIXPANEL log sending.**
-
-\
-
-
-****
-
-\
-
-
-****
-
-This parameter is used to identify user session so that we could chain the behavior from upstream client to Account WEBSSO via 
-
-**MIXPANEL**
-
- distinctId.
+This parameter is used to identify user session so that we could chain the behavior from upstream client to Account WEBSSO via **MIXPANEL** distinctId.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="bi_rc" type="string" %}
-**MIXPANEL data root client event field.**
-
+**MIXPANEL data root client event field.**\
+**MUST carry all other bi\_\* fields to trigger MIXPANEL log sending.**\
 \
-
-
-**MUST carry all other bi_* fields to trigger MIXPANEL log sending.**
-
-\
-
-
-****
-
-\
-
-
-****
-
-The first upstream client which is triggered by user. No matter how many middle clients which triggered via several flows, the rootClient is always the initiate client.
-
-\
-
-
-
-
+The first upstream client which is triggered by user. No matter how many middle clients which triggered via several flows, the rootClient is always the initiate client.\
 **The value should be client name instead of UUID.**
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="bi_tc" type="string" %}
-**MIXPANEL data trigger client event field.**
-
- 
-
+**MIXPANEL data trigger client event field.** \
+**MUST carry all other bi\_\* fields to trigger MIXPANEL log sending.**\
 \
-
-
-
-
-**MUST carry all other bi_* fields to trigger MIXPANEL log sending.**
-
-\
-
-
-
-
-\
-
-
-The client which is trigger WEBSSO SDK. If user open VIVEPORT Desktop and do sign-up flow via VIVEPORT Store, the trigger client should be VIVEPORT Store. 
-
-\
-
-
-
-
+The client which is trigger WEBSSO SDK. If user open VIVEPORT Desktop and do sign-up flow via VIVEPORT Store, the trigger client should be VIVEPORT Store. \
 **The value should be client name instead of UUID.**
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="bi_fep" type="string" %}
-**MIXPANEL data flow entry point event field.**
-
- 
-
+**MIXPANEL data flow entry point event field.** \
+**MUST carry all other bi\_\* fields to trigger MIXPANEL log sending.**\
 \
-
-
-
-
-**MUST carry all other bi_* fields to trigger MIXPANEL log sending.**
-
-\
-
-
-
-
-\
-
-
 The value is given by root client, which described as UI element to initiate the flow. Account WEBSSO SDK just pass this value to record the data value of flow entry point.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="pre_sign_up_url" type="string" %}
-**URI encoded string**
-
- for visiting infinity web redeem or select plan pages
-
-**,**
-
- please append 
-
-** `hl` **
-
- query parameter 
-
-**to this url for specifying user locale**
+**URI encoded string** for visiting infinity web redeem or select plan pages**,** please append **`hl`** query parameter **to this url for specifying user locale**
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="init_view" type="string" %}
-currently as constant, set up to 
-
-**`sign-up`**
+currently as constant, set up to **`sign-up`**
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="hl" type="string" %}
-host language, can switch to other support locale, 
-
-**if mis-matched, should fall back to english locale**
+host language, can switch to other support locale, **if mis-matched, should fall back to english locale**
 {% endswagger-parameter %}
 
 {% swagger-response status="302" description="" %}

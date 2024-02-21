@@ -8,8 +8,8 @@ You can inject the script during enroll flow for different environment to get `_
 
 | ENV   | Resource Domain                                                                          |
 | ----- | ---------------------------------------------------------------------------------------- |
-| STAGE | ​[https://account-stage.htcvive.com](https://account-stage.htcvive.com)​                 |
-| PRDO  | ​[https://account.htcvive.com](https://account-stage.htcvive.com)​                       |
+| STAGE | ​[https://account-stage.htcvive.com](https://account-stage.htcvive.com/)​                |
+| PRDO  | ​[https://account.htcvive.com](https://account-stage.htcvive.com/)​                      |
 | TEST  | ​[https://cstest.dev.usw2.cs-htc.co](https://cstest.dev.usw2.cs-htc.co/infinity/lib.js)​ |
 
 ### HTCProfileDefaultHost env

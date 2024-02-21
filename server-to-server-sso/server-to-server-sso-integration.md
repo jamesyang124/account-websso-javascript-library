@@ -38,7 +38,7 @@ Optional field for client would prefer redirect back to passive url for landing 
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="passive_url" type="string" %}
-Optional field with passive_mode parameter. This url should defined in HTC SSO OAuth registration form.
+Optional field with passive\_mode parameter. This url should defined in HTC SSO OAuth registration form.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="hl" type="string" %}
@@ -80,12 +80,12 @@ URL encoded space limited login methods, support list:
 
 **metamask.com**
 
-****
+
 
 **sample text: "google.com walletconnect.com"**\
-****\
-****\
-**please refer this for more detail:** [#authorities-field](../infinity-flow-integration-1/auth-configs-for-sso-v2.md#authorities-field "mention")****
+\
+\
+**please refer this for more detail:** [#authorities-field](../infinity-flow-integration-1/auth-configs-for-sso-v2.md#authorities-field "mention")
 {% endswagger-parameter %}
 
 {% swagger-response status="302" description="1. If user not signed-in and not in passive mode, will redirect to HTC SSO UI/UX web.
@@ -143,21 +143,7 @@ https://account.htcvive.com/SS/Services/OAuth/Authorize?hl=zh_TW&client_id=cc955
 
 {% swagger baseUrl="https://account.htcvive.com" path="/${DC_PREFIX}/SS/Services/OAuth/Token" method="post" summary="Get HTC Account access token by authorization code" %}
 {% swagger-description %}
-Client server call this api with authorization code and client secret to get user's HTC Account access token. 
-
-**This URL must from callback's**
-
- 
-
-`api_url`
-
- 
-
-_****_
-
-** query parameter so would have proper DC_PREFIX**
-
-.
+Client server call this api with authorization code and client secret to get user's HTC Account access token. **This URL must from callback's** `api_url` **query parameter so would have proper DC\_PREFIX**.
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="code" type="string" required="true" %}
@@ -173,7 +159,7 @@ OAuth client id
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="grant_type" type="string" required="true" %}
-must be "authorization_code"
+must be "authorization\_code"
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="respond JSON with HTC Account access token" %}

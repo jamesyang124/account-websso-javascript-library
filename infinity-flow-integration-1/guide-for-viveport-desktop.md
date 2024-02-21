@@ -8,8 +8,8 @@ Please follow below API call spec, we also provide an example to follow for VIVE
 
 | ENV   | Resource Domain                                                                          |
 | ----- | ---------------------------------------------------------------------------------------- |
-| STAGE | ​[https://account-stage.htcvive.com](https://account-stage.htcvive.com)​                 |
-| PRDO  | ​[https://account.htcvive.com](https://account-stage.htcvive.com)​                       |
+| STAGE | ​[https://account-stage.htcvive.com](https://account-stage.htcvive.com/)​                |
+| PRDO  | ​[https://account.htcvive.com](https://account-stage.htcvive.com/)​                      |
 | TEST  | ​[https://cstest.dev.usw2.cs-htc.co](https://cstest.dev.usw2.cs-htc.co/infinity/lib.js)​ |
 
 ### HTCProfileDefaultHost env
@@ -38,73 +38,33 @@ OAuth Authorize API proxy for VIVEPORT Desktop, it set up and handled by account
 {% endswagger-description %}
 
 {% swagger-parameter in="query" name="bi_sid" type="string" %}
-BI session id, if not carried, will generate for it, please reuse this BI session id if present. 
-
-\
-
-
-
-
+BI session id, if not carried, will generate for it, please reuse this BI session id if present. \
 **This field is also used for MIXPANEL data event.**
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="bi_did" type="string" %}
-**MIXPANEL distinct id data event field.**
-
-\
-
-
+**MIXPANEL distinct id data event field.**\
 This parameter is used to identify user session so that we could chain the behavior from upstream client to Account WEBSSO via MIXPANEL distinctId.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="bi_rc" type="string" %}
-**MIXPANEL root client data event field.**
-
- 
-
-\
-
-
+**MIXPANEL root client data event field.** \
 The first upstream client which is triggered by user. No matter how many middle clients which triggered via several flows, the rootClient is always the initiate client. The value should be client name instead of UUID.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="bi_tc" type="string" %}
-**MIXPANEL trigger client data event field.**
-
- 
-
-\
-
-
-The client which is trigger WEBSSO SDK. If user open VIVEPORT Desktop and do sign-up flow via VIVEPORT Store, the trigger client should be VIVEPORT Store. 
-
-\
-
-
-
-
+**MIXPANEL trigger client data event field.** \
+The client which is trigger WEBSSO SDK. If user open VIVEPORT Desktop and do sign-up flow via VIVEPORT Store, the trigger client should be VIVEPORT Store. \
 **The value should be client name instead of UUID.**
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="bi_fep" type="string" %}
-**MIXPANEL flow entry point data event field.**
-
- 
-
-\
-
-
+**MIXPANEL flow entry point data event field.** \
 The value is given by root client, which described as UI element to initiate the flow. Account WEBSSO SDK just pass this value to record the data value of flow entry point.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="sid" type="string" %}
-specify session id for BI logging, url encoded.
-
-\
-
-
-
-
+specify session id for BI logging, url encoded.\
 **THIS FIELD IS DEPRECATED, PLEASE USE `bi_sid` INSTEAD**
 {% endswagger-parameter %}
 
@@ -141,87 +101,37 @@ Default value is for VIVEPORT desktop, please carry this field with proper clien
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="bi_sid" type="string" %}
-BI session id, if not carried, will generate for it, please reuse this BI session id if present. 
-
-\
-
-
-
-
+BI session id, if not carried, will generate for it, please reuse this BI session id if present. \
 **This field is also used for MIXPANEL data event.**
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="bi_did" type="string" %}
-**MIXPANEL data event field.**
-
- 
-
-\
-
-
+**MIXPANEL data event field.** \
 This parameter is used to identify user session so that we could chain the behavior from upstream client to Account WEBSSO via MIXPANEL distinctId.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="bi_rc" type="string" %}
-**MIXPANEL data event field.**
-
- 
-
-\
-
-
-The first upstream client which is triggered by user. No matter how many middle clients which triggered via several flows, the rootClient is always the initiate client. 
-
-**The value should be client name instead of UUID.**
+**MIXPANEL data event field.** \
+The first upstream client which is triggered by user. No matter how many middle clients which triggered via several flows, the rootClient is always the initiate client. **The value should be client name instead of UUID.**
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="bi_tc" type="string" %}
-**MIXPANEL data event field.**
-
- 
-
-\
-
-
-The client which is trigger WEBSSO SDK. If user open VIVEPORT Desktop and do sign-up flow via VIVEPORT Store, the trigger client should be VIVEPORT Store. 
-
-\
-
-
-
-
+**MIXPANEL data event field.** \
+The client which is trigger WEBSSO SDK. If user open VIVEPORT Desktop and do sign-up flow via VIVEPORT Store, the trigger client should be VIVEPORT Store. \
 **The value should be client name instead of UUID.**
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="bi_fep" type="string" %}
-**MIXPANEL data event  field.**
-
- 
-
-\
-
-
+**MIXPANEL data event  field.** \
 The value is given by root client, which described as UI element to initiate the flow. Account WEBSSO SDK just pass this value to record the data value of flow entry point.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="init_view" type="string" %}
-should be 
-
-**sign-in**
-
- or 
-
-**sign-up, default is sign-in**
+should be **sign-in** or **sign-up, default is sign-in**
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="sid" type="string" %}
-specify session id for BI logging
-
-\
-
-
-
-
+specify session id for BI logging\
 **THIS FIELD IS DEPRECATED, PLEASE USE `bi_sid` INSTEAD**
 {% endswagger-parameter %}
 
@@ -258,87 +168,37 @@ Default value is for VIVEPORT desktop, please carry this field with proper clien
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="bi_sid" type="string" %}
-BI session id, if not carried, will generate for it, please reuse this BI session id if present. 
-
-\
-
-
-
-
+BI session id, if not carried, will generate for it, please reuse this BI session id if present. \
 **This field is also used for MIXPANEL data event.**
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="bi_did" type="string" %}
-**MIXPANEL data event field.**
-
- 
-
-\
-
-
+**MIXPANEL data event field.** \
 This parameter is used to identify user session so that we could chain the behavior from upstream client to Account WEBSSO via MIXPANEL distinctId.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="bi_rc" type="string" %}
-**MIXPANEL data event field.**
-
- 
-
-\
-
-
-The first upstream client which is triggered by user. No matter how many middle clients which triggered via several flows, the rootClient is always the initiate client. 
-
-**The value should be client name instead of UUID.**
+**MIXPANEL data event field.** \
+The first upstream client which is triggered by user. No matter how many middle clients which triggered via several flows, the rootClient is always the initiate client. **The value should be client name instead of UUID.**
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="bi_tc" type="string" %}
-**MIXPANEL data event field.**
-
- 
-
-\
-
-
-The client which is trigger WEBSSO SDK. If user open VIVEPORT Desktop and do sign-up flow via VIVEPORT Store, the trigger client should be VIVEPORT Store. 
-
-\
-
-
-
-
+**MIXPANEL data event field.** \
+The client which is trigger WEBSSO SDK. If user open VIVEPORT Desktop and do sign-up flow via VIVEPORT Store, the trigger client should be VIVEPORT Store. \
 **The value should be client name instead of UUID.**
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="bi_fep" type="string" %}
-**MIXPANEL data event  field.**
-
- 
-
-\
-
-
+**MIXPANEL data event  field.** \
 The value is given by root client, which described as UI element to initiate the flow. Account WEBSSO SDK just pass this value to record the data value of flow entry point.
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="init_view" type="string" %}
-should be 
-
-**sign-in, auth-eth,**
-
- or 
-
-**sign-up, default is sign-in**
+should be **sign-in, auth-eth,** or **sign-up, default is sign-in**
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" name="sid" type="string" %}
-specify session id for BI logging
-
-\
-
-
-
-
+specify session id for BI logging\
 **THIS FIELD IS DEPRECATED, PLEASE USE `bi_sid` INSTEAD**
 {% endswagger-parameter %}
 
