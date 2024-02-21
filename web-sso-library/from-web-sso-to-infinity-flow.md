@@ -12,7 +12,7 @@ We are going to retire WEB SSO V2 support due to maintenance issue. Please switc
 
 
 
-Since Feb. 2024, the WEB SSO SDK V1 will silently bump to V3, and should be compatible with Chrome's updated 3rd party cookie policy. The integration should be the same for V1 & V3 SDK.
+Since Feb. 2024, the WEB SSO SDK V1 will silently bump to V3, and should be compatible with Chrome's updated 3rd party cookie policy. The integration should be the same for V1 & V3 SDK. If client's integration is before Feb. 2024, please send us feedback if regression issue occurred.
 {% endhint %}
 
 ## API Backward Compatibility&#x20;
