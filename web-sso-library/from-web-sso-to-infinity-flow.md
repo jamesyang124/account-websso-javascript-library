@@ -8,11 +8,11 @@ description: >-
 # Migrate From V1 to V2 \[DEPRECATED]
 
 {% hint style="danger" %}
-We are going to retire WEB SSO V2 support due to maintenance issue. Please switch to server-to-server SSO if have server stack for your app. O.W. WEB SSO V1 will suffer 3rd party cookie disable issue due to iframe cross-site operations.
+We are going to retire WEB SSO V2 support due to maintenance issue. Please switch to server-to-server SSO if have server stack for your app.
 
 
 
-Since Feb. 2024, the WEB SSO SDK V1 will silently bump to V3, and should be compatible with Chrome's updated 3rd party cookie policy.
+Since Feb. 2024, the WEB SSO SDK V1 will silently bump to V3, and should be compatible with Chrome's updated 3rd party cookie policy. The integration should be the same for V1 & V3 SDK.
 {% endhint %}
 
 ## API Backward Compatibility&#x20;
